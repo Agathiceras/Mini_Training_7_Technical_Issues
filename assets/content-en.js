@@ -94,8 +94,8 @@ const CONTENT = {
    <div class="card"><p>You can't fix a platform bug or an enrolment. But a lot is in your hands — and the most important part is <strong>letting the right people know, fast and well</strong>.</p>
    <div class="tbl-wrap"><table>
     <tr><th>✅ Fully yours</th><th>🔁 Yours to adapt and report</th><th>🚫 Out of your control</th></tr>
-    <tr><td>Checking your own connection, device and Chrome before every lesson</td><td>A student who can't get in or connect: help with first aid and <strong>report it</strong></td><td>Fixing a Classroom or platform bug</td></tr>
-    <tr><td>Staying calm and normalising the issue in front of the group</td><td>A lesson lost to a failure: adapt the next one and <strong>report it</strong></td><td>Enrolment, credentials and licences</td></tr>
+    <tr><td>Checking your own connection, device and Chrome before every lesson<br>Sending the family the login details you find in BO</td><td>A student who can't get in or connect: help with first aid and <strong>report it</strong></td><td>Fixing a Classroom or platform bug</td></tr>
+    <tr><td>Staying calm and normalising the issue in front of the group</td><td>A lesson lost to a failure: adapt the next one and <strong>report it</strong></td><td>Enrolment and licences</td></tr>
     <tr><td>Muting and unmuting microphones with care</td><td>A device that doesn't meet the requirements: <strong>report it before lesson 1</strong></td><td>Whether an extra lesson, a group change or compensation is offered</td></tr>
     <tr><td>Reporting the same day with complete details</td><td>A failure that affects several students: triage, <strong>report</strong> and a recovery plan</td><td>VPN policy and country blocks</td></tr>
    </table></div></div>
@@ -179,9 +179,10 @@ const CONTENT = {
       say:`Acknowledge the inconvenience without explaining why it happened or promising a change: <em>“I understand it’s inconvenient. I’ve already shared it with my team so they can contact you.”</em>`,
       rep:`Team Leader + Client Service + BO comment.`},
      {ic:'✉️', title:`The family didn’t get the link or the credentials`,
-      do:`Check in BO what was sent and report it. Don’t improvise links.`,
-      say:`<em>“Customer Service will help you get it today.”</em>`,
-      rep:`Team Leader + Client Service + BO comment.`}
+      do:`<strong>You have them in BO.</strong> In the student’s profile you’ll find the login link and the login and password. Send them to the family yourself, straight away. If they’re missing or don’t work, report it.`,
+      say:`<em>“I’m sending you the access details now. Please try them and let me know if anything doesn’t work.”</em>`,
+      rep:`Only if the details are missing in BO or don’t work: Team Leader + Client Service + BO comment.`,
+      avoid:`Improvising links that don’t come from BO.`}
    ])}
    ${co('co-warn','🔗',`<p><strong>An alternative link when the student can't get in?</strong> Only in an emergency, <strong>once</strong>, and always with a same-day report. Sending alternative links lesson after lesson hides the problem: nobody fixes it because nobody finds out.</p>`)}
   `},
@@ -219,8 +220,7 @@ const CONTENT = {
    {type:'sort', prompt:'What’s your first action?', card:`The lesson starts in 10 minutes and a student says the join button doesn't appear.`, zones:[{label:'🔁 Refresh, check Chrome and confirm in BO that they’re in the group', fb:'Correct — quick first aid. If nothing changes, you report it with the BO links of the group and the student.'},{label:'🔗 Send them a Zoom link for that lesson', fb:'Not quite — an alternative link is for emergencies only, once and with a report. First aid comes first.'},{label:'⏳ Wait and see if they join later', fb:'Not quite — waiting in silence loses the lesson. Act now.'}], correctZone:0},
    {type:'sort', prompt:'What’s your first action?', card:`The student's course is Unity and BO shows their lesson 1 is on Thursday.`, zones:[{label:'⏳ Nothing — we’ll see in lesson 1', fb:'Not quite — in Unity, device problems are usually discovered in the first lesson, when it’s already too late.'},{label:'💻 Confirm the device before lesson 1, with a message approved by your Team Leader', fb:'Correct — Unity is a demanding course. Confirming the device beforehand avoids losing the first lesson.'},{label:'📝 Ask the family to buy a better computer', fb:'Not quite — you don’t ask for purchases. You confirm the device and, if it doesn’t meet the requirements, you report it.'}], correctZone:1},
    {type:'choice', prompt:`A mother writes: "My son doesn't appear as registered in the lesson." How do you reply?`, opts:[`"Your son isn't registered, you need to talk to sales."`,`"Yes, he's registered, it must be a mistake on your side."`,`"I'm checking your access with my team."`], correct:2, fb:`Don't confirm or deny the registration. You check it in BO and let your Team Leader and Client Service know.`},
-   {type:'choice', prompt:`The family says the lesson ended up at a different time from the one they asked for. What do you do?`, opts:[`Acknowledge the inconvenience without promising a change, and tell your Team Leader the same day`,`Offer to move it yourself to whatever time they prefer`,`Explain that the schedule can no longer be changed`], correct:0, fb:`You don't change the schedule, and you don't rule out a change either. You acknowledge the inconvenience and tell your team the same day.`},
-   {type:'sort', prompt:'Treasure or trash? Is this a good line for the family?', card:`"Your son isn't registered."`, zones:[{label:'💎 Treasure', fb:'Not quite — don’t confirm or deny the registration. Say: “I’m checking your access with my team.”'},{label:'🗑️ Trash', fb:'Correct — don’t confirm or deny the registration. Say: “I’m checking your access with my team.”'}], correctZone:1}
+   {type:'choice', prompt:`The family says the lesson ended up at a different time from the one they asked for. What do you do?`, opts:[`Acknowledge the inconvenience without promising a change, and tell your Team Leader the same day`,`Offer to move it yourself to whatever time they prefer`,`Explain that the schedule can no longer be changed`], correct:0, fb:`You don't change the schedule, and you don't rule out a change either. You acknowledge the inconvenience and tell your team the same day.`}
   ]
  }
 },
@@ -242,16 +242,15 @@ const CONTENT = {
    ])}
   `},
   {t:'💻 Devices and software', html:`
-   <div class="card"><p>Tap the problem that matches what you see. Below you’ll also find <strong>lighter tools</strong> to keep the lesson useful and <strong>things to do while Roblox Studio installs</strong>.</p></div>
+   <div class="card"><p>Tap the problem that matches what you see.</p></div>
    ${symCards([
      {ic:'🐢', title:`The computer doesn’t meet the minimum and the app doesn’t work`,
       see:`The app won’t open, freezes or closes, or the pre-join screen shows a requirements warning.`,
-      do:`<ul><li><strong>Keep the child learning:</strong> switch to a lighter tool from the table below, or run a demo on your shared screen while they follow in the browser or on paper.</li><li><strong>Report</strong> that the device doesn’t meet the requirement, so the team can follow up with the family.</li></ul>`,
+      do:`<ul><li><strong>Keep the child learning:</strong> change the activity so they can still follow the lesson usefully — for example, a demo on your shared screen or a guided example.</li><li><strong>Report</strong> that the device doesn’t meet the requirement, so the team can follow up with the family.</li></ul>`,
       avoid:`Promising a course change or asking the family to buy a computer.`,
       tip:`Ask your Team Leader which lighter tools are approved for the course you teach.`},
      {ic:'🧱', title:`They can’t download or install Roblox Studio`,
-      do:`Check the operating system and the free space (see the requirements in Module 1). <strong>Don’t spend the whole lesson installing:</strong> run one of the activities below while it downloads, then report it with a screenshot.`,
-      tip:`Even better: ask the family to install it <strong>before</strong> the lesson (see “Install it before lesson 1”).`},
+      do:`Check the operating system and the free space (see the requirements in Module 1). Don’t spend the whole lesson installing: report it.`},
      {ic:'🐌', title:`Unity or Blender freeze while the lesson is on`,
       do:`Ask them to close other tabs and apps. Unity and Blender need 8 GB of RAM. If it continues, report it with the device’s model and system.`},
      {ic:'🔥', title:`Classroom uses a lot of resources`,
@@ -261,39 +260,10 @@ const CONTENT = {
    ])}
   `},
   {t:'🧩 Lighter tools that ask less of the computer', html:`
-   <div class="card"><p>When the course tool is too heavy for the device, keep the <strong>same learning goal</strong> with a tool that runs in the browser or on paper. It’s a stop-gap for the lesson — <strong>not a course change</strong>.</p>
-   <div class="tbl-wrap"><table>
-    <tr><th>If this doesn’t run…</th><th>Use this instead</th><th>What the child still practises</th></tr>
-    <tr><td>🧱 <strong>Roblox Studio</strong> (game logic)</td><td><strong>Scratch</strong>, in the browser. It also works on tablets.</td><td>Events, loops, conditions and variables — the logic behind a Roblox game.</td></tr>
-    <tr><td>🧱 <strong>Roblox Studio</strong> (level design)</td><td><strong>Paper</strong> or a free online whiteboard / Canva</td><td>Planning the map, the characters, the rules and the goal of a game.</td></tr>
-    <tr><td>🐍 <strong>Python</strong> on a device that can’t install anything</td><td><strong>Google Colab</strong> (Chrome + a Google account)</td><td>The same code, with nothing to install.</td></tr>
-    <tr><td>🗿 <strong>Unity / Blender</strong></td><td>A browser-based 3D tool (for example Tinkercad) + <strong>Scratch</strong> for the game logic</td><td>3D shapes and game logic without a heavy installation.</td></tr>
-    <tr><td>⛏️ <strong>Minecraft</strong> (account or install problems)</td><td><strong>Scratch</strong> for the logic + a <strong>paper build plan</strong></td><td>Planning and logic while the account is being sorted out.</td></tr>
-   </table></div></div>
-   ${co('co-idea','📌',`<p><strong>Always tell your Team Leader</strong> which tool you used and why, and leave it in the BO comment. If the device keeps being a problem, the report is what lets the team look for a lasting solution with the family.</p>`)}
-  `},
-  {t:'⏳ While Roblox Studio installs', html:`
-   <div class="card"><p>The download can take several minutes, depending on the connection. Don’t let those minutes be dead time: pick one of these activities. <strong>Tap each card.</strong></p></div>
-   ${flipCards([
-     {ic:'🗺️', title:`Design your game on paper`, back:`<strong>Name, goal, 3 rules, hero and obstacles.</strong> They draw the map; you’ll build it together once Studio opens.`},
-     {ic:'🧠', title:`Predict what happens`, back:`Show 3 simple <strong>“when… then…”</strong> rules on your screen. Ask: <em>“What happens if…?”</em> They explain their reasoning in the chat.`},
-     {ic:'🎮', title:`Game detective`, back:`They pick a favourite Roblox game and describe <strong>one mechanic</strong> they’d like to build: how does it start, what changes, how do you win?`},
-     {ic:'🧭', title:`Studio tour on your screen`, back:`Open Studio on <strong>your</strong> screen and show the main windows. They write each name in the chat and say what they think it does.`},
-     {ic:'✍️', title:`Write the rules`, back:`In the chat they write <strong>3 rules</strong> for their game: <em>“When the player touches lava → lose a life.”</em> It’s the same logic they’ll script in Studio.`}
-   ])}
-   ${co('co-ok','✅',`<p><strong>The goal:</strong> the child leaves the lesson having worked on something real for their course, not having watched a progress bar. Report the installation problem the same day.</p>`)}
-  `},
-  {t:'📅 Install it before lesson 1', html:`
-   <div class="card"><p>The requirements table says it clearly: <strong>install Roblox Studio before lesson 1.</strong> Most installation problems are discovered in the first lesson, when the time is already lost. A short message a day or two before changes that.</p></div>
-   ${stepper([
-     {ic:'📩', title:`Send the family a short message`, html:`<p>With wording <strong>approved by your Team Leader</strong>, a day or two before lesson 1. Ask them to install Roblox Studio before the lesson.</p><p><em>“Hi [parent’s name]! To make the first lesson run smoothly, please install Roblox Studio before [day]: download it from the official Roblox website, sign in and open it once. If you see any error, send me a screenshot and we’ll sort it out before the lesson. Thank you!”</em></p>`},
-     {ic:'🔑', title:`Ask them to open it once`, html:`<p>Signing in and <strong>opening Studio once</strong> is the quickest way to find out whether it really starts. It can take a few minutes the first time.</p>`},
-     {ic:'📸', title:`Ask for a screenshot`, html:`<p>A screenshot of Studio open tells you it works. If it shows an error or a “device not supported” message, ask for a screenshot and for the <strong>device and operating system</strong>.</p>`},
-     {ic:'📮', title:`If it fails, report it before lesson 1`, html:`<p>Leave a BO comment with the screenshot, the device, the system and the free space, and tell your Team Leader. While there’s still time, the team can react.</p>`}
-   ])}
-   ${co('co-warn','🌍',`<p><strong>In some countries Roblox needs extra steps.</strong> Check the note for your region before you send the message.</p>`)}
+   ${co('co-warn','🚧',`<p><strong>Content pending confirmation.</strong> We’re still defining which tool replaces the original one in each course.</p>`)}
   `},
   {t:'🖥️ Classroom', html:`
+   ${co('co-warn','📝',`<p><strong>Note for Heads of Teaching:</strong> the Classroom section is still in progress. It will have more content, images and videos.</p>`)}
    <div class="card"><p>The most common quick fixes. The full, up-to-date steps are in the Classroom team's <strong>"Classroom Issues Quick Fixes"</strong> guide.</p></div>
    ${accItem('⬛ Black screen or camera', `<p>Stop and share again. If it happens because the student was on the Assignments tab, repeat it. Check that they're using Chrome. If it isn't fixed, report it.</p>`)}
    ${accItem('▬ A black rectangle instead of your screen', `<p>Stop and resume. For some, minimising and restoring the window works.</p>`)}
@@ -333,9 +303,7 @@ const CONTENT = {
   items:[
    {type:'sort', prompt:'What’s the first action?', card:`A student's shared screen is black.`, zones:[{label:'🔁 Stop and share again, and check they’re using Chrome', fb:'Correct — it’s the first step in the guide. If it isn’t fixed, you report it.'},{label:'🆘 Switch to Zoom right away', fb:'Not quite — Zoom is the exception. The Classroom steps come first.'},{label:'⏭️ Carry on with the lesson without them', fb:'Not quite — first aid comes first; if it isn’t solved in 10 minutes, you report it.'}], correctZone:0},
    {type:'sort', prompt:'What’s the first action?', card:`A student on a tablet can't share their screen.`, zones:[{label:'🔁 Ask them to try again several times', fb:'Not quite — screen sharing isn’t possible from a tablet browser.'},{label:'📝 Ask them to switch browsers on the tablet', fb:'Not quite — on a phone or tablet it isn’t possible, whatever the browser.'},{label:'💻 Explain they need a computer to share their screen, and continue the lesson another way', fb:'Correct — it’s a known limitation. Adapt the activity and, if the course requires it, report it.'}], correctZone:2},
-   {type:'sort', prompt:'What’s the first action?', card:`You muted a student a while ago because of background noise.`, zones:[{label:'🔊 Unmute them as soon as possible', fb:'Correct — if you mute someone, unmute them again. A child muted without realising it is left out of the lesson.'},{label:'🔇 Leave them muted until the end', fb:'Not quite — a child muted for the whole lesson stops taking part, and that can cost us a family.'}], correctZone:0},
    {type:'choice', prompt:`Five minutes in, three students can't get in and the other two are waiting. What do you do?`, opts:[`Help each one in turn until they're all in`,`Cancel the lesson and tell the families`,`Report it now (it's the platform), carry on with the two who are connected and ask the others to follow in the chat`], correct:2, fb:`If several fail, it's the platform: report it now. Keep the lesson alive with those who are connected and prepare the recovery plan afterwards.`},
-   {type:'choice', prompt:`A student's computer doesn't meet the minimum and the course app won't open. What do you do?`, opts:[`Tell the family they have to change course`,`Change the activity so they can still follow the lesson usefully (a demo, a guided example) and report that the device doesn't meet the requirement`,`Do the task yourself on your screen and send it to them finished`], correct:1, fb:`You keep the lesson useful for the child and report it. You don't offer a course change, and you don't do the task for them.`},
    {type:'choice', prompt:`When is Zoom used?`, opts:[`Only when Classroom doesn't work for the whole lesson and can't be fixed, with your Team Leader's approval, and reported the same day`,`Whenever a student has trouble getting in`,`When it's more convenient for the family`], correct:0, fb:`Classroom is the default channel. Zoom is the exception: with your Team Leader's approval and always with a same-day report.`}
   ]
  }
@@ -353,7 +321,7 @@ const CONTENT = {
   {t:'🩺 Symptoms after the lesson', html:`
    ${symCards([
      {ic:'🔒', title:`They can’t get into the platform to do the homework`,
-      do:`Confirm the browser (desktop Chrome) and the device. If nothing changes, report it with the BO links of the student and the group, and <strong>follow up after 24 hours</strong>.`,
+      do:`Confirm the browser (desktop Chrome), the device and the login details — you can find them in BO and send them again. If nothing changes, report it with the BO links of the student and the group, and <strong>follow up after 24 hours</strong>.`,
       say:`<em>“I’m looking into it with my team and I’ll write to you tomorrow.”</em>`},
      {ic:'📱', title:`They can only get in from a phone and it doesn’t display well`,
       do:`The platform is designed for computers: they should use “desktop site” or a computer. Don’t promise alternative access.`,
@@ -460,18 +428,14 @@ const CONTENT = {
   title:'Report well, and in order',
   instr:'Pick the lane, the best comment and what you would say. 70% to complete this module.',
   items:[
-   {type:'sort', prompt:'Which lane does this report go down?', card:`The student's Minecraft credentials don't work.`, zones:[{label:'1️⃣ Classroom failure', fb:'Not quite — it isn’t a Classroom failure, it’s an account or licence.'},{label:'2️⃣ Account, enrolment, credentials, schedule, licences', fb:'Correct — it goes to your Team Leader and Client Service, with a BO comment.'},{label:'3️⃣ Lost lesson', fb:'Not quite — it isn’t a lost lesson yet: it’s a credentials problem.'}], correctZone:1},
    {type:'sort', prompt:'Which lane does this report go down?', card:`The whiteboard stays visible after closing it, and leaving and joining again doesn't fix it.`, zones:[{label:'1️⃣ Classroom failure', fb:'Correct — the steps in the guide didn’t fix it: Classroom support channel and a BO comment.'},{label:'2️⃣ Account, enrolment, credentials, schedule, licences', fb:'Not quite — it has nothing to do with the student’s account.'},{label:'3️⃣ Lost lesson', fb:'Not quite — the lesson went on; it’s a Classroom failure.'}], correctZone:0},
    {type:'choice', prompt:`Which is the best BO comment for the same case?`, opts:[`"Couldn't get in, bad connection."`,`"3/11, lesson 2. Couldn't get in: banner 'System not supported' on the pre-join screen. Windows 7, Chrome up to date. Tried refreshing and another browser, 10 min. Screenshot attached. BO links of the group and the student."`,`"The platform isn't working again, this always happens."`], correct:1, fb:`The useful comment is complete and neutral: date, what failed, the banner, the device, what you tried, the screenshot and the BO links.`},
    {type:'choice', prompt:`A student has lost their second lesson in a row to a failure. What comes first?`, opts:[`Write to the family and offer an extra lesson`,`Wait and see if the next lesson works`,`Talk to your Team Leader the same day, and agree with them on the message to the family`], correct:2, fb:`Two compromised lessons: Team Leader the same day. Team first, family second. You don't offer the extra lesson.`},
-   {type:'choice', prompt:`This report is missing something: "Lesson 3, the student's audio couldn't be heard, tried permissions 10 min, Chrome, Windows 10, screenshot attached." What's missing?`, opts:[`The BO links of the group and the student`,`The tutor's opinion of the platform`,`The family's phone number`], correct:0, fb:`The BO links of the group and the student are mandatory in every report: without them the case can't be reviewed.`},
-   {type:'sort', prompt:'Treasure or trash? Is this a good line for the family?', card:`"I've already reported it to my team with all the details, and Client Service will get in touch with you."`, zones:[{label:'💎 Treasure', fb:'Correct — it acknowledges the problem, says it’s been reported and who will come back, without promising anything.'},{label:'🗑️ Trash', fb:'Not quite — it’s exactly what you can say: acknowledge, report and say who will come back, without promising.'}], correctZone:0},
-   {type:'choice', prompt:`A parent writes, upset: “This is the second time my son couldn’t get in.” It’s 6 pm and you haven’t talked to your Team Leader yet. What do you do first?`, opts:[`Wait until tomorrow, talk to your Team Leader and reply once with all the answers`,`Reply now, briefly: you’re sorry, you’ve seen it, you’re on it and you’ll write again with news — then sync with your Team Leader`,`Explain how Classroom works so they understand it’s rarely the platform’s fault`], correct:1, fb:`Acknowledging is always allowed, and silence does more damage than the failure itself. Reply now with warmth and a time for the next update; the explanations and options wait for your Team Leader.`},
-   {type:'sort', prompt:'Treasure or trash? Is this a good reply to an upset parent?', card:`“I’m very sorry, two lost lessons isn’t okay. I’ve reported it with all the details and I’ll write to you again tomorrow morning. I’ll join early next lesson to check that he gets in.”`, zones:[{label:'💎 Treasure', fb:'Correct — it acknowledges the problem, shows concrete effort, says when you’ll write next and promises nothing that isn’t yours to decide.'},{label:'🗑️ Trash', fb:'Not quite — it’s exactly what an upset family needs: you care, you’re acting and you say when they’ll hear from you.'}], correctZone:0}
+   {type:'choice', prompt:`A parent writes, upset: “This is the second time my son couldn’t get in.” It’s 6 pm and you haven’t talked to your Team Leader yet. What do you do first?`, opts:[`Wait until tomorrow, talk to your Team Leader and reply once with all the answers`,`Reply now, briefly: you’re sorry, you’ve seen it, you’re on it and you’ll write again with news — then sync with your Team Leader`,`Explain how Classroom works so they understand it’s rarely the platform’s fault`], correct:1, fb:`Acknowledging is always allowed, and silence does more damage than the failure itself. Reply now with warmth and a time for the next update; the explanations and options wait for your Team Leader.`}
   ]
  }
 },
-{id:'checklist', numLabel:'Final checklist', emoji:'✅', color:'#FFD34D', art:'shield', learn:[['🛟','If a refund request exists'],['🧭','Before · during · after'],['🃏','Six pocket rules']],
+{id:'checklist', numLabel:'Final checklist', emoji:'✅', color:'#FFD34D', art:'shield', learn:[['🛟','If a refund request exists'],['🧭','Before · during · after']],
  eyebrow:'Final checklist',
  title:'Final Checklist',
  desc:'No test here — just the essentials of this mini-training, before, during and after the lesson.',
@@ -486,19 +450,9 @@ const CONTENT = {
   `},
   {t:'🧭 Before, during and after', html:`
    ${tabsBlock([
-     {ic:'🧰', title:'Before', html:`<div class="card">${numlist(['Desktop Chrome, up to date','Microphone, camera and screen tested','BO: group and student list','Pre-join warnings','In lesson 1, I join early','Roblox Studio installed before lesson 1'])}</div>`},
+     {ic:'🧰', title:'Before', html:`<div class="card">${numlist(['Desktop Chrome, up to date','Microphone, camera and screen tested','BO: group and student list','Pre-join warnings','In lesson 1, I join early'])}</div>`},
      {ic:'🛠️', title:'During', html:`<div class="card">${numlist(['Calm first','10 minutes, then I escalate','Banner: they read it out loud','If many are affected, I report it now','I don’t do the task for the student'])}</div>`},
      {ic:'🏠', title:'After', html:`<div class="card">${numlist(['Can they get into the homework?','Recording and recovery plan','Same-day report with complete details','I answer the family on time and keep them updated, even with no news','Follow-up after 24 hours','I close the loop with the family'])}</div>`}
-   ])}
-  `},
-  {t:'🃏 The six pocket rules', html:`
-   ${flipCards([
-     {ic:'🔁', title:'Adapt first', back:`In every situation there’s something you can change in <strong>your own lesson</strong>, right now, without asking anyone.`},
-     {ic:'📮', title:`Reporting isn’t optional`, back:`If you don’t tell anyone, <strong>nobody else knows</strong>. A problem that isn’t reported doesn’t exist.`},
-     {ic:'👥', title:'Team before family', back:`Sync with your Team Leader before writing about access, schedule or a lost lesson. <strong>Acknowledging receipt</strong> is always fine.`},
-     {ic:'⚖️', title:'Never promise, never refuse', back:`No compensation, no extra lesson, no <em>“that’s not possible”</em>. Do show that you care and that you’re on it.`},
-     {ic:'📅', title:'Escalate once and follow up', back:`Put a reminder in your calendar to check in <strong>two lessons</strong> later.`},
-     {ic:'💛', title:'Reply on time', back:`Silence costs more than the failure. A quick, caring reply is what makes a family <strong>give us another chance</strong>.`}
    ])}
   `},
   {t:'', html:`

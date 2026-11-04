@@ -93,8 +93,8 @@ const CONTENT = {
    <div class="card"><p>No puedes arreglar un bug de la plataforma ni una matrícula. Pero hay mucho que sí está en tus manos — y lo más importante es <strong>avisar rápido y bien</strong>.</p>
    <div class="tbl-wrap"><table>
     <tr><th>✅ Totalmente tuyo</th><th>🔁 Tuyo para adaptar y para reportar</th><th>🚫 Fuera de tu control</th></tr>
-    <tr><td>Revisar tu propia conexión, tu equipo y Chrome antes de cada clase</td><td>Un estudiante que no puede entrar o conectarse: ayúdalo con los primeros auxilios y <strong>reporta</strong></td><td>Corregir un bug de Classroom o de la plataforma</td></tr>
-    <tr><td>Mantener la calma y normalizar el problema delante del grupo</td><td>Una clase que se perdió por una falla: adapta la siguiente y <strong>reporta</strong></td><td>La matrícula, las credenciales y las licencias</td></tr>
+    <tr><td>Revisar tu propia conexión, tu equipo y Chrome antes de cada clase<br>Enviar a la familia los datos de acceso que encuentras en BO</td><td>Un estudiante que no puede entrar o conectarse: ayúdalo con los primeros auxilios y <strong>reporta</strong></td><td>Corregir un bug de Classroom o de la plataforma</td></tr>
+    <tr><td>Mantener la calma y normalizar el problema delante del grupo</td><td>Una clase que se perdió por una falla: adapta la siguiente y <strong>reporta</strong></td><td>La matrícula y las licencias</td></tr>
     <tr><td>Silenciar y volver a activar micrófonos con cuidado</td><td>Un dispositivo que no cumple los requisitos: <strong>reporta antes de la clase 1</strong></td><td>Si se ofrece una clase extra, un cambio de grupo o una compensación</td></tr>
     <tr><td>Reportar el mismo día con datos completos</td><td>Una falla que afecta a varios estudiantes: triage, <strong>reporte</strong> y plan de recuperación</td><td>La política de VPN y los bloqueos por país</td></tr>
    </table></div></div>
@@ -177,9 +177,10 @@ const CONTENT = {
       say:`Reconoce la molestia, sin explicar por qué ocurrió ni prometer un cambio: <em>«Entiendo que es incómodo. Ya lo compartí con mi equipo para que te contacten.»</em>`,
       rep:`Team Leader + Servicio al Cliente + comentario en BO.`},
      {ic:'✉️', title:`La familia no recibió el enlace o las credenciales`,
-      do:`Verifica en BO qué se envió y repórtalo. No improvises enlaces.`,
-      say:`<em>«Servicio al Cliente le ayudará a recibirlo hoy.»</em>`,
-      rep:`Team Leader + Servicio al Cliente + comentario en BO.`}
+      do:`<strong>Las tienes en BO.</strong> En el perfil del estudiante encuentras el enlace de acceso y el usuario y la contraseña. Envíaselos directamente a la familia, de inmediato. Si faltan o no funcionan, repórtalo.`,
+      say:`<em>«Te estoy enviando los datos de acceso ahora. Pruébalos y avísame si algo no funciona.»</em>`,
+      rep:`Solo si los datos faltan en BO o no funcionan: Team Leader + Servicio al Cliente + comentario en BO.`,
+      avoid:`Improvisar enlaces que no salgan de BO.`}
    ])}
    ${co('co-warn','🔗',`<p><strong>¿Un enlace alternativo cuando el estudiante no puede entrar?</strong> Solo en una emergencia, <strong>una sola vez</strong>, y siempre con reporte el mismo día. Enviar enlaces alternativos clase tras clase esconde el problema: nadie lo arregla porque nadie se entera.</p>`)}
   `},
@@ -217,8 +218,7 @@ const CONTENT = {
    {type:'sort', prompt:'¿Cuál es tu primera acción?', card:`Faltan 10 minutos para la clase y un estudiante dice que no le aparece el botón de acceso.`, zones:[{label:'🔁 Recargar, revisar Chrome y confirmar en BO que está en el grupo', fb:'Correcto — primeros auxilios rápidos. Si sigue igual, reportas con los enlaces de BO del grupo y del estudiante.'},{label:'🔗 Enviarle un enlace de Zoom para esa clase', fb:'No exactamente — un enlace alternativo es solo para emergencias, una vez y con reporte. Primero, los primeros auxilios.'},{label:'⏳ Esperar a ver si entra más tarde', fb:'No exactamente — esperar en silencio hace perder la clase. Actúa ahora.'}], correctZone:0},
    {type:'sort', prompt:'¿Cuál es tu primera acción?', card:`El curso del estudiante es Unity y en BO ves que su clase 1 es el jueves.`, zones:[{label:'⏳ Nada — lo veremos en la clase 1', fb:'No exactamente — en Unity, los problemas de equipo suelen descubrirse en la primera clase, cuando ya es tarde.'},{label:'💻 Confirmar el equipo antes de la clase 1, con un mensaje aprobado por tu Team Leader', fb:'Correcto — Unity es un curso exigente. Confirmar el equipo antes evita perder la primera clase.'},{label:'📝 Pedirle a la familia que compre un equipo mejor', fb:'No exactamente — tú no pides compras. Confirmas el equipo y, si no cumple, lo reportas.'}], correctZone:1},
    {type:'choice', prompt:`Una madre escribe: «Mi hijo no aparece registrado en la clase.» ¿Qué le respondes?`, opts:[`«Tu hijo no está registrado, tienes que hablar con ventas.»`,`«Sí, está registrado, seguramente es un error tuyo.»`,`«Estoy verificando tu acceso con mi equipo.»`], correct:2, fb:`No confirmes ni niegues el registro. Lo compruebas en BO y avisas a tu Team Leader y a Servicio al Cliente.`},
-   {type:'choice', prompt:`La familia dice que la clase quedó a otra hora de la que pidieron. ¿Qué haces?`, opts:[`Reconoces la molestia sin prometer un cambio y avisas a tu Team Leader el mismo día`,`Les ofreces cambiarla tú a la hora que prefieran`,`Les explicas que el horario ya no se puede cambiar`], correct:0, fb:`El horario no lo cambias tú, y tampoco descartas un cambio. Reconoces la molestia y avisas a tu equipo el mismo día.`},
-   {type:'sort', prompt:'¿Tesoro o basura? ¿Es una buena frase para la familia?', card:`«Tu hijo no está registrado.»`, zones:[{label:'💎 Tesoro', fb:'No exactamente — no confirmes ni niegues el registro. Di: «Estoy verificando tu acceso con mi equipo.»'},{label:'🗑️ Basura', fb:'Correcto — no confirmes ni niegues el registro. Di: «Estoy verificando tu acceso con mi equipo.»'}], correctZone:1}
+   {type:'choice', prompt:`La familia dice que la clase quedó a otra hora de la que pidieron. ¿Qué haces?`, opts:[`Reconoces la molestia sin prometer un cambio y avisas a tu Team Leader el mismo día`,`Les ofreces cambiarla tú a la hora que prefieran`,`Les explicas que el horario ya no se puede cambiar`], correct:0, fb:`El horario no lo cambias tú, y tampoco descartas un cambio. Reconoces la molestia y avisas a tu equipo el mismo día.`}
   ]
  }
 },
@@ -239,16 +239,15 @@ const CONTENT = {
    ])}
   `},
   {t:'💻 Equipo y software', html:`
-   <div class="card"><p>Toca el problema que coincide con lo que ves. Más abajo encontrarás <strong>herramientas más ligeras</strong> para que la clase siga siendo útil y <strong>cosas que hacer mientras se instala Roblox Studio</strong>.</p></div>
+   <div class="card"><p>Toca el problema que coincide con lo que ves.</p></div>
    ${symCards([
      {ic:'🐢', title:`El computador no cumple los mínimos y la aplicación no funciona`,
       see:`La aplicación no abre, se congela o se cierra, o la pantalla previa a unirse muestra una advertencia de requisitos.`,
-      do:`<ul><li><strong>Que el niño siga aprendiendo:</strong> pasa a una herramienta más ligera de la tabla de abajo, o haz una demostración en tu pantalla compartida mientras él la sigue en el navegador o en papel.</li><li><strong>Reporta</strong> que el equipo no cumple el requisito, para que el equipo pueda hablar con la familia.</li></ul>`,
+      do:`<ul><li><strong>Que el niño siga aprendiendo:</strong> cambia la actividad para que pueda seguir la clase de forma útil — por ejemplo, una demostración en tu pantalla compartida o un ejemplo guiado.</li><li><strong>Reporta</strong> que el equipo no cumple el requisito, para que el equipo pueda hablar con la familia.</li></ul>`,
       avoid:`Prometer un cambio de curso o pedirle a la familia que compre un computador.`,
       tip:`Pregunta a tu Team Leader qué herramientas ligeras están aprobadas para el curso que enseñas.`},
      {ic:'🧱', title:`No pueden descargar o instalar Roblox Studio`,
-      do:`Revisa el sistema operativo y el espacio libre (mira los requisitos en el Módulo 1). <strong>No gastes toda la clase instalando:</strong> haz una de las actividades de abajo mientras se descarga y después repórtalo con una captura.`,
-      tip:`Mejor aún: pide a la familia que lo instale <strong>antes</strong> de la clase (mira «Instálalo antes de la clase 1»).`},
+      do:`Revisa el sistema operativo y el espacio libre (mira los requisitos en el Módulo 1). No gastes toda la clase instalando: repórtalo.`},
      {ic:'🐌', title:`Unity o Blender se traban mientras se ve la clase`,
       do:`Pídeles que cierren otras pestañas y aplicaciones. Unity y Blender necesitan 8 GB de RAM. Si sigue, repórtalo con el modelo y el sistema del equipo.`},
      {ic:'🔥', title:`Classroom consume muchos recursos`,
@@ -258,39 +257,10 @@ const CONTENT = {
    ])}
   `},
   {t:'🧩 Herramientas ligeras que exigen menos al computador', html:`
-   <div class="card"><p>Cuando la herramienta del curso es demasiado pesada para el equipo, mantén el <strong>mismo objetivo de aprendizaje</strong> con una herramienta que corra en el navegador o en papel. Es un recurso para esa clase — <strong>no un cambio de curso</strong>.</p>
-   <div class="tbl-wrap"><table>
-    <tr><th>Si esto no corre…</th><th>Usa esto</th><th>Qué sigue practicando el niño</th></tr>
-    <tr><td>🧱 <strong>Roblox Studio</strong> (lógica del juego)</td><td><strong>Scratch</strong>, en el navegador. También funciona en tablet.</td><td>Eventos, bucles, condiciones y variables: la lógica detrás de un juego de Roblox.</td></tr>
-    <tr><td>🧱 <strong>Roblox Studio</strong> (diseño de niveles)</td><td><strong>Papel</strong> o una pizarra en línea gratuita / Canva</td><td>Planear el mapa, los personajes, las reglas y la meta de un juego.</td></tr>
-    <tr><td>🐍 <strong>Python</strong> en un equipo que no puede instalar nada</td><td><strong>Google Colab</strong> (Chrome + una cuenta de Google)</td><td>El mismo código, sin instalar nada.</td></tr>
-    <tr><td>🗿 <strong>Unity / Blender</strong></td><td>Una herramienta 3D en el navegador (por ejemplo Tinkercad) + <strong>Scratch</strong> para la lógica del juego</td><td>Formas 3D y lógica de juego sin una instalación pesada.</td></tr>
-    <tr><td>⛏️ <strong>Minecraft</strong> (problemas de cuenta o instalación)</td><td><strong>Scratch</strong> para la lógica + un <strong>plan de construcción en papel</strong></td><td>Planificación y lógica mientras se resuelve la cuenta.</td></tr>
-   </table></div></div>
-   ${co('co-idea','📌',`<p><strong>Avisa siempre a tu Team Leader</strong> qué herramienta usaste y por qué, y déjalo en el comentario de BO. Si el equipo sigue siendo un problema, el reporte es lo que permite buscar una solución duradera con la familia.</p>`)}
-  `},
-  {t:'⏳ Mientras se instala Roblox Studio', html:`
-   <div class="card"><p>La descarga puede tardar varios minutos, según la conexión. No dejes que esos minutos sean tiempo muerto: elige una de estas actividades. <strong>Toca cada tarjeta.</strong></p></div>
-   ${flipCards([
-     {ic:'🗺️', title:`Diseña tu juego en papel`, back:`<strong>Nombre, meta, 3 reglas, héroe y obstáculos.</strong> Dibuja el mapa; lo construirán juntos cuando abra Studio.`},
-     {ic:'🧠', title:`Predice qué pasa`, back:`Muestra 3 reglas simples <strong>«cuando… entonces…»</strong> en tu pantalla. Pregunta: <em>«¿Qué pasa si…?»</em> Explica su razonamiento en el chat.`},
-     {ic:'🎮', title:`Detective de juegos`, back:`Elige un juego favorito de Roblox y describe <strong>una mecánica</strong> que le gustaría construir: ¿cómo empieza, qué cambia, cómo se gana?`},
-     {ic:'🧭', title:`Recorrido por Studio en tu pantalla`, back:`Abre Studio en <strong>tu</strong> pantalla y muestra las ventanas principales. Escribe cada nombre en el chat y dice para qué cree que sirve.`},
-     {ic:'✍️', title:`Escribe las reglas`, back:`En el chat escribe <strong>3 reglas</strong> para su juego: <em>«Cuando el jugador toca la lava → pierde una vida.»</em> Es la misma lógica que programará en Studio.`}
-   ])}
-   ${co('co-ok','✅',`<p><strong>El objetivo:</strong> que el niño salga de la clase habiendo trabajado en algo real de su curso, y no mirando una barra de progreso. Reporta el problema de instalación el mismo día.</p>`)}
-  `},
-  {t:'📅 Instálalo antes de la clase 1', html:`
-   <div class="card"><p>La tabla de requisitos lo dice claro: <strong>instala Roblox Studio antes de la clase 1.</strong> La mayoría de los problemas de instalación se descubren en la primera clase, cuando el tiempo ya se perdió. Un mensaje corto uno o dos días antes lo cambia.</p></div>
-   ${stepper([
-     {ic:'📩', title:`Envía a la familia un mensaje corto`, html:`<p>Con una redacción <strong>aprobada por tu Team Leader</strong>, uno o dos días antes de la clase 1. Pídeles que instalen Roblox Studio antes de la clase.</p><p><em>«¡Hola, [nombre del padre o la madre]! Para que la primera clase salga bien, por favor instalen Roblox Studio antes del [día]: descárguenlo del sitio oficial de Roblox, inicien sesión y ábranlo una vez. Si ven algún error, mándenme una captura y lo resolvemos antes de la clase. ¡Gracias!»</em></p>`},
-     {ic:'🔑', title:`Pídeles que lo abran una vez`, html:`<p>Iniciar sesión y <strong>abrir Studio una vez</strong> es la forma más rápida de saber si de verdad arranca. La primera vez puede tardar unos minutos.</p>`},
-     {ic:'📸', title:`Pide una captura`, html:`<p>Una captura de Studio abierto te dice que funciona. Si aparece un error o un mensaje de «dispositivo no compatible», pide la captura y el <strong>equipo y el sistema operativo</strong>.</p>`},
-     {ic:'📮', title:`Si falla, repórtalo antes de la clase 1`, html:`<p>Deja un comentario en BO con la captura, el equipo, el sistema y el espacio libre, y avisa a tu Team Leader. Mientras haya tiempo, el equipo puede reaccionar.</p>`}
-   ])}
-   ${co('co-warn','🌍',`<p><strong>En algunos países Roblox necesita pasos adicionales.</strong> Revisa la nota de tu región antes de enviar el mensaje.</p>`)}
+   ${co('co-warn','🚧',`<p><strong>Contenido pendiente de confirmación.</strong> Aún se está definiendo qué herramienta reemplaza a la original en cada curso.</p>`)}
   `},
   {t:'🖥️ Classroom', html:`
+   ${co('co-warn','📝',`<p><strong>Nota para los Heads of Teaching:</strong> la sección de Classroom está en proceso. Tendrá más contenido, imágenes y videos.</p>`)}
    <div class="card"><p>Las soluciones rápidas más frecuentes. Los pasos completos y actualizados están en la guía <strong>«Classroom Issues Quick Fixes»</strong> del equipo de Classroom.</p></div>
    ${accItem('⬛ Pantalla o cámara negra', `<p>Detén y vuelve a compartir. Si pasa porque el estudiante estaba en la pestaña de Assignments, repítelo. Verifica que use Chrome. Si no se arregla, reporta.</p>`)}
    ${accItem('▬ Un rectángulo negro en lugar de tu pantalla', `<p>Detén y reanuda. A algunos les funciona minimizar y restaurar la ventana.</p>`)}
@@ -330,9 +300,7 @@ const CONTENT = {
   items:[
    {type:'sort', prompt:'¿Cuál es la primera acción?', card:`La pantalla compartida de un estudiante se ve negra.`, zones:[{label:'🔁 Detener y volver a compartir, y revisar que use Chrome', fb:'Correcto — es el primer paso de la guía. Si no se arregla, reportas.'},{label:'🆘 Pasar a Zoom de inmediato', fb:'No exactamente — Zoom es la excepción. Primero los pasos de Classroom.'},{label:'⏭️ Seguir la clase sin él', fb:'No exactamente — primero los primeros auxilios; si no se resuelve en 10 minutos, reportas.'}], correctZone:0},
    {type:'sort', prompt:'¿Cuál es la primera acción?', card:`Un estudiante con tablet no puede compartir su pantalla.`, zones:[{label:'🔁 Que vuelva a intentarlo varias veces', fb:'No exactamente — desde el navegador de una tablet no es posible compartir pantalla.'},{label:'📝 Que cambie de navegador en la tablet', fb:'No exactamente — en un móvil o tablet no es posible, sea cual sea el navegador.'},{label:'💻 Explicar que necesita un computador para compartir pantalla, y seguir la clase de otra forma', fb:'Correcto — es una limitación conocida. Adapta la actividad y, si el curso lo requiere, repórtalo.'}], correctZone:2},
-   {type:'sort', prompt:'¿Cuál es la primera acción?', card:`Silenciaste a un estudiante hace un rato por ruido de fondo.`, zones:[{label:'🔊 Volver a activar su micrófono en cuanto sea posible', fb:'Correcto — si silencias a alguien, vuelve a activarlo. Un niño silenciado sin darse cuenta se queda fuera de la clase.'},{label:'🔇 Dejarlo silenciado hasta el final', fb:'No exactamente — un niño silenciado toda la clase deja de participar, y eso puede costar una familia.'}], correctZone:0},
    {type:'choice', prompt:`A los 5 minutos de empezar, tres estudiantes no pueden entrar y los otros dos esperan. ¿Qué haces?`, opts:[`Ayudas a cada uno por turno hasta que entren todos`,`Cancelas la clase y avisas a las familias`,`Reportas ya (es de plataforma), sigues la clase con los dos conectados y pides a los demás que sigan por el chat`], correct:2, fb:`Si fallan varios, es de plataforma: se reporta ya. Mantén viva la clase con quienes están conectados y prepara después el plan de recuperación.`},
-   {type:'choice', prompt:`El computador de un estudiante no cumple los mínimos y la aplicación del curso no abre. ¿Qué haces?`, opts:[`Le dices a la familia que tiene que cambiar de curso`,`Cambias la actividad para que siga la clase de forma útil (demostración, ejemplo guiado) y reportas que el equipo no cumple`,`Haces tú la tarea en tu pantalla y se la envías terminada`], correct:1, fb:`Mantienes la clase útil para el niño y lo reportas. El cambio de curso no lo ofreces tú, y la tarea no la haces por él.`},
    {type:'choice', prompt:`¿Cuándo se usa Zoom?`, opts:[`Solo cuando Classroom no funciona para toda la clase y no se resuelve, con la aprobación de tu Team Leader, y reportándolo el mismo día`,`Siempre que un estudiante tenga un problema para entrar`,`Cuando a la familia le resulta más cómodo`], correct:0, fb:`Classroom es el canal por defecto. Zoom es la excepción: con aprobación de tu Team Leader y siempre con reporte el mismo día.`}
   ]
  }
@@ -349,7 +317,7 @@ const CONTENT = {
   {t:'🩺 Síntomas después de la clase', html:`
    ${symCards([
      {ic:'🔒', title:`No puede entrar a la plataforma a hacer las tareas`,
-      do:`Confirma el navegador (Chrome de escritorio) y el dispositivo. Si no cambia nada, repórtalo con los enlaces de BO del estudiante y del grupo, y <strong>haz seguimiento a las 24 horas</strong>.`,
+      do:`Confirma el navegador (Chrome de escritorio), el dispositivo y los datos de acceso — los encuentras en BO y puedes enviarlos de nuevo. Si no cambia nada, repórtalo con los enlaces de BO del estudiante y del grupo, y <strong>haz seguimiento a las 24 horas</strong>.`,
       say:`<em>«Lo estoy revisando con mi equipo y te escribo mañana.»</em>`},
      {ic:'📱', title:`Solo puede entrar desde el celular y no se ve bien`,
       do:`La plataforma está pensada para computador: que use el «sitio de escritorio» o un computador. No prometas un acceso alternativo.`,
@@ -455,18 +423,14 @@ const CONTENT = {
   title:'Avisa bien, y en orden',
   instr:'Elige el carril, el mejor comentario y lo que dirías. 70 % para completar este módulo.',
   items:[
-   {type:'sort', prompt:'¿Por qué carril va este reporte?', card:`Las credenciales de Minecraft del estudiante no funcionan.`, zones:[{label:'1️⃣ Falla de Classroom', fb:'No exactamente — no es una falla de Classroom, es una cuenta o licencia.'},{label:'2️⃣ Cuenta, matrícula, credenciales, horario, licencias', fb:'Correcto — va a tu Team Leader y a Servicio al Cliente, con un comentario en BO.'},{label:'3️⃣ Clase perdida', fb:'No exactamente — todavía no es una clase perdida: es un problema de credenciales.'}], correctZone:1},
    {type:'sort', prompt:'¿Por qué carril va este reporte?', card:`La pizarra sigue visible después de cerrarla y salir y volver a entrar no lo arregla.`, zones:[{label:'1️⃣ Falla de Classroom', fb:'Correcto — los pasos de la guía no la resolvieron: canal de soporte de Classroom y comentario en BO.'},{label:'2️⃣ Cuenta, matrícula, credenciales, horario, licencias', fb:'No exactamente — no tiene que ver con la cuenta del estudiante.'},{label:'3️⃣ Clase perdida', fb:'No exactamente — la clase siguió; es una falla de Classroom.'}], correctZone:0},
    {type:'choice', prompt:`¿Cuál es el mejor comentario de BO para el mismo caso?`, opts:[`«No pudo entrar, mala conexión.»`,`«3/11, clase 2. No pudo entrar: banner "Sistema no compatible" en la pantalla previa a unirse. Windows 7, Chrome actualizado. Probé recargar y otro navegador, 10 min. Captura adjunta. Enlaces de BO del grupo y del estudiante.»`,`«Otra vez la plataforma no funciona, esto pasa siempre.»`], correct:1, fb:`El comentario útil es completo y neutral: fecha, qué falló, el banner, el equipo, qué intentaste, la captura y los enlaces de BO.`},
    {type:'choice', prompt:`Un estudiante perdió su segunda clase seguida por una falla. ¿Qué es lo primero?`, opts:[`Escribir a la familia y ofrecerle una clase extra`,`Esperar a ver si la próxima clase funciona`,`Hablar con tu Team Leader el mismo día, y acordar con él el mensaje a la familia`], correct:2, fb:`Dos clases comprometidas: Team Leader el mismo día. Equipo primero, familia después. La clase extra no la ofreces tú.`},
-   {type:'choice', prompt:`A este reporte le falta algo: «Clase 3, no se oía el audio del estudiante, probé permisos 10 min, Chrome, Windows 10, captura adjunta.» ¿Qué falta?`, opts:[`Los enlaces de BO del grupo y del estudiante`,`La opinión del tutor sobre la plataforma`,`El número de teléfono de la familia`], correct:0, fb:`Los enlaces de BO del grupo y del estudiante son obligatorios en todo reporte: sin ellos no se puede revisar el caso.`},
-   {type:'sort', prompt:'¿Tesoro o basura? ¿Es una buena frase para la familia?', card:`«Ya lo reporté a mi equipo con todos los datos y Servicio al Cliente se pondrá en contacto contigo.»`, zones:[{label:'💎 Tesoro', fb:'Correcto — reconoce el problema, dice que ya está reportado y quién volverá, sin prometer nada.'},{label:'🗑️ Basura', fb:'No exactamente — es justo lo que se puede decir: reconocer, reportar y decir quién volverá, sin prometer.'}], correctZone:0},
-   {type:'choice', prompt:`Una madre escribe, molesta: «Es la segunda vez que mi hijo no puede entrar». Son las 6 p. m. y todavía no has hablado con tu Team Leader. ¿Qué haces primero?`, opts:[`Esperar a mañana, hablar con tu Team Leader y responder una sola vez con todas las respuestas`,`Responder ahora, con brevedad: lo sientes, lo viste, estás en ello y volverás a escribir con novedades — y luego sincronizar con tu Team Leader`,`Explicarle cómo funciona Classroom para que entienda que rara vez es culpa de la plataforma`], correct:1, fb:`Confirmar la recepción siempre está permitido, y el silencio hace más daño que la falla. Responde ahora con calidez y con una hora para la próxima novedad; las explicaciones y las opciones esperan a tu Team Leader.`},
-   {type:'sort', prompt:'¿Tesoro o basura? ¿Es una buena respuesta para una familia molesta?', card:`«Lo siento mucho, dos clases perdidas no está bien. Ya lo reporté con todos los detalles y te escribo de nuevo mañana por la mañana. En la próxima clase entro antes para comprobar que él entre.»`, zones:[{label:'💎 Tesoro', fb:'Correcto — reconoce el problema, muestra un esfuerzo concreto, dice cuándo volverás a escribir y no promete nada que no te corresponda decidir.'},{label:'🗑️ Basura', fb:'No exactamente — es justo lo que necesita una familia molesta: te importa, estás actuando y dices cuándo sabrá de ti.'}], correctZone:0}
+   {type:'choice', prompt:`Una madre escribe, molesta: «Es la segunda vez que mi hijo no puede entrar». Son las 6 p. m. y todavía no has hablado con tu Team Leader. ¿Qué haces primero?`, opts:[`Esperar a mañana, hablar con tu Team Leader y responder una sola vez con todas las respuestas`,`Responder ahora, con brevedad: lo sientes, lo viste, estás en ello y volverás a escribir con novedades — y luego sincronizar con tu Team Leader`,`Explicarle cómo funciona Classroom para que entienda que rara vez es culpa de la plataforma`], correct:1, fb:`Confirmar la recepción siempre está permitido, y el silencio hace más daño que la falla. Responde ahora con calidez y con una hora para la próxima novedad; las explicaciones y las opciones esperan a tu Team Leader.`}
   ]
  }
 },
-{id:'checklist', numLabel:'Lista de verificación final', emoji:'✅', eyebrow:'Lista final', color:'#FFD34D', art:'shield', learn:[['🛟','Si ya existe un reembolso'],['🧭','Antes · durante · después'],['🃏','Seis reglas de bolsillo']],
+{id:'checklist', numLabel:'Lista de verificación final', emoji:'✅', eyebrow:'Lista final', color:'#FFD34D', art:'shield', learn:[['🛟','Si ya existe un reembolso'],['🧭','Antes · durante · después']],
  title:'Lista de verificación final',
  desc:'Aquí no hay examen — solo lo esencial de este mini-entrenamiento, antes, durante y después de la clase.',
  obj:'Repasa la lista de verificación de abajo. Este módulo no se califica — léela y luego finaliza el mini-entrenamiento.',
@@ -480,19 +444,9 @@ const CONTENT = {
   `},
   {t:'🧭 Antes, durante y después', html:`
    ${tabsBlock([
-     {ic:'🧰', title:'Antes', html:`<div class="card">${numlist(['Chrome de escritorio actualizado','Micrófono, cámara y pantalla probados','BO: grupo y lista de estudiantes','Advertencias previas a unirse','En la clase 1, entro antes','Roblox Studio instalado antes de la clase 1'])}</div>`},
+     {ic:'🧰', title:'Antes', html:`<div class="card">${numlist(['Chrome de escritorio actualizado','Micrófono, cámara y pantalla probados','BO: grupo y lista de estudiantes','Advertencias previas a unirse','En la clase 1, entro antes'])}</div>`},
      {ic:'🛠️', title:'Durante', html:`<div class="card">${numlist(['Primero la calma','10 minutos y escalo','Banner: que lo lea en voz alta','Si hay muchos afectados, reporto ya','No hago la tarea por el estudiante'])}</div>`},
      {ic:'🏠', title:'Después', html:`<div class="card">${numlist(['¿Puede entrar a las tareas?','Grabación y plan de recuperación','Reporte el mismo día con datos completos','Respondo a la familia a tiempo y la mantengo al tanto, aunque no haya novedades','Seguimiento a las 24 horas','Cierro el ciclo con la familia'])}</div>`}
-   ])}
-  `},
-  {t:'🃏 Las seis reglas de bolsillo', html:`
-   ${flipCards([
-     {ic:'🔁', title:'Adapta primero', back:`En cada situación hay algo que puedes cambiar en <strong>tu propia clase</strong>, ahora mismo, sin pedirle permiso a nadie.`},
-     {ic:'📮', title:`Avisar no es opcional`, back:`Si no se lo cuentas a nadie, <strong>nadie más lo sabe</strong>. Un problema que no se reporta no existe.`},
-     {ic:'👥', title:'Equipo antes que familia', back:`Sincroniza con tu Team Leader antes de escribir sobre acceso, horario o una clase perdida. <strong>Confirmar la recepción</strong> siempre está bien.`},
-     {ic:'⚖️', title:'Nunca prometas ni rechaces', back:`Ni compensación, ni clase extra, ni <em>«eso no es posible»</em>. Sí muestra que te importa y que ya estás en ello.`},
-     {ic:'📅', title:'Escala una vez y haz seguimiento', back:`Pon un recordatorio en tu calendario para revisarlo <strong>dos clases</strong> después.`},
-     {ic:'💛', title:'Responde a tiempo', back:`El silencio cuesta más que la falla. Una respuesta rápida y cálida es lo que hace que una familia <strong>nos dé otra oportunidad</strong>.`}
    ])}
   `},
   {t:'', html:`
