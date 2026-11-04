@@ -9,6 +9,19 @@ const CONTENT = {
     heroEyebrow:"🎯 Mini-Training",
     heroTitle:"When <span class=\"h-pill\">Technology</span> Fails",
     heroIntro:"You've received this training because you have students whose families have requested a refund because of technical issues. Here you'll see what you can do before, during and after the lesson, and how to report it so it gets fixed in time.",
+    heroCard1:"<b>At your own pace.</b> Your progress is saved in this browser.",
+    heroCard2:"<b>Practice included.</b> You’ll report a technical issue in a Back Office simulation.",
+    pbLabel:'modules complete',
+    tapOpen:'Tap to open',
+    tapFlip:'Tap to flip',
+    lblSee:'What you see',
+    lblDo:'What you do',
+    lblSay:'What you can say',
+    lblReport:'Where to report',
+    lblAvoid:'Avoid',
+    lblTip:'Tip',
+    stepOf:'Step {i} of {n}',
+    next:'Next',
     heroWork:"Work through 6 short modules. Each module check needs 70%+ to unlock the next. About 25–35 minutes total.",
     startBtn:"🚀 Start Training",
     pathLabel:'Your learning path',
@@ -65,7 +78,8 @@ const CONTENT = {
 
   buildModules(){
     return [
-{id:'intro', numLabel:'Introduction', emoji:'🧩', color:'var(--coral)',
+{id:'intro', numLabel:'Introduction', emoji:'🧩', color:'#5DD39E', art:'lifebuoy', learn:[['📊','What the data shows'],['🧭','What is yours — and what isn’t'],['🛟','What to do if a refund request already exists'],['🎯','How to make your next lesson the recovery attempt']],
+ eyebrow:'Introduction',
  title:'Why You’re Here',
  desc:'Why a technical issue in the first lessons can cost us a family, which part is yours — and what to do if a refund request already exists.',
  obj:'Understand why a technical issue in the first lessons can cost us a family, which part is yours, and what to do once a refund request already exists.',
@@ -73,8 +87,6 @@ const CONTENT = {
   {t:'📊 What the data shows', html:`
    <div class="card"><p>A technical issue rarely comes alone. It shows up in the first lessons, while the family is still deciding whether Kodland is right for them — and sometimes before the child has seen a single lesson.</p></div>
    ${bigStat('≈ 1 in 20',`<p>refund requests has a <strong>real technical issue</strong> behind it. And that's a minimum: some of these cases arrive labelled with another reason.</p>`)}
-   ${bigStat('6 in 10',`<p>of these cases appear <strong>by lesson 5</strong>, and <strong>1 in 7</strong> children never attended a single lesson.</p>`)}
-   ${bigStat('1 in 4',`<p>is won back when the child <strong>never attended</strong>. In lessons 1–2, <strong>1 in 2</strong> is won back, and from lesson 3 on, <strong>3 in 4</strong>. The earlier the issue appears, the harder it is to win the family back.</p>`)}
    <p style="font-size:11.5px;color:var(--text-muted)">Based on the refund requests of the last 90 days across all regions; approximate figures.</p>
    ${co('co-idea','💡',`<p><strong>The first lessons are the narrowest window.</strong> A technical issue fixed the same day is usually saved; the same issue fixed late almost never is. That's why the first lessons count, and why the same day counts.</p>`)}
   `},
@@ -129,18 +141,19 @@ const CONTENT = {
   ]
  }
 },
-{id:'before', numLabel:'Module 1', emoji:'🧰', color:'var(--coral)',
+{id:'before', numLabel:'Module 1', emoji:'🧰', color:'#7EA8FF', art:'clock', learn:[['⏱️','The 15 minutes before every lesson'],['🩺','What to do when access fails'],['💻','Is the device right for the course?'],['📮','Who to tell and what to say']],
+ eyebrow:'Module 1 of 4',
  title:'Before the Lesson',
  desc:'The 15 minutes before every lesson, problems with access, enrolment, schedule and link, and how to tell whether the student’s device is right for their course.',
  obj:'Spot and report access problems before the family loses the lesson.',
  sections:[
   {t:'⏱️ The 15 minutes before', html:`
    <div class="card"><p>Most access problems can be seen <strong>before</strong> the lesson starts. These 15 minutes are your best insurance.</p></div>
-   ${numlist([
-     'Open the lesson in <strong>desktop Google Chrome, up to date</strong>. It’s the only fully compatible browser; Safari and others aren’t fully compatible.',
-     'Test your microphone and camera. If the browser didn’t ask for permissions, turn them on manually: icon to the left of the URL → Camera and Microphone set to “Always allow”.',
-     'Check the group and the student list in BO. Look out for <strong>warnings on the pre-join screen</strong> (for example, unsupported system requirements).',
-     'In a <strong>new student’s first lesson</strong>, join early and wait. If they haven’t joined 5 minutes after the start time, report it; don’t wait until the lesson ends.'
+   ${stepper([
+     {ic:'🌐', title:'Open the lesson in desktop Chrome', html:`<p>Use <strong>desktop Google Chrome, up to date</strong>. It’s the only fully compatible browser; Safari and others aren’t fully compatible.</p>`},
+     {ic:'🎙️', title:'Test your microphone and camera', html:`<p>If the browser didn’t ask for permissions, turn them on manually: icon to the left of the URL → Camera and Microphone set to “Always allow”.</p>`},
+     {ic:'📋', title:'Check the group in BO', html:`<p>Check the group and the student list. Look out for <strong>warnings on the pre-join screen</strong> (for example, unsupported system requirements).</p>`},
+     {ic:'👋', title:'In a new student’s first lesson, join early', html:`<p>Join early and wait. If they haven’t joined <strong>5 minutes after the start time</strong>, report it; don’t wait until the lesson ends.</p>`}
    ])}
    ${doavoid(
      ['Join 15 minutes early and test everything','Use desktop Chrome, up to date','Check the group in BO before every lesson','Report right away if a new student doesn’t show up'],
@@ -148,26 +161,28 @@ const CONTENT = {
    )}
   `},
   {t:'🩺 Symptoms before the lesson', html:`
-   <div class="card"><p>Open each symptom. Look at three things: <strong>what you do</strong>, <strong>what you can say</strong> and <strong>where to report</strong>.</p></div>
-   ${accItem('🚪 The join button doesn’t appear', `
-    <p><strong>🎯 What you do:</strong> refresh, check that you're using Chrome and confirm in BO that the student is in the group. If nothing changes, report it with the BO links of the group and the student.</p>
-    <p><strong>💬 What you can say:</strong> <em>"I'm checking the access with my team and I'll write to you as soon as I have news."</em></p>
-    <p><strong>📮 Where to report:</strong> Classroom technical support channel + BO comment.</p>`)}
-   ${accItem('📋 “I’m not registered”', `
-    <p><strong>🎯 What you do:</strong> <strong>don't confirm or deny the registration.</strong> Check it in BO and let your Team Leader and Client Service know.</p>
-    <p><strong>💬 What you can say:</strong> <em>"I'm checking your access with my team."</em></p>
-    <p><strong>📮 Where to report:</strong> Team Leader + Client Service + BO comment.</p>`)}
-   ${accItem('🕒 The schedule isn’t the one the family asked for', `
-    <p><strong>👀 What you see:</strong> the lesson is at another time, or a notification arrived with a different start date.</p>
-    <p><strong>🎯 What you do:</strong> don't change anything yourself. Tell your Team Leader the same day.</p>
-    <p><strong>💬 What you can say:</strong> acknowledge the inconvenience, without explaining why it happened or promising a change: <em>"I understand it's inconvenient. I've already shared it with my team so they can contact you."</em></p>
-    <p><strong>📮 Where to report:</strong> Team Leader + Client Service + BO comment.</p>`)}
-   ${accItem('✉️ The family says they didn’t get the link or the credentials', `
-    <p><strong>🎯 What you do:</strong> check in BO what was sent and report it. Don't improvise links.</p>
-    <p><strong>💬 What you can say:</strong> <em>"Customer Service will help you get it today."</em></p>
-    <p><strong>📮 Where to report:</strong> Team Leader + Client Service + BO comment.</p>`)}
-   ${accItem('🧑‍💼 You’re a TSM or TL and can’t get into the lesson', `
-    <p><strong>🎯 What you do:</strong> follow the fix posted in the Classroom support channel; if it doesn't work, say so in that same channel.</p>`)}
+   <div class="card"><p>Tap each symptom. You’ll see <strong>what you do</strong>, <strong>what you can say</strong> and <strong>where to report</strong>.</p></div>
+   ${symCards([
+     {ic:'🚪', title:`The join button doesn’t appear`,
+      do:`Refresh, check that you’re using Chrome and confirm in BO that the student is in the group. If nothing changes, report it with the BO links of the group and the student.`,
+      say:`<em>“I’m checking the access with my team and I’ll write to you as soon as I have news.”</em>`,
+      rep:`Classroom technical support channel + BO comment.`},
+     {ic:'📋', title:`“I’m not registered”`,
+      see:`The family says the child doesn’t appear as registered.`,
+      do:`<strong>Don’t confirm or deny the registration.</strong> Check it in BO and let your Team Leader and Client Service know.`,
+      say:`<em>“I’m checking your access with my team.”</em>`,
+      rep:`Team Leader + Client Service + BO comment.`,
+      avoid:`Telling the family <em>“he isn’t registered”</em>.`},
+     {ic:'🕒', title:`The schedule isn’t the one the family asked for`,
+      see:`The lesson is at another time, or a notification arrived with a different start date.`,
+      do:`Don’t change anything yourself. Tell your Team Leader the same day.`,
+      say:`Acknowledge the inconvenience without explaining why it happened or promising a change: <em>“I understand it’s inconvenient. I’ve already shared it with my team so they can contact you.”</em>`,
+      rep:`Team Leader + Client Service + BO comment.`},
+     {ic:'✉️', title:`The family didn’t get the link or the credentials`,
+      do:`Check in BO what was sent and report it. Don’t improvise links.`,
+      say:`<em>“Customer Service will help you get it today.”</em>`,
+      rep:`Team Leader + Client Service + BO comment.`}
+   ])}
    ${co('co-warn','🔗',`<p><strong>An alternative link when the student can't get in?</strong> Only in an emergency, <strong>once</strong>, and always with a same-day report. Sending alternative links lesson after lesson hides the problem: nobody fixes it because nobody finds out.</p>`)}
   `},
   {t:'💻 Before lesson 1: is the device right?', html:`
@@ -209,7 +224,8 @@ const CONTENT = {
   ]
  }
 },
-{id:'during', numLabel:'Module 2', emoji:'🛠️', color:'var(--coral)',
+{id:'during', numLabel:'Module 2', emoji:'🛠️', color:'#FFB44D', art:'micCam', learn:[['🧘','Stay calm first'],['⏱️','The 10-minute rule'],['🛠️','Fix devices, Classroom, audio and camera'],['👥','Handle a failure that hits several students']],
+ eyebrow:'Module 2 of 4',
  title:'During the Lesson',
  desc:'The first move is emotional, the 10-minute rule, and what to do about devices, Classroom, audio and camera, failures that hit several students, and emergency Zoom.',
  obj:'Solve what can be solved in 10 minutes, protect the group’s mood and not lose the whole lesson to a technical issue.',
@@ -226,17 +242,56 @@ const CONTENT = {
    ])}
   `},
   {t:'💻 Devices and software', html:`
-   ${accItem('🐢 The computer doesn’t meet the minimum and the app doesn’t work', `
-    <p><strong>🎯 What you do:</strong> change the activity so the child can still follow the lesson usefully (a demo on screen share, a guided example) and <strong>report</strong> that the device doesn't meet the requirement.</p>
-    <p><strong>🚫 Avoid:</strong> promising a course change.</p>`)}
-   ${accItem('🧱 They can’t download or install Roblox', `
-    <p><strong>🎯 What you do:</strong> check the operating system and free space (see the requirements in Module 1). Don't spend the whole lesson installing: report it.</p>`)}
-   ${accItem('🐌 Unity or Blender freeze while the lesson is on', `
-    <p><strong>🎯 What you do:</strong> ask them to close other tabs and apps. Unity and Blender need 8 GB of RAM. If it continues, report it.</p>`)}
-   ${accItem('🔥 Classroom uses a lot of resources', `
-    <p><strong>🎯 What you do:</strong> close tabs and apps, and report it with the device's model and system.</p>`)}
-   ${accItem('🌐 The VPN makes everything slow', `
-    ${co('co-warn','🚧',`<p><strong>Content pending confirmation for your region.</strong></p>`)}`)}
+   <div class="card"><p>Tap the problem that matches what you see. Below you’ll also find <strong>lighter tools</strong> to keep the lesson useful and <strong>things to do while Roblox Studio installs</strong>.</p></div>
+   ${symCards([
+     {ic:'🐢', title:`The computer doesn’t meet the minimum and the app doesn’t work`,
+      see:`The app won’t open, freezes or closes, or the pre-join screen shows a requirements warning.`,
+      do:`<ul><li><strong>Keep the child learning:</strong> switch to a lighter tool from the table below, or run a demo on your shared screen while they follow in the browser or on paper.</li><li><strong>Report</strong> that the device doesn’t meet the requirement, so the team can follow up with the family.</li></ul>`,
+      avoid:`Promising a course change or asking the family to buy a computer.`,
+      tip:`Ask your Team Leader which lighter tools are approved for the course you teach.`},
+     {ic:'🧱', title:`They can’t download or install Roblox Studio`,
+      do:`Check the operating system and the free space (see the requirements in Module 1). <strong>Don’t spend the whole lesson installing:</strong> run one of the activities below while it downloads, then report it with a screenshot.`,
+      tip:`Even better: ask the family to install it <strong>before</strong> the lesson (see “Install it before lesson 1”).`},
+     {ic:'🐌', title:`Unity or Blender freeze while the lesson is on`,
+      do:`Ask them to close other tabs and apps. Unity and Blender need 8 GB of RAM. If it continues, report it with the device’s model and system.`},
+     {ic:'🔥', title:`Classroom uses a lot of resources`,
+      do:`Close tabs and apps, and report it with the device’s model and system.`},
+     {ic:'🌐', title:`The VPN makes everything slow`,
+      do:`${co('co-warn','🚧',`<p><strong>Content pending confirmation for your region.</strong></p>`)}`}
+   ])}
+  `},
+  {t:'🧩 Lighter tools that ask less of the computer', html:`
+   <div class="card"><p>When the course tool is too heavy for the device, keep the <strong>same learning goal</strong> with a tool that runs in the browser or on paper. It’s a stop-gap for the lesson — <strong>not a course change</strong>.</p>
+   <div class="tbl-wrap"><table>
+    <tr><th>If this doesn’t run…</th><th>Use this instead</th><th>What the child still practises</th></tr>
+    <tr><td>🧱 <strong>Roblox Studio</strong> (game logic)</td><td><strong>Scratch</strong>, in the browser. It also works on tablets.</td><td>Events, loops, conditions and variables — the logic behind a Roblox game.</td></tr>
+    <tr><td>🧱 <strong>Roblox Studio</strong> (level design)</td><td><strong>Paper</strong> or a free online whiteboard / Canva</td><td>Planning the map, the characters, the rules and the goal of a game.</td></tr>
+    <tr><td>🐍 <strong>Python</strong> on a device that can’t install anything</td><td><strong>Google Colab</strong> (Chrome + a Google account)</td><td>The same code, with nothing to install.</td></tr>
+    <tr><td>🗿 <strong>Unity / Blender</strong></td><td>A browser-based 3D tool (for example Tinkercad) + <strong>Scratch</strong> for the game logic</td><td>3D shapes and game logic without a heavy installation.</td></tr>
+    <tr><td>⛏️ <strong>Minecraft</strong> (account or install problems)</td><td><strong>Scratch</strong> for the logic + a <strong>paper build plan</strong></td><td>Planning and logic while the account is being sorted out.</td></tr>
+   </table></div></div>
+   ${co('co-idea','📌',`<p><strong>Always tell your Team Leader</strong> which tool you used and why, and leave it in the BO comment. If the device keeps being a problem, the report is what lets the team look for a lasting solution with the family.</p>`)}
+  `},
+  {t:'⏳ While Roblox Studio installs', html:`
+   <div class="card"><p>The download can take several minutes, depending on the connection. Don’t let those minutes be dead time: pick one of these activities. <strong>Tap each card.</strong></p></div>
+   ${flipCards([
+     {ic:'🗺️', title:`Design your game on paper`, back:`<strong>Name, goal, 3 rules, hero and obstacles.</strong> They draw the map; you’ll build it together once Studio opens.`},
+     {ic:'🧠', title:`Predict what happens`, back:`Show 3 simple <strong>“when… then…”</strong> rules on your screen. Ask: <em>“What happens if…?”</em> They explain their reasoning in the chat.`},
+     {ic:'🎮', title:`Game detective`, back:`They pick a favourite Roblox game and describe <strong>one mechanic</strong> they’d like to build: how does it start, what changes, how do you win?`},
+     {ic:'🧭', title:`Studio tour on your screen`, back:`Open Studio on <strong>your</strong> screen and show the main windows. They write each name in the chat and say what they think it does.`},
+     {ic:'✍️', title:`Write the rules`, back:`In the chat they write <strong>3 rules</strong> for their game: <em>“When the player touches lava → lose a life.”</em> It’s the same logic they’ll script in Studio.`}
+   ])}
+   ${co('co-ok','✅',`<p><strong>The goal:</strong> the child leaves the lesson having worked on something real for their course, not having watched a progress bar. Report the installation problem the same day.</p>`)}
+  `},
+  {t:'📅 Install it before lesson 1', html:`
+   <div class="card"><p>The requirements table says it clearly: <strong>install Roblox Studio before lesson 1.</strong> Most installation problems are discovered in the first lesson, when the time is already lost. A short message a day or two before changes that.</p></div>
+   ${stepper([
+     {ic:'📩', title:`Send the family a short message`, html:`<p>With wording <strong>approved by your Team Leader</strong>, a day or two before lesson 1. Ask them to install Roblox Studio before the lesson.</p><p><em>“Hi [parent’s name]! To make the first lesson run smoothly, please install Roblox Studio before [day]: download it from the official Roblox website, sign in and open it once. If you see any error, send me a screenshot and we’ll sort it out before the lesson. Thank you!”</em></p>`},
+     {ic:'🔑', title:`Ask them to open it once`, html:`<p>Signing in and <strong>opening Studio once</strong> is the quickest way to find out whether it really starts. It can take a few minutes the first time.</p>`},
+     {ic:'📸', title:`Ask for a screenshot`, html:`<p>A screenshot of Studio open tells you it works. If it shows an error or a “device not supported” message, ask for a screenshot and for the <strong>device and operating system</strong>.</p>`},
+     {ic:'📮', title:`If it fails, report it before lesson 1`, html:`<p>Leave a BO comment with the screenshot, the device, the system and the free space, and tell your Team Leader. While there’s still time, the team can react.</p>`}
+   ])}
+   ${co('co-warn','🌍',`<p><strong>In some countries Roblox needs extra steps.</strong> Check the note for your region before you send the message.</p>`)}
   `},
   {t:'🖥️ Classroom', html:`
    <div class="card"><p>The most common quick fixes. The full, up-to-date steps are in the Classroom team's <strong>"Classroom Issues Quick Fixes"</strong> guide.</p></div>
@@ -285,7 +340,8 @@ const CONTENT = {
   ]
  }
 },
-{id:'after', numLabel:'Module 3', emoji:'🏠', color:'var(--coral)',
+{id:'after', numLabel:'Module 3', emoji:'🏠', color:'#B79DF2', art:'phoneDesk', learn:[['🔍','Spot “can’t” hiding behind “doesn’t”'],['📲','Know the phone and tablet limits'],['📼','Recover a lost lesson'],['🔁','Close the loop with the family']],
+ eyebrow:'Module 3 of 4',
  title:'After the Lesson',
  desc:'Homework that isn’t handed in because they can’t get in, the platform on a phone or tablet, lost lessons and how to close the loop with the family.',
  obj:'Make sure a technical issue doesn’t leave a family without homework or without an answer, and spot it before mistaking it for “not handing in”.',
@@ -295,25 +351,26 @@ const CONTENT = {
    ${co('co-idea','❓',`<p><strong>Ask before assuming:</strong> <em>"Were you able to open the homework? Which device did you try it on?"</em></p>`)}
   `},
   {t:'🩺 Symptoms after the lesson', html:`
-   ${accItem('🔒 They can’t get into the platform to do the homework', `
-    <p><strong>🎯 What you do:</strong> confirm the browser (desktop Chrome) and the device. If nothing changes, report it with the BO links of the student and the group, and <strong>follow up after 24 hours</strong>.</p>
-    <p><strong>💬 What you can say:</strong> <em>"I'm looking into it with my team and I'll write to you tomorrow."</em></p>`)}
-   ${accItem('📱 They can only get in from a phone and it doesn’t display well', `
-    <p><strong>🎯 What you do:</strong> the platform is designed for computers: they should use "desktop site" or a computer. Don't promise alternative access.</p>
-    <p><strong>💬 What you can say:</strong> explain the limitation warmly: <em>"Some parts don't display well on a phone; on a computer, or with the desktop site, it works much better."</em></p>`)}
-   ${accItem('📲 The platform doesn’t fully work on a phone or tablet', `
-    <p><strong>🎯 What you do:</strong> it's a <strong>known limitation</strong> (for example, screen sharing isn't possible from a phone). If the course requires it, report it.</p>`)}
-   ${accItem('🗂️ The homework doesn’t show in the notebook or dashboard', `
-    <p><strong>🎯 What you do:</strong> report it with a screenshot.</p>`)}
-   ${accItem('📼 They lost a lesson to a failure', `
-    <p><strong>🎯 What you do:</strong> send the recording and the essential part, and put together a recovery plan.</p>
-    <p><strong>💬 Before writing to the family:</strong> <strong>sync with your Team Leader.</strong></p>`)}
+   ${symCards([
+     {ic:'🔒', title:`They can’t get into the platform to do the homework`,
+      do:`Confirm the browser (desktop Chrome) and the device. If nothing changes, report it with the BO links of the student and the group, and <strong>follow up after 24 hours</strong>.`,
+      say:`<em>“I’m looking into it with my team and I’ll write to you tomorrow.”</em>`},
+     {ic:'📱', title:`They can only get in from a phone and it doesn’t display well`,
+      do:`The platform is designed for computers: they should use “desktop site” or a computer. Don’t promise alternative access.`,
+      say:`Explain the limitation warmly: <em>“Some parts don’t display well on a phone; on a computer, or with the desktop site, it works much better.”</em>`},
+     {ic:'📲', title:`The platform doesn’t fully work on a phone or tablet`,
+      do:`It’s a <strong>known limitation</strong> (for example, screen sharing isn’t possible from a phone). If the course requires it, report it.`},
+     {ic:'🗂️', title:`The homework doesn’t show in the notebook or dashboard`,
+      do:`Report it with a screenshot.`},
+     {ic:'📼', title:`They lost a lesson to a failure`,
+      do:`Send the recording and the essential part, and put together a recovery plan.`,
+      tip:`<strong>Sync with your Team Leader before writing to the family.</strong>`}
+   ])}
   `},
   {t:'🔁 Close the loop', html:`
    <div class="card"><p>When the problem is solved, <strong>let the family know</strong>. An informed parent is a parent who stays.</p></div>
    <div class="card" style="background:var(--surface2)"><h4>💬 A closing message you can use</h4>
    <p style="font-size:13.5px;line-height:1.75"><em>"Hi [parent's name]. I'm writing to let you know that the access problem [student] had is now fixed. Thank you for your patience. If anything happens again, write to me and we'll look into it right away."</em></p></div>
-   ${co('co-danger','🚫',`<p><strong>In no message</strong> should you promise compensation or an extra lesson. Acknowledge the problem, say it has been reported and who will come back with news.</p>`)}
   `}
  ],
  ix:{
@@ -327,10 +384,11 @@ const CONTENT = {
   ]
  }
 },
-{id:'report', numLabel:'Module 4', emoji:'📮', color:'var(--coral)',
+{id:'report', numLabel:'Module 4', emoji:'📮', color:'#F58AC4', art:'report', learn:[['🛣️','Choose the right lane'],['🧾','Write a complete report'],['💛','Reply to the family on time'],['🖥️','Practise in a BO simulation']],
+ eyebrow:'Module 4 of 4',
  title:'Report and Escalate',
- desc:'Who to tell depending on the problem, what a good report includes, in what order to talk to your team and to the family, and what a good BO comment looks like.',
- obj:'Know who to tell, with what details and in what order. A problem that isn’t reported doesn’t exist for anyone else.',
+ desc:'Who to tell depending on the problem, what a good report includes, how to answer the family on time, and a BO simulation to practise a technical report.',
+ obj:'Know who to tell, with what details and in what order — and keep the family informed on time. A problem that isn’t reported, or a family that isn’t answered, doesn’t exist for anyone else.',
  sections:[
   {t:'🛣️ Three lanes', html:`
    <div class="card"><p>Depending on the type of problem, the report goes down a different lane:</p>
@@ -359,6 +417,11 @@ const CONTENT = {
    <strong>What I tried:</strong> [e.g. refresh, Chrome, share again — 10 minutes]<br>
    <strong>Screenshot:</strong> [attached] · <strong>Family's words:</strong> [word for word, if any]</p></div>
   `},
+  {t:'🖥️ Practise: report a technical issue in BO', html:`
+   <div class="card"><p>Now do it for real, in a replica of the Back Office. <strong>A student couldn’t get into today’s lesson because of a technical problem.</strong> Follow the 4-step walkthrough. In <strong>step 4</strong> choose the Problem Kind <strong>“Technical issue, please, get in touch with the student”</strong> and write your comment with the facts: what failed, when, the message or banner, what you tried and the family’s own words.</p></div>
+   <div class="sim-embed"><div class="sim-embed-inner"><span class="sim-embed-tag">🖥️ BO — Report a technical issue</span><iframe src="Simulacion_BO_Evaluate.html" title="BO — Report a technical issue" loading="lazy"></iframe></div></div>
+   ${co('co-idea','📝',`<p><strong>Use the template above.</strong> The more complete your comment is, the faster someone can get in touch with the family.</p>`)}
+  `},
   {t:'🔢 The order matters', html:`
    ${iconGrid([
      {ic:'👥', html:`<strong>Team first, family second.</strong> When the problem involves more than your teaching (access, schedule, a lost lesson), don't write to the family before talking to your Team Leader.`},
@@ -367,6 +430,30 @@ const CONTENT = {
      {ic:'📅', html:`<strong>Escalate once and follow up.</strong> Put a reminder in your calendar to check in two lessons.`}
    ])}
    ${co('co-ok','💬',`<p><strong>A message you can send</strong> (once agreed with your Team Leader): <em>"Hi [parent's name]. I saw that [student] couldn't get into the lesson today. I've already reported it to my team with all the details, and Client Service will get in touch with you. In the meantime, I'm sending you the recording so nothing we covered is lost."</em></p>`)}
+  `},
+  {t:'💛 Reply on time: families notice your effort', html:`
+   <div class="card"><p>A technical failure is rarely the only reason a family leaves. What decides it is what happens <strong>next</strong>: does someone answer, does the child get back in, does the family feel that somebody cares? When parents see that you are working so that everything runs — you reply quickly, you follow up, you make sure their child gets the best possible lesson — they notice. That effort is what makes many families <strong>give us a second chance</strong>. Silence tells them the opposite.</p></div>
+   ${co('co-danger','🚨',`<p><strong>Don’t treat a technical problem as a small thing.</strong> For you it may be a black screen. For the family it’s a lesson they paid for, a disappointed child and a doubt: <em>“is this worth it?”</em> Take it seriously, even if it only lasted five minutes — and especially if the family has already shown they’re upset.</p>`)}
+   ${rclock([
+     {ic:'👀', when:'Right away', t:'Seen it, on it', d:'Acknowledge their message straight away, even if you don’t have the answer yet.'},
+     {ic:'📮', when:'Same day', t:'Report and sync', d:'BO comment with all the details, Team Leader informed, and agree what you’ll tell the family.'},
+     {ic:'💬', when:'Same day', t:'Update the family', d:'Tell them what you’ve done and when you’ll write next — and do it, even if there’s no news.'},
+     {ic:'🚪', when:'Next lesson', t:'Make it work', d:'Join early, test everything and check that the student gets in. Then close the loop.'}
+   ])}
+   ${co('co-ok','💬',`<p><strong>Acknowledging is always allowed.</strong> A short, warm message — you’ve seen it, you care, you’re on it and when you’ll write again — needs nobody’s approval. What waits for your Team Leader is any explanation, any option and anything about compensation.</p>`)}
+   ${chatMock({
+     name:'Parent', sub:'online', avatar:'👩', time:'18:02',
+     msgs:[`Good evening. This is the <strong>second time</strong> my son can’t get into the lesson. We’re paying for classes he isn’t getting and he’s very disappointed. What is going on??`],
+     title:'How do you reply?',
+     text:'It’s 6 pm. You’ve just seen the message and you haven’t talked to your Team Leader yet. Tap each reply to see what happens.',
+     opts:[
+      {t:`“Good evening! Classroom usually works fine, it’s probably your internet. Try another browser.”`, ok:false, fb:`You’ve blamed the family and the platform at the same time, and shown no sign that you care. The parent will read it as “not my problem”.`},
+      {t:`“I’m very sorry — two lessons lost is not okay, and I understand how disappointed he must be. I’ve seen your message and I’m on it: I’m reporting it with all the details to my team today. I’ll write to you again tomorrow morning with news, and I’ll join early next lesson to make sure he gets in.”`, ok:true, fb:`This is the one. It acknowledges the problem and the feeling, shows concrete effort, says when you’ll write again and promises nothing that isn’t yours to decide.`},
+      {t:`“Don’t worry, I’ll give him a free extra lesson to make up for it!”`, ok:false, fb:`Kind, but it isn’t yours to promise: extra lessons and compensation are decided with your Team Leader and Client Service. If it then can’t happen, the family loses trust again.`},
+      {t:`I’ll reply tomorrow, once I have the full answer.`, reply:`<i>(no reply tonight…)</i>`, ok:false, fb:`Silence is the worst option. The parent is already upset; every hour without an answer confirms that nobody cares. Always acknowledge right away.`}
+     ]
+   })}
+   ${co('co-star','🌟',`<p><strong>Remember:</strong> a technical failure can be forgiven. Feeling ignored is much harder to forgive. Your reply, your follow-up and your effort so that the student recovers access and has the best possible lesson are what many families see — and why they decide to stay.</p>`)}
   `}
  ],
  ix:{
@@ -378,11 +465,14 @@ const CONTENT = {
    {type:'choice', prompt:`Which is the best BO comment for the same case?`, opts:[`"Couldn't get in, bad connection."`,`"3/11, lesson 2. Couldn't get in: banner 'System not supported' on the pre-join screen. Windows 7, Chrome up to date. Tried refreshing and another browser, 10 min. Screenshot attached. BO links of the group and the student."`,`"The platform isn't working again, this always happens."`], correct:1, fb:`The useful comment is complete and neutral: date, what failed, the banner, the device, what you tried, the screenshot and the BO links.`},
    {type:'choice', prompt:`A student has lost their second lesson in a row to a failure. What comes first?`, opts:[`Write to the family and offer an extra lesson`,`Wait and see if the next lesson works`,`Talk to your Team Leader the same day, and agree with them on the message to the family`], correct:2, fb:`Two compromised lessons: Team Leader the same day. Team first, family second. You don't offer the extra lesson.`},
    {type:'choice', prompt:`This report is missing something: "Lesson 3, the student's audio couldn't be heard, tried permissions 10 min, Chrome, Windows 10, screenshot attached." What's missing?`, opts:[`The BO links of the group and the student`,`The tutor's opinion of the platform`,`The family's phone number`], correct:0, fb:`The BO links of the group and the student are mandatory in every report: without them the case can't be reviewed.`},
-   {type:'sort', prompt:'Treasure or trash? Is this a good line for the family?', card:`"I've already reported it to my team with all the details, and Client Service will get in touch with you."`, zones:[{label:'💎 Treasure', fb:'Correct — it acknowledges the problem, says it’s been reported and who will come back, without promising anything.'},{label:'🗑️ Trash', fb:'Not quite — it’s exactly what you can say: acknowledge, report and say who will come back, without promising.'}], correctZone:0}
+   {type:'sort', prompt:'Treasure or trash? Is this a good line for the family?', card:`"I've already reported it to my team with all the details, and Client Service will get in touch with you."`, zones:[{label:'💎 Treasure', fb:'Correct — it acknowledges the problem, says it’s been reported and who will come back, without promising anything.'},{label:'🗑️ Trash', fb:'Not quite — it’s exactly what you can say: acknowledge, report and say who will come back, without promising.'}], correctZone:0},
+   {type:'choice', prompt:`A parent writes, upset: “This is the second time my son couldn’t get in.” It’s 6 pm and you haven’t talked to your Team Leader yet. What do you do first?`, opts:[`Wait until tomorrow, talk to your Team Leader and reply once with all the answers`,`Reply now, briefly: you’re sorry, you’ve seen it, you’re on it and you’ll write again with news — then sync with your Team Leader`,`Explain how Classroom works so they understand it’s rarely the platform’s fault`], correct:1, fb:`Acknowledging is always allowed, and silence does more damage than the failure itself. Reply now with warmth and a time for the next update; the explanations and options wait for your Team Leader.`},
+   {type:'sort', prompt:'Treasure or trash? Is this a good reply to an upset parent?', card:`“I’m very sorry, two lost lessons isn’t okay. I’ve reported it with all the details and I’ll write to you again tomorrow morning. I’ll join early next lesson to check that he gets in.”`, zones:[{label:'💎 Treasure', fb:'Correct — it acknowledges the problem, shows concrete effort, says when you’ll write next and promises nothing that isn’t yours to decide.'},{label:'🗑️ Trash', fb:'Not quite — it’s exactly what an upset family needs: you care, you’re acting and you say when they’ll hear from you.'}], correctZone:0}
   ]
  }
 },
-{id:'checklist', numLabel:'Final checklist', emoji:'✅', color:'var(--coral)',
+{id:'checklist', numLabel:'Final checklist', emoji:'✅', color:'#FFD34D', art:'shield', learn:[['🛟','If a refund request exists'],['🧭','Before · during · after'],['🃏','Six pocket rules']],
+ eyebrow:'Final checklist',
  title:'Final Checklist',
  desc:'No test here — just the essentials of this mini-training, before, during and after the lesson.',
  obj:'Go through the checklist below. This module isn’t graded — read it, then finish the mini-training.',
@@ -395,19 +485,20 @@ const CONTENT = {
    ])}
   `},
   {t:'🧭 Before, during and after', html:`
-   <div class="three-col">
-    <div class="card"><h4>🧰 Before</h4>${numlist(['Desktop Chrome, up to date','Microphone, camera and screen tested','BO: group and student list','Pre-join warnings','In lesson 1, I join early'])}</div>
-    <div class="card"><h4>🛠️ During</h4>${numlist(['Calm first','10 minutes, then I escalate','Banner: they read it out loud','If many are affected, I report it now','I don’t do the task for the student'])}</div>
-    <div class="card"><h4>🏠 After</h4>${numlist(['Can they get into the homework?','Recording and recovery plan','Same-day report with complete details','Follow-up after 24 hours','I close the loop with the family'])}</div>
-   </div>
+   ${tabsBlock([
+     {ic:'🧰', title:'Before', html:`<div class="card">${numlist(['Desktop Chrome, up to date','Microphone, camera and screen tested','BO: group and student list','Pre-join warnings','In lesson 1, I join early','Roblox Studio installed before lesson 1'])}</div>`},
+     {ic:'🛠️', title:'During', html:`<div class="card">${numlist(['Calm first','10 minutes, then I escalate','Banner: they read it out loud','If many are affected, I report it now','I don’t do the task for the student'])}</div>`},
+     {ic:'🏠', title:'After', html:`<div class="card">${numlist(['Can they get into the homework?','Recording and recovery plan','Same-day report with complete details','I answer the family on time and keep them updated, even with no news','Follow-up after 24 hours','I close the loop with the family'])}</div>`}
+   ])}
   `},
-  {t:'🃏 The five pocket rules', html:`
-   ${iconGrid([
-     {ic:'🔁', html:`<strong>Adapt first.</strong>`},
-     {ic:'📮', html:`<strong>Reporting isn't optional.</strong>`},
-     {ic:'👥', html:`<strong>Team before family.</strong>`},
-     {ic:'⚖️', html:`<strong>Never promise, never refuse.</strong>`},
-     {ic:'📅', html:`<strong>Escalate once and follow up.</strong>`}
+  {t:'🃏 The six pocket rules', html:`
+   ${flipCards([
+     {ic:'🔁', title:'Adapt first', back:`In every situation there’s something you can change in <strong>your own lesson</strong>, right now, without asking anyone.`},
+     {ic:'📮', title:`Reporting isn’t optional`, back:`If you don’t tell anyone, <strong>nobody else knows</strong>. A problem that isn’t reported doesn’t exist.`},
+     {ic:'👥', title:'Team before family', back:`Sync with your Team Leader before writing about access, schedule or a lost lesson. <strong>Acknowledging receipt</strong> is always fine.`},
+     {ic:'⚖️', title:'Never promise, never refuse', back:`No compensation, no extra lesson, no <em>“that’s not possible”</em>. Do show that you care and that you’re on it.`},
+     {ic:'📅', title:'Escalate once and follow up', back:`Put a reminder in your calendar to check in <strong>two lessons</strong> later.`},
+     {ic:'💛', title:'Reply on time', back:`Silence costs more than the failure. A quick, caring reply is what makes a family <strong>give us another chance</strong>.`}
    ])}
   `},
   {t:'', html:`

@@ -330,7 +330,7 @@ tbody tr.clickable{cursor:pointer}
   <div class="celebrate-box">
     <div class="celebrate-emoji">🎉</div>
     <div class="celebrate-title">Report sent!</div>
-    <div class="celebrate-text">You now know where to report a case in BO and what to include: the problem kind, the group, and a comment with facts and the student's own words. The earlier Client Service sees it, the more options stay open. Feel free to keep exploring this replica on your own.</div>
+    <div class="celebrate-text">You now know how to report a technical issue in BO: the problem kind (Technical issue, please, get in touch with the student), the group, and a comment with the facts — what failed, when, the message or banner, what you tried and the family's own words. The earlier Client Service sees it, the sooner someone can get in touch with the family. Feel free to keep exploring this replica on your own.</div>
     <button class="celebrate-close" onclick="closeCelebration()">Keep exploring →</button>
   </div>
 </div>
@@ -496,7 +496,17 @@ function reportContentIssue(lessonId){
 }
 function openEvalModal(){ document.getElementById('evalModal').style.display='flex'; fire('open-evaluate-modal'); }
 function closeEvalModal(){ const m=document.getElementById('evalModal'); if(m) m.style.display='none'; }
-function confirmEvalModal(){ closeEvalModal(); toast('✅ Evaluation sent. Your Team Lead will review it.'); fire('confirm-evaluate-modal'); }
+const REQUIRED_KIND = 'Technical issue, please, get in touch with the student';
+function confirmEvalModal(){
+  /* During the walkthrough (step 4) this is a technical report: the Problem Kind must be the technical one and the comment must carry facts. */
+  if(stepIdx>=0 && STEPS[stepIdx] && STEPS[stepIdx].waitFor==='confirm-evaluate-modal'){
+    const sel=document.getElementById('problemKindSel');
+    const txt=document.getElementById('evalComment');
+    if(sel && sel.value!==REQUIRED_KIND){ toast('⚠️ For a technical failure the Problem Kind is “'+REQUIRED_KIND+'”. Pick it and try again.'); sel.focus(); return; }
+    if(txt && txt.value.trim().length<20){ toast('✍️ Write what failed, when, the message or banner, what you tried and the family’s own words.'); txt.focus(); return; }
+  }
+  closeEvalModal(); toast('✅ Evaluation sent. Your Team Lead will review it.'); fire('confirm-evaluate-modal');
+}
 function requestExtraLesson(){ toast('🧪 This is a simulation — in the real BO this opens the form to schedule the extra lesson. Remember to include a clear justification so your Team Leader can approve it.'); fire('click-add-lesson'); }
 function clickLoginLink(){ toast('🔗 Link copied — it lets the student log into the platform already signed in, useful if they run into a technical issue mid-class.'); fire('click-login-link'); }
 function clickCopyCreds(){ toast('🔒 Student username and password copied to the clipboard.'); fire('click-copy-credentials'); }
@@ -1256,9 +1266,9 @@ function renderProgressTab(s){
     <div style="padding:0 18px 20px">
       <div class="evalentry">
         <b>Jan 20, 2026, 11:10 AM, Camila Reyes (you)</b><br>
-        Please review this case — the family mentioned in the Trial Class that the student has diagnosed ADHD.<br>
-        <b>Problem Kind:</b> Edit the students personal information (Name, email, phone number)<br>
-        <b>Comment:</b> Suggest confirming with CS whether the 60-minute lesson length is appropriate, or if an individual class with shorter blocks would work better.
+        The student could not get into today's lesson (lesson 2).<br>
+        <b>Problem Kind:</b> Technical issue, please, get in touch with the student<br>
+        <b>Comment:</b> 20 Jan, lesson 2: black screen after joining, no banner. I tried refreshing and Chrome for 10 min, no change. Screenshot attached. The mother wrote: "He has been waiting since 11 and nothing opens." Group and student BO links included.
       </div>
     </div>
   </div>
@@ -1270,7 +1280,7 @@ function renderProgressTab(s){
       <label>Choose the group</label>
       <select><option>${s.active}</option></select>
       <label>Write comment</label>
-      <textarea placeholder="E.g.: I contacted the parent with empathy, explained I noticed the absence, offered the recording and an extra lesson..."></textarea>
+      <textarea id="evalComment" placeholder="E.g.: Lesson 3, 12 Nov. The student couldn't get in: banner 'System not supported' on the pre-join screen. Windows 7, Chrome up to date. I tried refreshing and another browser for 10 min. Screenshot attached. The mother wrote: '...'"></textarea>
       <div class="modal-actions"><a onclick="closeEvalModal()">Cancel</a><button class="btn btn-accent" onclick="confirmEvalModal()">Confirm</button></div>
     </div>
   </div>
@@ -1291,10 +1301,10 @@ function renderExtraTab(s){
 
 /* ---------- GUIDED TOUR ---------- */
 const STEPS = [
- {page:'studentDetail',sel:'#detailTabs [data-dtab="progress"]',hl:['#detailTabs [data-dtab="progress"]'],title:'1 · Open the student\'s Progress tab',body:'You have noticed that this student may be in the wrong course for them, or may not enjoy the content. The report starts on the student\'s profile. Click the <b>Progress</b> tab.',advance:'progress',waitFor:'open-detail-tab-progress'},
- {page:'studentDetail',dtab:'progress',sel:'#tutorsEvalPanel',title:'2 · Tutors\' Evaluations',body:'This is where you report a case to Client Service. Do it <b>the same day</b> you notice the signal: the earlier they see it, the more options stay open — a motivational lesson, a leveling lesson or advising session, another course. The entry shown here is an example from a real-looking report.',advance:'next'},
+ {page:'studentDetail',sel:'#detailTabs [data-dtab="progress"]',hl:['#detailTabs [data-dtab="progress"]'],title:'1 · Open the student\'s Progress tab',body:'Today this student could not get into the lesson because of a technical problem, and the family let you know. The report starts on the student\'s profile. Click the <b>Progress</b> tab.',advance:'progress',waitFor:'open-detail-tab-progress'},
+ {page:'studentDetail',dtab:'progress',sel:'#tutorsEvalPanel',title:'2 · Tutors\' Evaluations',body:'This is where you report a case to Client Service. Do it <b>the same day</b> the problem happens: the earlier Client Service and your Team Leader see it, the sooner someone can get in touch with the family and fix the access. The entry shown here is an example of a good technical report.',advance:'next'},
  {page:'studentDetail',dtab:'progress',sel:'#evalStudentBtn',hl:['#evalStudentBtn'],title:'3 · Evaluate the student',body:'Click <b>Evaluate The Student</b> to open the form.',advance:'evalopen',waitFor:'open-evaluate-modal'},
- {page:'studentDetail',dtab:'progress',sel:'#evalModal .modal-box',title:'4 · The evaluation form',body:'Pick the <b>Problem Kind</b> that fits best — if none matches exactly (for example "the course isn\'t what they expected"), choose <b>Other</b>. Then choose the group and write the comment: what you saw, when, and the student\'s own words. Click <b>Confirm</b> to send it.',advance:'evalsent',waitFor:'confirm-evaluate-modal',hl:['#evalModal .btn-accent']},
+ {page:'studentDetail',dtab:'progress',sel:'#evalModal .modal-box',title:'4 · The evaluation form',body:'For a technical failure the <b>Problem Kind</b> is <b>Technical issue, please, get in touch with the student</b> — pick it. Then choose the group and write the comment: what failed, when, the message or banner, what you tried and the family\'s own words. Click <b>Confirm</b> to send it.',advance:'evalsent',waitFor:'confirm-evaluate-modal',hl:['#problemKindSel','#evalModal .btn-accent']},
 ];let stepIdx = -1;
 
 function startTour(){
