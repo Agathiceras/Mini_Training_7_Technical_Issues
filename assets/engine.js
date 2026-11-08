@@ -183,6 +183,10 @@ function toggleDevMode(){
 })();
 
 /* ---------- learning path ---------- */
+// Modules without their own colour / illustration get one by position (intro, middle modules, final checklist).
+const MOD_COLORS=['#5DD39E','#7EA8FF','#FFB44D','#B79DF2','#F58AC4','#FFD34D'];
+function moduleColor(m,idx){ return m.color || (m.gateExam ? '#FFD34D' : MOD_COLORS[idx%(MOD_COLORS.length-1)]); }
+function moduleArt(m,idx){ return m.art || (idx===0 ? 'lifebuoy' : m.gateExam ? 'shield' : ['chat','report','clock'][(idx-1)%3]); }
 function leadEmoji(s){
   const m=/^((?:\p{Extended_Pictographic}|\p{Regional_Indicator})(?:\uFE0F|\u200D\p{Extended_Pictographic}|\p{Emoji_Modifier})*)\s*([\s\S]*)$/u.exec(s||'');
   return m?{e:m[1],t:m[2]}:{e:'',t:s||''};
@@ -197,7 +201,7 @@ function renderHome(){
     if(done) doneCount++;
     const pct = getScore(m.id);
     const badge = locked?`<span class="badge bl">${T('locked')}</span>`:done?(m.ix?`<span class="badge bd">${T('passedBadge',{pct:pct})}</span>`:`<span class="badge bd">${T('reviewedBadge')}</span>`):(m.ix?`<span class="badge br">${T('startBadge')}</span>`:`<span class="badge br">${T('reviewBadge')}</span>`);
-    return `<div class="mc ${locked?'locked':''} ${done?'done':''}" style="--mcol:${m.color||'#AEDD2E'}" onclick="${locked?'':'openModule('+idx+')'}">
+    return `<div class="mc ${locked?'locked':''} ${done?'done':''}" style="--mcol:${moduleColor(m,idx)}" onclick="${locked?'':'openModule('+idx+')'}">
       <div class="mc-body">
         <div class="mc-num">${m.numLabel||T('moduleN',{n:idx+1})}</div>
         <span class="mc-big">${m.emoji}</span>
@@ -230,7 +234,7 @@ function openModule(idx){
       <h1 class="mh1"><span class="mh1-em">${m.emoji}</span> ${m.title}</h1>
       <div class="mobj-box"><div class="mobj-ic">🎯</div><div class="mobj-txt"><strong>${T('objective')}</strong><p>${m.obj}</p></div></div>
     </div>
-    ${m.art?`<div class="mhead-art">${ill(m.art)}</div>`:''}
+    <div class="mhead-art">${ill(moduleArt(m,idx))}</div>
   </div>
   ${learn.length?`<div class="learn reveal">${learn.map(l=>`<div class="lcard"><span>${l[0]}</span><p>${l[1]}</p></div>`).join('')}</div>`:''}
   ${chips?`<div class="chips reveal">${chips}</div>`:''}`;
@@ -575,10 +579,12 @@ document.addEventListener('click',function(e){
   if((el=t.closest('.chip'))){ const s=document.getElementById(el.dataset.jump); if(s) s.scrollIntoView({behavior:'smooth',block:'start'}); return; }
 });
 
-/* ---------- hero art (home screen) ---------- */
+/* ---------- hero art (home screen) ----------
+   Each mini-training can set window.HERO_ART={ill:'chat', orbs:['💬','🎯','📚','🛟']} in its <lang>.html. */
 function initHeroArt(){
   const h=document.getElementById('heroArt'); if(!h) return;
-  h.innerHTML=`<span class="orb o1">📶</span><span class="orb o2">🎙️</span><span class="orb o3">💻</span><span class="orb o4">🛟</span>${ill('laptopWarn')}`;
+  const a=window.HERO_ART||{ill:'laptopWarn',orbs:['📶','🎙️','💻','🛟']};
+  h.innerHTML=a.orbs.map((o,i)=>`<span class="orb o${i+1}">${o}</span>`).join('')+ill(a.ill);
 }
 
 /* ---------- init ---------- */
