@@ -122,7 +122,7 @@ window.SIM_TEXT = {
     "Client wants to change the schedule": "Klien ingin mengubah jadwal",
     "Other": "Lainnya",
     "Write comment": "Tulis komentar",
-    "E.g.: I contacted the parent with empathy, explained I noticed the absence, offered the recording and an extra lesson...": "Contoh: Saya menghubungi orang tua dengan empati, menjelaskan bahwa saya melihat ketidakhadiran siswa, menawarkan rekaman dan pelajaran tambahan...",
+    "E.g.: I contacted the parent with empathy, explained I noticed the absence, offered the recording and said my Team Leader and Client Service will follow up...": "Contoh: Saya menghubungi orang tua dengan empati, menjelaskan bahwa saya melihat ketidakhadiran siswa, menawarkan rekaman, dan menyampaikan bahwa Team Leader saya dan Client Service akan menindaklanjutinya...",
     "Cancel": "Batal",
     "Confirm": "Konfirmasi",
     "Step 2 of 4": "Langkah 2 dari 4",

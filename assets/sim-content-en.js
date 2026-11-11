@@ -122,7 +122,7 @@ window.SIM_TEXT = {
     "Client wants to change the schedule": "Client wants to change the schedule",
     "Other": "Other",
     "Write comment": "Write comment",
-    "E.g.: I contacted the parent with empathy, explained I noticed the absence, offered the recording and an extra lesson...": "E.g.: I contacted the parent with empathy, explained I noticed the absence, offered the recording and an extra lesson...",
+    "E.g.: I contacted the parent with empathy, explained I noticed the absence, offered the recording and said my Team Leader and Client Service will follow up...": "E.g.: I contacted the parent with empathy, explained I noticed the absence, offered the recording and said my Team Leader and Client Service will follow up...",
     "Cancel": "Cancel",
     "Confirm": "Confirm",
     "Step 2 of 4": "Step 2 of 4",

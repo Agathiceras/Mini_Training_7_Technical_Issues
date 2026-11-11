@@ -301,7 +301,7 @@ const CONTENT = {
    ${stepFlow([
      {ic:'🔁', label:'Minta dia bergabung ulang ke pelajaran'},
      {ic:'🎚️', label:'Cek bahwa mikrofon dan kamera yang benar sudah dipilih'},
-     {ic:'📮', label:'Masih tidak berfungsi: laporkan dan minta dukungan teknis mengetesnya dalam minggu itu'}
+     {ic:'📮', label:'Masih tidak berfungsi: laporkan ke Team Leader-mu, yang akan mengeskalasikannya ke dukungan teknis, dan minta dukungan teknis mengetesnya dalam minggu itu'}
    ])}
    ${co('co-ok','💬',`<p><strong>Sementara itu, siswa tetap belajar.</strong> Dia bisa ikut tanpa kamera dan, sebagai pengecualian, bahkan tanpa mikrofon: kalian berkomunikasi lewat chat dan reaksi. Tidak ada yang tertinggal dari pelajaran karena masalah perangkat.</p>`)}
    ${co('co-danger','🔇',`<p><strong>Jika kamu mematikan mikrofon siswa, nyalakan lagi.</strong> Membiarkan mikrofon anak tetap mati tanpa disadari bisa membuat kita kehilangan sebuah keluarga.</p>`)}
@@ -309,7 +309,7 @@ const CONTENT = {
   {t:'🧩 Saat alat kursus tidak berfungsi — solusi alternatif per kursus', html:`
    <div class="card"><p>Para penyusun kursus membagikan apa yang bisa kamu lakukan saat siswa tidak bisa membuka program kursus atau komputernya kesulitan menjalankannya. Ketuk kursusmu:</p></div>
    ${tabsBlock([
-     {ic:'🎮', title:'Roblox, platform apa pun', html:`${symCards([
+     {ic:'🎮', title:'Roblox', html:`${symCards([
        {ic:'🔑', title:`Siswa tidak bisa login, atau programnya tidak mau terbuka`,
         do:`<ul><li><strong>Dia mengikuti demomu:</strong> siswa menonton layarmu dan menjawab secara lisan tentang apa yang sedang dikerjakan — dia tetap ikut serta dalam pelajaran.</li><li><strong>Setelah pelajaran,</strong> bantu dia menyelesaikan instalasi atau login.</li><li><strong>Masih belum teratasi?</strong> Minta dukungan teknis melalui Team Leader-mu, yang akan mengeskalasikannya ke dukungan teknis.</li></ul>`,
         avoid:`Menghabiskan seluruh pelajaran untuk instalasi sementara anggota grup lainnya menunggu.`},
@@ -375,12 +375,12 @@ const CONTENT = {
   {t:'🩺 Gejala setelah pelajaran', html:`
    ${symCards([
      {ic:'🔒', title:`Dia tidak bisa masuk ke platform untuk mengerjakan pekerjaan rumah`,
-      do:`Konfirmasi browsernya (Chrome desktop), perangkatnya, dan detail login-nya — kamu bisa menemukannya di BO dan mengirimkannya lagi. Jika tidak ada perubahan, laporkan dengan menyertakan tautan BO siswa dan grup, lalu <strong>tindak lanjuti setelah 24 jam</strong>.`,
+      do:`Konfirmasi browsernya (Chrome desktop), perangkatnya, dan detail login-nya — kamu bisa menemukannya di BO dan mengirimkannya lagi. Jika tidak ada perubahan, laporkan ke Team Leader-mu, yang akan mengeskalasikannya ke dukungan teknis, dengan menyertakan tautan BO siswa dan grup, lalu <strong>tindak lanjuti setelah 24 jam</strong>.`,
       say:`<em>“Saya sedang mengeceknya bersama tim saya dan akan menghubungi Anda besok.”</em>`},
      {ic:'🧩', title:`Program kursus tidak mau terbuka selama pelajaran`,
       do:`Setelah pelajaran, bantu siswa menyelesaikan instalasi atau login (dan solusi alternatif untuk kursusnya dari Modul 2). Jika masih tidak berfungsi, minta dukungan teknis melalui Team Leader-mu, yang akan mengeskalasikannya ke dukungan teknis.`},
      {ic:'🎙️', title:`Mikrofon atau kameranya tidak berfungsi`,
-      do:`Jika bergabung ulang dan mengecek perangkat tidak membantu, laporkan dan minta dukungan teknis mengetesnya bersama siswa dalam minggu berikutnya. Sampai saat itu, siswa ikut serta lewat chat dan reaksi.`},
+      do:`Jika bergabung ulang dan mengecek perangkat tidak membantu, laporkan ke Team Leader-mu, yang akan mengeskalasikannya ke dukungan teknis, dan minta dukungan teknis mengetesnya bersama siswa dalam minggu berikutnya. Sampai saat itu, siswa ikut serta lewat chat dan reaksi.`},
      {ic:'📱', title:`Dia hanya bisa masuk dari ponsel dan tampilannya tidak bagus`,
       do:`Platform ini dirancang untuk komputer: dia sebaiknya memakai “situs desktop” atau komputer. Jangan menjanjikan akses alternatif.`,
       say:`Jelaskan keterbatasannya dengan hangat: <em>“Beberapa bagian tidak tampil dengan baik di ponsel; di komputer, atau dengan situs desktop, jauh lebih lancar.”</em>`},
@@ -422,7 +422,7 @@ const CONTENT = {
    <div class="tbl-wrap"><table>
     <tr><th>Apa yang terjadi</th><th>Siapa</th></tr>
     <tr><td>Masalah teknis yang tidak bisa kamu selesaikan (Classroom, tautan, platform)</td><td>Team Leader-mu</td></tr>
-    <tr><td>Kredit pelajaran kurang, jadwal yang salah, pemotongan pelajaran yang tidak adil</td><td>Team Leader-mu + Operations: <strong>@Diah Sukmawati</strong></td></tr>
+    <tr><td>Kredit pelajaran kurang, jadwal yang salah, pemotongan pelajaran yang tidak adil</td><td>Team Leader-mu + Client Service + komentar di BO (Operations: <strong>@Diah Sukmawati</strong>)</td></tr>
     <tr><td>Pelajaran tambahan, atau pelajaran yang tidak bisa dilaksanakan</td><td>Team Leader-mu</td></tr>
    </table></div></div>
   `},
@@ -430,8 +430,8 @@ const CONTENT = {
    <div class="card"><p>Tergantung jenis masalahnya, laporan masuk ke jalur yang berbeda:</p>
    <div class="tbl-wrap"><table>
     <tr><th>Jalur</th><th>Kapan</th><th>Ke mana</th></tr>
-    <tr><td><strong>1. Gangguan Classroom atau platform</strong><br>(layar hitam, audio, papan tulis, room, tautan rusak)</td><td>Solusi cepat tidak menyelesaikannya</td><td>Team Leader-mu (dia yang mengeskalasikannya ke dukungan teknis) + komentar di BO</td></tr>
-    <tr><td><strong>2. Akun dan Operations</strong><br>(pendaftaran, kredensial, jadwal, lisensi, kredit pelajaran, pemotongan)</td><td>Siswa tidak bisa masuk, tidak terdaftar, jadwalnya salah, kredensialnya tidak berfungsi, atau pelajaran dipotong secara tidak adil</td><td>Team Leader + Client Service + komentar di BO (Operations: @Diah Sukmawati)</td></tr>
+    <tr><td><strong>1. Gangguan Classroom atau platform</strong><br>(tidak bisa masuk / tombol bergabung tidak muncul, layar hitam, audio, papan tulis, room, tautan rusak)</td><td>Solusi cepat tidak menyelesaikannya</td><td>Team Leader-mu (dia yang mengeskalasikannya ke dukungan teknis) + komentar di BO</td></tr>
+    <tr><td><strong>2. Akun dan Operations</strong><br>(pendaftaran, kredensial, jadwal, lisensi, kredit pelajaran, pemotongan)</td><td>Siswa tidak bisa masuk karena masalah akun: tidak terdaftar, kredensialnya tidak berfungsi, jadwalnya salah, atau pelajaran dipotong secara tidak adil</td><td>Team Leader + Client Service + komentar di BO (Operations: @Diah Sukmawati)</td></tr>
     <tr><td><strong>3. Pelajaran yang hilang</strong><br>(satu pelajaran atau lebih terganggu)</td><td>Karena gangguan platform, pembatalan, atau ketidakhadiran</td><td><strong>Team Leader di hari yang sama</strong> (kamu bisa mengajukan pelajaran tambahan) + Client Service jika keluarga kecewa + komentar di BO</td></tr>
    </table></div></div>
   `},
@@ -470,10 +470,10 @@ const CONTENT = {
   `},
   {t:'🔢 Urutannya penting', html:`
    ${iconGrid([
-     {ic:'👥', html:`<strong>Tim dulu, keluarga kemudian.</strong> Saat masalahnya menyangkut lebih dari sekadar pengajaranmu (akses, jadwal, kredit, pelajaran yang hilang), jangan menulis ke keluarga sebelum berbicara dengan Team Leader-mu.`},
+     {ic:'👥', html:`<strong>Tim dulu, keluarga kemudian.</strong> Saat masalahnya menyangkut lebih dari sekadar pengajaranmu (akses, jadwal, kredit, pelajaran yang hilang), jangan menulis hal lain ke keluarga sebelum berbicara dengan Team Leader-mu. Pengecualiannya: kamu <strong>selalu boleh langsung membalas</strong> dengan pesan singkat bahwa pesannya sudah kamu terima (<em>“Saya sudah melihatnya dan sedang mengeceknya”</em>). Pilihan, penjelasan, kompensasi, atau pelajaran tambahan baru disampaikan setelah kamu berbicara dengan Team Leader-mu.`},
      {ic:'🎓', html:`<strong>Kamu bicara soal pembelajaran; tindakannya kamu serahkan.</strong> Kamu bisa menyampaikan apa yang sudah kamu coba di pelajaran dan bahwa kamu sedang mengeceknya. Pilihan-pilihannya (pelajaran tambahan, pindah grup atau kursus, kompensasi) datang dari Team Leader-mu dan Client Service.`},
      {ic:'⚖️', html:`<strong>Jangan pernah berjanji dan jangan pernah menolak.</strong> Bukan <em>“kami akan memberi pelajaran tambahan”</em> dan bukan juga <em>“itu tidak mungkin”</em>. Tunjukkan bahwa kamu peduli dan sudah menanganinya.`},
-     {ic:'📅', html:`<strong>Eskalasikan sekali lalu tindak lanjuti.</strong> Pasang pengingat di kalendermu untuk mengecek lagi setelah dua pelajaran.`}
+     {ic:'📅', html:`<strong>Eskalasikan sekali lalu tindak lanjuti.</strong> Pasang pengingat di kalendermu untuk menindaklanjuti setelah 24 jam.`}
    ])}
    ${co('co-ok','💬',`<p><strong>Pesan yang bisa kamu kirim</strong> (setelah disepakati dengan Team Leader-mu): <em>“Halo, [nama orang tua]. Saya melihat [siswa] tidak bisa masuk ke pelajaran hari ini. Saya sudah melaporkannya ke tim saya dengan semua detailnya, dan Client Service akan menghubungi Anda. Sementara itu, saya kirimkan rekamannya agar tidak ada materi yang terlewat.”</em></p>`)}
   `},

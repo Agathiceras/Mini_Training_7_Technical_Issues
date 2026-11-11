@@ -297,7 +297,7 @@ const CONTENT = {
    ${stepFlow([
      {ic:'🔁', label:'Ask them to rejoin the lesson'},
      {ic:'🎚️', label:'Check the right microphone and camera are selected'},
-     {ic:'📮', label:'Still not working: report it and ask tech support to test it within the week'}
+     {ic:'📮', label:'Still not working: report it in the Slack channel #uk-tsm-and-tutors and ask tech support to test it within the week'}
    ])}
    ${co('co-ok','💬',`<p><strong>Meanwhile, the student keeps learning.</strong> They can attend without a camera and, as an exception, even without a microphone: you communicate through the chat and reactions. Nobody is left out of the lesson because of a device.</p>`)}
    ${co('co-danger','🔇',`<p><strong>If you mute a student, unmute them again.</strong> Leaving a child muted without noticing can cost us a family.</p>`)}
@@ -305,7 +305,7 @@ const CONTENT = {
   {t:'🧩 When the course tool doesn’t work — workarounds by course', html:`
    <div class="card"><p>The course authors shared what you can do when a student can't open the course program or their computer struggles with it. Tap your course:</p></div>
    ${tabsBlock([
-     {ic:'🎮', title:'Roblox, any platform', html:`${symCards([
+     {ic:'🎮', title:'Roblox', html:`${symCards([
        {ic:'🔑', title:`The student can’t log in, or the program won’t open`,
         do:`<ul><li><strong>They follow your demo:</strong> the student watches your screen and gives verbal answers about what is being done — they still take part in the lesson.</li><li><strong>After the lesson,</strong> go through the installation or login with them.</li><li><strong>Still not solved?</strong> Ask for tech support in the Slack channel <em>#uk-tsm-and-tutors</em>.</li></ul>`,
         avoid:`Spending the whole lesson installing while the rest of the group waits.`},
@@ -371,12 +371,12 @@ const CONTENT = {
   {t:'🩺 Symptoms after the lesson', html:`
    ${symCards([
      {ic:'🔒', title:`They can’t get into the platform to do the homework`,
-      do:`Confirm the browser (desktop Chrome), the device and the login details — you can find them in BO and send them again. If nothing changes, report it with the BO links of the student and the group, and <strong>follow up after 24 hours</strong>.`,
+      do:`Confirm the browser (desktop Chrome), the device and the login details — you can find them in BO and send them again. If nothing changes, report it in the Slack channel <em>#uk-tsm-and-tutors</em> with the BO links of the student and the group, and <strong>follow up after 24 hours</strong>.`,
       say:`<em>“I’m looking into it with my team and I’ll write to you tomorrow.”</em>`},
      {ic:'🧩', title:`The course program didn’t open during the lesson`,
       do:`After the lesson, go through the installation or login with the student (and the workaround for their course from Module 2). If it still doesn’t work, ask for tech support in the Slack channel <em>#uk-tsm-and-tutors</em>.`},
      {ic:'🎙️', title:`Their microphone or camera didn’t work`,
-      do:`If rejoining and checking the device didn’t help, report it and ask tech support to test it with the student within the following week. Until then, the student joins with chat and reactions.`},
+      do:`If rejoining and checking the device didn’t help, report it in the Slack channel <em>#uk-tsm-and-tutors</em> and ask tech support to test it with the student within the following week. Until then, the student joins with chat and reactions.`},
      {ic:'📱', title:`They can only get in from a phone and it doesn’t display well`,
       do:`The platform is designed for computers: they should use “desktop site” or a computer. Don’t promise alternative access.`,
       say:`Explain the limitation warmly: <em>“Some parts don’t display well on a phone; on a computer, or with the desktop site, it works much better.”</em>`},
@@ -418,7 +418,7 @@ const CONTENT = {
    <div class="tbl-wrap"><table>
     <tr><th>What happened</th><th>Who</th></tr>
     <tr><td>A technical issue you can’t solve (Classroom, links, platforms)</td><td>The Slack channel <em>#uk-tsm-and-tutors</em></td></tr>
-    <tr><td>Missing lesson credits, a wrong schedule, an unfair lesson deduction</td><td>Your Team Leader + Operations: <strong>@Azzura Muzdalifa</strong></td></tr>
+    <tr><td>Missing lesson credits, a wrong schedule, an unfair lesson deduction</td><td>Your Team Leader + Client Service + BO comment (Operations: <strong>@Azzura Muzdalifa</strong>)</td></tr>
     <tr><td>An extra lesson, or a lesson that can’t take place</td><td>Your Team Leader</td></tr>
    </table></div></div>
   `},
@@ -426,8 +426,8 @@ const CONTENT = {
    <div class="card"><p>Depending on the type of problem, the report goes down a different lane:</p>
    <div class="tbl-wrap"><table>
     <tr><th>Lane</th><th>When</th><th>Where</th></tr>
-    <tr><td><strong>1. Classroom or platform failure</strong><br>(black screen, audio, whiteboard, rooms, broken links)</td><td>The quick fixes didn't solve it</td><td>The Slack channel <em>#uk-tsm-and-tutors</em> + BO comment</td></tr>
-    <tr><td><strong>2. Account and Operations</strong><br>(enrolment, credentials, schedule, licences, lesson credits, deductions)</td><td>The student can't get in, isn't registered, the schedule is wrong, credentials don't work, or lessons were deducted unfairly</td><td>Team Leader + Client Service + BO comment (Operations: @Azzura Muzdalifa)</td></tr>
+    <tr><td><strong>1. Classroom or platform failure</strong><br>(can’t get in / join button missing, black screen, audio, whiteboard, rooms, broken links)</td><td>The quick fixes didn't solve it</td><td>The Slack channel <em>#uk-tsm-and-tutors</em> + BO comment</td></tr>
+    <tr><td><strong>2. Account and Operations</strong><br>(enrolment, credentials, schedule, licences, lesson credits, deductions)</td><td>The student can't get in because of an account problem: isn't registered, credentials don't work, the schedule is wrong, or lessons were deducted unfairly</td><td>Team Leader + Client Service + BO comment (Operations: @Azzura Muzdalifa)</td></tr>
     <tr><td><strong>3. Lost lesson</strong><br>(one or more lessons compromised)</td><td>Because of a platform failure, a cancellation or an absence</td><td><strong>Team Leader the same day</strong> (you can request an extra lesson) + Client Service if the family is upset + BO comment</td></tr>
    </table></div></div>
   `},
@@ -466,10 +466,10 @@ const CONTENT = {
   `},
   {t:'🔢 The order matters', html:`
    ${iconGrid([
-     {ic:'👥', html:`<strong>Team first, family second.</strong> When the problem involves more than your teaching (access, schedule, credits, a lost lesson), don't write to the family before talking to your Team Leader.`},
+     {ic:'👥', html:`<strong>Team first, family second.</strong> When the problem involves more than your teaching (access, schedule, credits, a lost lesson), don't write anything else to the family before talking to your Team Leader. The exception: you can <strong>always acknowledge right away</strong> with a short message (<em>“I’m here and looking into it”</em>). Options, explanations, compensation or an extra lesson only come after you’ve talked to your Team Leader.`},
      {ic:'🎓', html:`<strong>You talk about the learning; you hand over the action.</strong> You can say what you tried in the lesson and that you're looking into it. The options (extra lesson, group or course change, compensation) come from your Team Leader and Client Service.`},
      {ic:'⚖️', html:`<strong>Never promise and never refuse.</strong> Neither <em>"we'll give you an extra lesson"</em> nor <em>"that's not possible"</em>. Do show that you care and that you're already on it.`},
-     {ic:'📅', html:`<strong>Escalate once and follow up.</strong> Put a reminder in your calendar to check in two lessons.`}
+     {ic:'📅', html:`<strong>Escalate once and follow up.</strong> Put a reminder in your calendar to follow up after 24 hours.`}
    ])}
    ${co('co-ok','💬',`<p><strong>A message you can send</strong> (once agreed with your Team Leader): <em>"Hi [parent's name]. I saw that [student] couldn't get into the lesson today. I've already reported it to my team with all the details, and Client Service will get in touch with you. In the meantime, I'm sending you the recording so nothing we covered is lost."</em></p>`)}
   `},
