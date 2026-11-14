@@ -4,8 +4,8 @@
    telling the LMS "completed". Everything else starts on DOMContentLoaded, after the engine: it reads its
    globals (MODULES, LANG, TRAINING_ID) and wraps openModule / setResult / lmsSend.
    - The modules open only after the start survey has been sent.
-   - Time per module: "module_log" rows (module_start / module_complete / training_complete, active seconds)
-     go to the same Apps Script, tab "Module log". Active time = page visible and input in the last 2 minutes.
+   - Time per module: ONE row per tutor + training ("training_time": start/finish time, active minutes in
+     total and per module) goes to the same Apps Script, tab "Module time". See "time per module" below.
    - Start survey: a pop-up when the training opens; the training can't be used until it is sent.
    - Final survey: a section at the end of the LAST module (the final checklist). Its finish button
      unlocks, and the module counts as passed (so the LMS gets "completed"), only after it is sent.
@@ -51,27 +51,45 @@
     ar: { emailPlaceholder:"name.surname@kodland.team", emailError:"يُرجى كتابة بريدك الإلكتروني المؤسسي في Kodland (ينتهي بـ ‎@kodland.team).", missing:"يُرجى الإجابة عن جميع الأسئلة للمتابعة.", minChars:"اكتب 10 أحرف على الأقل." }
   };
 
-  /* ---------- time per module ---------- */
-  var activeMs = 0, lastTick = Date.now(), lastInput = Date.now(), moduleStartMs = 0;
+  /* ---------- time per module: ONE row per tutor + training (Apps Script tab "Module time") ----------
+     Active time = page visible and mouse/keyboard/touch input in the last 2 minutes. It is added to the module
+     that is open on screen (and always to the training total). Kept in storage, so a reload or a second day
+     adds to it. The row is created when the first module opens and updated each time a module is passed,
+     when the tutor leaves the page (at most once a minute) and when the training is completed.
+     After completion the time is frozen: later visits don't change the row. */
+  var lastTick = Date.now(), lastInput = Date.now(), TIME = null, dirty = false, lastSent = 0;
   ['mousemove','keydown','scroll','click','touchstart'].forEach(function(ev){ addEventListener(ev, function(){ lastInput = Date.now(); }, { passive:true }); });
-  setInterval(function(){
-    var now = Date.now();
-    if (document.visibilityState === 'visible' && now - lastInput < 120000) activeMs += now - lastTick;
-    lastTick = now;
-  }, 5000);
   function trainingId(){ return (typeof TRAINING_ID !== 'undefined') ? TRAINING_ID : ''; }
   function startKey(){ return 'kl-rf-start-survey-' + trainingId(); }
   function finalKey(){ return 'kl-rf-final-survey-' + trainingId(); }
-  function logModule(event, moduleId){
-    if (!SURVEY_URL || (typeof isDevMode === 'function' && isDevMode())) return;   // nothing is logged in developer mode
-    if (event === 'module_start') moduleStartMs = activeMs;
+  function timeKey(){ return 'kl-rf-time-' + trainingId(); }
+  function devOn(){ return typeof isDevMode === 'function' && isDevMode(); }
+  function loadTime(){ var t = null; try { t = JSON.parse(store(timeKey()) || 'null'); } catch(e){} return (t && t.mods) ? t : { started_at:'', finished_at:'', total:0, mods:{} }; }
+  function saveTime(){ if (TIME) store(timeKey(), JSON.stringify(TIME)); }
+  setInterval(function(){
+    var now = Date.now(), d = Math.min(now - lastTick, 10000) / 1000;
+    lastTick = now;
+    if (!TIME || !TIME.started_at || TIME.finished_at || devOn()) return;
+    if (document.visibilityState !== 'visible' || now - lastInput >= 120000) return;
+    TIME.total += d;
+    var scr = document.getElementById('screen-content');
+    if (scr && scr.classList.contains('active') && typeof currentModule !== 'undefined' && currentModule) TIME.mods[currentModule] = (TIME.mods[currentModule] || 0) + d;
+    dirty = true; saveTime();
+  }, 5000);
+  function min1(sec){ return Math.round((sec || 0) / 6) / 10; }   // seconds → minutes with 1 decimal
+  function sendTime(beacon){
+    if (!SURVEY_URL || !TIME || !TIME.started_at || devOn() || typeof MODULES === 'undefined') return;   // nothing is sent in developer mode
     var email = ''; try { email = (JSON.parse(store(startKey()) || 'null') || {}).email || ''; } catch(e){}
-    try {
-      fetch(SURVEY_URL, { method:'POST', mode:'no-cors', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body:JSON.stringify({
-        type:'module_log', email:email, training:trainingId(), module:moduleId, event:event, ts:new Date().toISOString(),
-        activeSecModule:Math.round((activeMs - moduleStartMs) / 1000), activeSecTotal:Math.round(activeMs / 1000) }) });
-    } catch(e){}
+    if (!email) return;
+    var body = JSON.stringify({ type:'training_time', email:email, training:trainingId(), training_name:TRAINING_NAMES[trainingId()] || trainingId(),
+      lang:(typeof LANG !== 'undefined' && LANG) || '', started_at:TIME.started_at, finished_at:TIME.finished_at, completed:!!TIME.finished_at,
+      active_min:min1(TIME.total), module_ids:MODULES.map(function(m){ return m.id; }), module_min:MODULES.map(function(m){ return min1(TIME.mods[m.id]); }) });
+    dirty = false; lastSent = Date.now();
+    try { if (beacon && navigator.sendBeacon && navigator.sendBeacon(SURVEY_URL, new Blob([body], { type:'text/plain;charset=utf-8' }))) return; } catch(e){}
+    try { fetch(SURVEY_URL, { method:'POST', mode:'no-cors', keepalive:true, headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body:body }); } catch(e){}
   }
+  // Leaving or hiding the page: save the time spent so far (at most once a minute)
+  document.addEventListener('visibilitychange', function(){ if (document.visibilityState === 'hidden' && dirty && Date.now() - lastSent > 60000) sendTime(true); });
   // Read by the engine before it tells the LMS "completed" (that message unlocks the DST): only after the final survey.
   window.TD_CAN_COMPLETE = function(){ return !!store(finalKey()); };
 
@@ -476,6 +494,7 @@
     var dev = false;   // v2: no skip, not even with ?dev=1
     var page = (location.pathname.split('/').pop() || 'index.html').replace(/\.html?$/i, '') || 'index';
     var KEY_START = 'kl-rf-start-survey-' + TRAINING_ID, KEY_FINAL = 'kl-rf-final-survey-' + TRAINING_ID;
+    TIME = loadTime();
     var base = { training:TRAINING_ID, training_name:TRAINING_NAMES[TRAINING_ID] || TRAINING_ID, page:page, lang:lang };
 
     var st = document.createElement('style'); st.id = 'ksv-style'; st.textContent = css; document.head.appendChild(st);
@@ -529,19 +548,24 @@
     window.setResult = function(id, pct, passed){
       if (id === last.id && !last.ix && passed && !finalDone()) return;
       var was = isPassed(id), r = origSetResult(id, pct, passed);
-      if (!was && isPassed(id)) logModule('module_complete', id);
+      if (!was && isPassed(id)) sendTime();
       return r;
     };
     var origOpen = openModule;
     window.openModule = function(idx){
       if (!store(KEY_START)){ startSurvey(); return; }   // the modules open only after the start survey has been sent
+      var first = !TIME.started_at && !devOn();
+      if (first){ TIME.started_at = new Date().toISOString(); saveTime(); }
       origOpen(idx);
-      logModule('module_start', MODULES[idx].id);
+      if (first) sendTime();   // creates the row
       if (MODULES[idx] === last) addFinal();
     };
-    // "completed" reaches the LMS only after the final survey (window.TD_CAN_COMPLETE); it is logged when it is sent.
+    // "completed" reaches the LMS only after the final survey (window.TD_CAN_COMPLETE); that moment is the finish time.
     var origSend = lmsSend;
-    window.lmsSend = function(event){ if (event === 'completed') logModule('training_complete', 'all'); return origSend(event); };
+    window.lmsSend = function(event){
+      if (event === 'completed' && TIME.started_at && !TIME.finished_at && !devOn()){ TIME.finished_at = new Date().toISOString(); saveTime(); sendTime(); }
+      return origSend(event);
+    };
     function addFinal(){
       var cta = document.getElementById('moduleCta'); if (!cta || document.getElementById('ksvFinal')) return;
       var sec = document.createElement('div'); sec.id = 'ksvFinal'; sec.className = 'ksv ksv-sec';
