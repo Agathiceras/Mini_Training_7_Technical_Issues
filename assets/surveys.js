@@ -17,7 +17,7 @@
   /* ---------- CONFIG ----------
      Web App URL of the Apps Script of the Refunds surveys Google Sheet.
      Empty = answers are not sent anywhere: the payload is logged (console.warn), kept in storage and the survey closes. */
-  var SURVEY_URL = 'https://script.google.com/macros/s/AKfycbz6pYwkAc5_p-2kInEZ5nbyaAeKKgg4N5O1A6ERW-oYDpruyaGyxkE42AprQ4QNN-7lWg/exec';
+  var SURVEY_URL = 'https://script.google.com/macros/s/AKfycbzQYTKZrHsEyEU11S8AvjZiH8rKwPBw-v0tMYSCunVZcq3hBmalJlCbZHUz3-lYkz-B/exec';
   var TRAINING_NAMES = {
     'refunds': 'Refunds (main training)',
     'mini-no_interest': 'Mini 1 · No Interest',
