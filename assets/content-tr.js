@@ -398,8 +398,6 @@ const CONTENT = {
   `},
   {t:'🔁 Süreci kapatın', html:`
    <div class="card"><p>Sorun çözüldüğünde <strong>aileye haber verin</strong>. Bilgilendirilen bir veli, kalan bir velidir.</p></div>
-   <div class="card" style="background:var(--surface2)"><h4>💬 Kullanabileceğiniz bir kapanış mesajı</h4>
-   <p style="font-size:13.5px;line-height:1.75"><em>“Merhaba [velinin adı]. [öğrenci] adlı öğrencimizin yaşadığı erişim sorununun artık çözüldüğünü haber vermek için yazıyorum. Sabrınız için teşekkür ederim. Yeniden bir sorun olursa bana yazın, hemen ilgilenelim.”</em></p></div>
   `}
  ],
  ix:{
@@ -477,7 +475,6 @@ const CONTENT = {
      {ic:'⚖️', html:`<strong>Asla söz vermeyin, asla reddetmeyin.</strong> Ne <em>“size ek ders vereceğiz”</em> ne de <em>“bu mümkün değil”</em>. Ama önemsediğinizi ve konuyla zaten ilgilendiğinizi mutlaka gösterin.`},
      {ic:'📅', html:`<strong>Bir kez iletin ve takip edin.</strong> İki ders sonra kontrol etmek için takviminize bir hatırlatma koyun.`}
    ])}
-   ${co('co-ok','💬',`<p><strong>Gönderebileceğiniz bir mesaj</strong> (Takım Liderinizle uzlaştıktan sonra): <em>“Merhaba [velinin adı]. [öğrenci] bugün derse giremedi, gördüm. Durumu tüm ayrıntılarıyla ekibime bildirdim; Müşteri Hizmetleri sizinle iletişime geçecek. Bu arada, işlediğimiz hiçbir şey kaybolmasın diye ders kaydını gönderiyorum.”</em></p>`)}
   `},
   {t:'💛 Zamanında cevap verin: aileler emeğinizi fark eder', html:`
    <div class="card"><p>Teknik bir aksaklık, bir ailenin ayrılmasının nadiren tek nedenidir. Belirleyici olan <strong>sonrasında</strong> yaşananlardır: Biri cevap veriyor mu, çocuk derse geri dönebiliyor mu, aile birinin önemsediğini hissediyor mu? Veliler, her şeyin yolunda gitmesi için çalıştığınızı gördüklerinde — hızlı cevap veriyor, takip ediyor, çocuklarının mümkün olan en iyi dersi almasını sağlıyorsanız — bunu fark ederler. Birçok ailenin <strong>bize ikinci bir şans vermesini</strong> sağlayan şey bu emektir. Sessizlik ise onlara tam tersini anlatır.</p></div>

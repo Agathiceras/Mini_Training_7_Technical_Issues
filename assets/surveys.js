@@ -129,11 +129,11 @@
       regions:[["brazil","Brasil"],["latam","LATAM (incl. Espanha)"],["mena","MENA"],["italy","Itália"],["poland","Polônia"],["uk","UK"],["usa","USA"],["indonesia","Indonésia"],["gcc","GCC"],["cis","CIS"]]
     },
     it: {
-      start: { title:"Prima di iniziare: un breve check-in", intro:"Non ci sono risposte giuste o sbagliate. Le tue risposte aiutano il team a sostenerti meglio. Inviale per aprire la formazione." },
-      final: { sec:"💬 Un ultimo check-in", title:"Prima di finire: come ti senti ora?", intro:"Non è un test: non ci sono risposte giuste o sbagliate. Le tue risposte ci aiutano a migliorare la formazione e il supporto che offriamo ai tutor. Inviale per completare la formazione.", lockMsg:"Invia il sondaggio qui sopra per completare la formazione.", unlocked:"Ora puoi completare la formazione." },
+      start: { title:"Prima di iniziare: un breve questionario", intro:"Non ci sono risposte giuste o sbagliate. Le tue risposte aiutano il team a sostenerti meglio. Invia le risposte per accedere alla formazione." },
+      final: { sec:"💬 Un ultimo questionario", title:"Prima di finire: come ti senti ora?", intro:"Non è un test: non ci sono risposte giuste o sbagliate. Le tue risposte ci aiutano a migliorare la formazione e il supporto che offriamo ai tutor. Inviale per completare la formazione.", lockMsg:"Invia il sondaggio qui sopra per completare la formazione.", unlocked:"Ora puoi completare la formazione." },
       s: { emailLabel:"La tua e-mail aziendale Kodland", emailPlaceholder:"nome.cognome@kodland.org", emailError:"Inserisci il tuo indirizzo e-mail aziendale Kodland (ad esempio nome.cognome@kodland.org).", regionLabel:"La tua regione", regionPlaceholder:"Scegli la tua regione…", regionError:"Scegli la tua regione.", missing:"Rispondi a tutte le domande contrassegnate con ★.", send:"Invia le mie risposte", sending:"Invio in corso…", thanks:"✅ <b>Grazie!</b> Le tue risposte sono state inviate.", low:"Per niente", high:"Completamente", optional:"facoltativa", openPlaceholder:"Scrivi quello che vuoi…" },
       q: {
-        start_feeling:"Come ti senti dopo aver ricevuto questa formazione?",
+        start_feeling:"Come ti senti all’idea che ti sia stata assegnata questa formazione?",
         understand_why:"Hai capito perché ti è stata assegnata questa formazione?",
         know_help:"Sai dove trovare aiuto e a chi rivolgerti se hai domande o hai bisogno di supporto nella gestione dei casi di rimborso?",
         confidence_before:"Prima di iniziare, quanto ti senti sicuro/a di poter gestire e risolvere i casi di rimborso relativi a questo specifico motivo?",
@@ -142,7 +142,7 @@
         confidence_after:"Ora che hai completato la formazione, quanto ti senti sicuro/a di poter gestire e risolvere i casi di rimborso relativi a questo specifico motivo?",
         prevent_confidence:"Quanto ti senti sicuro/a di poter prevenire o ridurre questo tipo di casi di rimborso nelle tue lezioni future?",
         kodland_support:"Senti che Kodland ti offre il supporto necessario per migliorare e gestire questo tipo di situazioni?",
-        clarity:"Quanto hai trovato la formazione chiara e facile da seguire?",
+        clarity:"Quanto ti è sembrata chiara e facile da seguire la formazione?",
         duration:"Come valuteresti la durata della formazione?",
         improve:"C’è qualcosa che cambieresti nella formazione o che pensi potremmo migliorare? Raccontaci cosa ne pensi!",
         support_suggestions:"Hai commenti o suggerimenti su come potremmo migliorare il supporto che offriamo ai tutor nella gestione dei casi di rimborso?"

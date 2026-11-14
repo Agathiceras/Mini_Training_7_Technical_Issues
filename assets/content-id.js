@@ -81,14 +81,14 @@ const CONTENT = {
 {id:'intro', numLabel:'Pendahuluan', emoji:'🧩', color:'#5DD39E', art:'lifebuoy', learn:[['📊','Apa yang ditunjukkan data'],['🔎','Masalah yang dibahas pelatihan ini'],['🧭','Mana yang jadi bagianmu — dan mana yang bukan'],['🛟','Apa yang harus dilakukan jika permintaan refund sudah ada'],['🎯','Cara menjadikan pelajaran berikutnya sebagai upaya pemulihan']],
  eyebrow:'Pendahuluan',
  title:'Kenapa Kamu Ada di Sini',
- desc:'Mengapa masalah teknis di pelajaran-pelajaran pertama bisa membuat kita kehilangan sebuah keluarga, mana yang jadi bagianmu — dan apa yang harus dilakukan jika permintaan refund sudah ada.',
- obj:'Memahami mengapa masalah teknis di pelajaran-pelajaran pertama bisa membuat kita kehilangan sebuah keluarga, mana yang jadi bagianmu, dan apa yang harus dilakukan begitu permintaan refund sudah ada.',
+ desc:'Mengapa masalah teknis di pelajaran-pelajaran pertama bisa membuat kita kehilangan seorang siswa, mana yang jadi bagianmu — dan apa yang harus dilakukan jika permintaan refund sudah ada.',
+ obj:'Memahami mengapa masalah teknis di pelajaran-pelajaran pertama bisa membuat kita kehilangan seorang siswa, mana yang jadi bagianmu, dan apa yang harus dilakukan begitu permintaan refund sudah ada.',
  sections:[
   {t:'📊 Apa yang ditunjukkan data', html:`
    <div class="card"><p>Masalah teknis jarang datang sendirian. Masalah ini muncul di pelajaran-pelajaran pertama, saat keluarga masih menimbang apakah Kodland cocok untuk mereka — dan terkadang bahkan sebelum anaknya mengikuti satu pelajaran pun.</p></div>
-   ${bigStat('≈ 1 dari 20',`<p>permintaan refund punya <strong>masalah teknis yang nyata</strong> di baliknya. Dan itu angka minimum: sebagian kasus seperti ini masuk dengan label alasan lain.</p>`)}
+   ${bigStat('≈ 1 dari 20',`<p>permintaan refund dilatarbelakangi oleh <strong>masalah teknis yang nyata</strong>. Itu pun masih angka minimum, karena sebagian kasus serupa tercatat dengan alasan lain.</p>`)}
    <p style="font-size:11.5px;color:var(--text-muted)">Berdasarkan permintaan refund dalam 90 hari terakhir di semua wilayah; angka perkiraan.</p>
-   ${co('co-idea','💡',`<p><strong>Pelajaran-pelajaran pertama adalah jendela yang paling sempit.</strong> Masalah teknis yang diperbaiki di hari yang sama biasanya bisa diselamatkan; masalah yang sama jika diperbaiki terlambat hampir tidak pernah bisa. Karena itulah pelajaran-pelajaran pertama itu penting, dan hari yang sama itu penting.</p>`)}
+   ${co('co-idea','💡',`<p><strong>Pelajaran-pelajaran pertama adalah jendela yang paling sempit.</strong> Masalah teknis yang diperbaiki di hari yang sama biasanya bisa diselamatkan; jika penanganannya terlambat, masalah tersebut hampir mustahil untuk diselamatkan. Itulah sebabnya sesi awal dan respons cepat di hari yang sama sangat menentukan.</p>`)}
   `},
   {t:'🔎 Masalah yang dibahas pelatihan ini', html:`
    ${iconGrid([
@@ -102,25 +102,25 @@ const CONTENT = {
    <div class="tbl-wrap"><table>
     <tr><th>✅ Sepenuhnya bagianmu</th><th>🔁 Bagianmu untuk menyesuaikan dan melaporkan</th><th>🚫 Di luar kendalimu</th></tr>
     <tr><td>Memeriksa koneksi, perangkat, dan Chrome milikmu sendiri sebelum setiap pelajaran<br>Mengirimkan detail login yang kamu temukan di BO kepada keluarga</td><td>Siswa yang tidak bisa masuk atau terhubung: bantu dengan pertolongan pertama dan <strong>laporkan</strong></td><td>Memperbaiki bug Classroom atau platform</td></tr>
-    <tr><td>Tetap tenang dan menganggapnya hal yang wajar di depan grup</td><td>Pelajaran yang hilang karena gangguan: sesuaikan pelajaran berikutnya dan <strong>laporkan</strong></td><td>Pendaftaran, lisensi, dan kredit pelajaran</td></tr>
+    <tr><td>Tetap tenang dan bersikap santai (tidak panik) di depan kelas</td><td>Pelajaran yang hilang karena gangguan: sesuaikan pelajaran berikutnya dan <strong>laporkan</strong></td><td>Pendaftaran, lisensi, dan kredit pelajaran</td></tr>
     <tr><td>Mematikan dan menyalakan mikrofon dengan hati-hati</td><td>Komputer yang tidak memenuhi persyaratan: jaga agar pelajaran tetap bermanfaat dan <strong>laporkan ke Team Leader-mu</strong></td><td>Memindahkan siswa ke kursus, grup, atau jadwal lain</td></tr>
     <tr><td>Mencoba solusi alternatif yang sudah diketahui (refresh, masuk ulang, alat lain untuk kursusnya)</td><td>Masalah teknis yang bisa membuat keluarga pergi: <strong>ajukan pelajaran tambahan ke Team Leader-mu</strong></td><td>Menyetujui pelajaran tambahan, penjadwalan ulang, atau kompensasi apa pun</td></tr>
     <tr><td>Melapor di hari yang sama dengan detail lengkap</td><td>Gangguan yang memengaruhi beberapa siswa: triase, <strong>laporkan</strong>, dan buat rencana pemulihan</td><td>Penyedia internet atau jaringan rumah keluarga</td></tr>
    </table></div></div>
    ${co('co-ok','✅',`<p><strong>Bagianmu terdiri dari tiga langkah:</strong> pertolongan pertama di pelajaran, menyesuaikan pelajaran agar dampaknya sekecil mungkin, dan <strong>melapor di hari yang sama</strong> dengan detail lengkap.</p>`)}
-   ${co('co-danger','⏱️',`<p><strong>Jangan menunggu dalam diam.</strong> Jika dalam 10 menit belum teratasi, berhenti mencoba sendirian: komunikasikan, dokumentasikan, eskalasikan.</p>`)}
+   ${co('co-danger','⏱️',`<p><strong>Jangan diam saja menunggu.</strong> Jika dalam 10 menit belum teratasi, berhenti mencoba sendirian: komunikasikan, dokumentasikan, eskalasikan.</p>`)}
   `},
   {t:'🛟 Jika permintaan refund karena masalah teknis sudah ada', html:`
    <div class="card"><p>Semua hal di atas adalah tentang mencegahnya. Tapi mungkin kamu membuka pelatihan ini karena ada keluarga yang <strong>sudah</strong> mengajukan refund karena masalah teknis. Baca dulu aturan-aturan ini.</p></div>
-   ${co('co-idea','💡',`<p><strong>Permintaannya dibuat oleh Client Service, bukan oleh kamu.</strong> Kamu mengetahuinya dari komentar Client Service di profil siswa di BO; tidak ada notifikasi otomatis.</p>`)}
-   ${co('co-danger','🤐',`<p><strong>Jangan membicarakan permintaan itu sama sekali</strong> — tidak kepada anak, tidak kepada keluarga — kecuali Client Service memintamu menyampaikan sesuatu yang spesifik. Jika anak itu yang membahasnya, alihkan dengan hangat dan lanjutkan mengajar.</p>`)}
+   ${co('co-idea','💡',`<p><strong>Permintaannya dibuat oleh Customer Service (CS), bukan oleh kamu.</strong> Kamu mengetahuinya dari komentar CS di profil siswa di BO; tidak ada notifikasi otomatis.</p>`)}
+   ${co('co-danger','🤐',`<p><strong>Jangan membahas pengajuan refund tersebut sama sekali</strong> — baik kepada murid maupun orang tuanya — kecuali tim CS memintamu menyampaikan hal tertentu. Jika anak itu yang membahasnya, alihkan dengan hangat dan lanjutkan mengajar.</p>`)}
   `},
   {t:'🎯 Pelajaran berikutnya adalah upaya pemulihan', html:`
    <div class="card"><p>Pelajaran itu harus <strong>bebas dari gangguan teknis</strong>. Gangguan kedua setelah permintaan refund adalah skenario terburuk.</p></div>
    ${iconGrid([
      {ic:'⏱️', html:`<strong>15 menit sebelumnya:</strong> Chrome desktop versi terbaru, aplikasi lain ditutup; mikrofon, kamera, dan berbagi layar sudah dites; grup dan daftar siswa sudah dicek di BO.`},
      {ic:'🅱️', html:`<strong>Rencana B yang siap:</strong> apa yang akan kamu lakukan jika siswa tidak bisa masuk, jika audionya gagal, atau jika alat kursusnya tidak mau terbuka (Modul 1 dan 2).`},
-     {ic:'👀', html:`<strong>Perhatian yang spesifik</strong> untuk anak itu — buat dia merasa diperhatikan karena sesuatu yang konkret, bukan sekadar dipuji secara umum.`},
+     {ic:'👀', html:`<strong>Perhatian yang spesifik</strong> untuk anak itu — berikan perhatian atau apresiasi yang spesifik, bukan sekadar pujian umum.`},
      {ic:'🏆', html:`<strong>Keberhasilan yang cepat dan terlihat.</strong> Dia harus meninggalkan pelajaran dengan perasaan mampu, bukan tertinggal.`}
    ])}
    ${co('co-danger','🚨',`<p><strong>Jika gangguan terjadi lagi di pelajaran itu, segera laporkan</strong> ke Team Leader-mu, yang akan mengeskalasikannya ke dukungan teknis — bukan di akhir hari.</p>`)}
@@ -128,18 +128,18 @@ const CONTENT = {
   {t:'📮 Laporkan di hari yang sama, dan ingat satu kalimat yang aman', html:`
    ${numlist([
      'Tinggalkan komentar di BO pada hari yang sama berisi persis apa yang kamu lihat: tanggal, apa yang gagal, pesan error atau banner, apa yang sudah kamu coba, dan tangkapan layar',
-     'Sertakan kata-kata keluarga itu sendiri, apa adanya, jika kamu punya',
+     'Sertakan kutipan langsung dari orang tua murid (apa adanya), jika ada',
      'Beri tahu Team Leader-mu di hari yang sama — ini juga saat yang tepat untuk menanyakan apakah pelajaran tambahan masuk akal',
      'Jangan pernah mengonfirmasi bahwa refund sudah disetujui, jangan pernah membahas nominal, dan jangan pernah menyalahkan platform'
    ])}
    ${co('co-ok','✅',`<p><strong>Kalimat yang selalu aman:</strong> <em>“Tim Customer Service akan membantu Anda terkait hal ini.”</em> Di situlah bagianmu dalam percakapan berakhir.</p>`)}
   `},
   {t:'🌱 Pertahankan upayanya setelah itu', html:`
-   <div class="card"><p>Meskipun permintaannya dibatalkan atau anak itu pindah ke grup lain, tetap perhatikan sisi teknis pelajarannya selama beberapa minggu berikutnya: masuk lebih awal, tes perangkatmu, dan tanyakan apakah semuanya berfungsi. Pemulihan yang hanya bertahan satu pelajaran lalu diam-diam kembali seperti biasa sering kali tidak bertahan.</p></div>
+   <div class="card"><p>Meskipun permintaannya dibatalkan atau anak itu pindah ke grup lain, tetap perhatikan sisi teknis pelajarannya selama beberapa minggu berikutnya: masuk lebih awal, tes perangkatmu, dan tanyakan apakah semuanya berfungsi. Perhatian ekstra yang hanya diberikan di satu pertemuan lalu kembali seperti biasa biasanya berujung sia-sia.</p></div>
   `}
  ],
  ix:{
-  title:'Bagianmu, bagianmu untuk dilaporkan, dan bukan bagianmu',
+  title:'Bagian kamu, Apa yang harus dilaporkan, dan Apa yang bukan bagian kamu',
   instr:'Kelompokkan setiap situasi dan pilih tindakan terbaik. 70% untuk membuka modul berikutnya.',
   items:[
    {type:'sort', prompt:'Ini bagian siapa?', card:`Gangguan di Classroom menghabiskan setengah pelajaran kemarin.`, zones:[{label:'✅ Sepenuhnya bagianku', fb:'Belum tepat — kamu tidak bisa memperbaiki gangguannya sendiri. Yang jadi bagianmu adalah menyesuaikan pelajaran berikutnya dan melaporkannya.'},{label:'🔁 Bagianku untuk menyesuaikan dan melaporkan', fb:'Benar — kamu menyesuaikan pelajaran berikutnya untuk mengejar materi pokok dan melaporkannya di hari yang sama.'},{label:'🚫 Di luar kendaliku', fb:'Tidak sepenuhnya — memperbaiki gangguannya memang bukan bagianmu, tapi menyesuaikan pelajaran berikutnya dan melaporkannya adalah bagianmu.'}], correctZone:1},
@@ -183,28 +183,28 @@ const CONTENT = {
       rep:`Team Leader-mu (dia yang mengeskalasikannya ke dukungan teknis) + komentar di BO.`},
      {ic:'📋', title:`“Saya tidak terdaftar”`,
       see:`Keluarga mengatakan anaknya tidak muncul sebagai terdaftar.`,
-      do:`<strong>Jangan mengonfirmasi atau membantah pendaftarannya.</strong> Cek di BO dan beri tahu Team Leader-mu dan Client Service.`,
+      do:`<strong>Jangan mengonfirmasi atau membantah pendaftarannya.</strong> Cek di BO dan beri tahu Team Leader-mu dan CS.`,
       say:`<em>“Saya sedang mengecek akses Anda bersama tim saya.”</em>`,
-      rep:`Team Leader + Client Service + komentar di BO.`,
+      rep:`Team Leader + CS + komentar di BO.`,
       avoid:`Mengatakan kepada keluarga <em>“anak Anda tidak terdaftar”</em>.`},
      {ic:'🕒', title:`Jadwalnya bukan yang diminta keluarga`,
       see:`Pelajarannya di jam lain, atau ada notifikasi yang datang dengan tanggal mulai yang berbeda.`,
-      do:`Jangan mengubah apa pun sendiri — tutor tidak bisa menjadwal ulang pelajaran. Beri tahu Team Leader-mu dan Client Service di hari yang sama.`,
+      do:`Jangan mengubah apa pun sendiri — tutor tidak bisa menjadwal ulang pelajaran. Beri tahu Team Leader-mu dan CS di hari yang sama.`,
       say:`Akui ketidaknyamanannya tanpa menjelaskan penyebabnya atau menjanjikan perubahan: <em>“Saya mengerti ini merepotkan. Saya sudah menyampaikannya ke tim saya agar mereka bisa menghubungi Anda.”</em>`,
-      rep:`Team Leader + Client Service + komentar di BO.`},
+      rep:`Team Leader + CS + komentar di BO.`},
      {ic:'🎟️', title:`Kredit pelajaran kurang atau pelajaran dipotong secara tidak adil`,
       see:`Keluarga mengatakan jumlah pelajarannya tidak sesuai, atau ada pelajaran yang tidak terlaksana tapi tetap dipotong.`,
-      do:`Catat persis apa yang dikatakan keluarga dan teruskan ke Team Leader-mu dan Client Service di hari yang sama — tim Operations yang akan meninjaunya.`,
+      do:`Catat persis apa yang dikatakan keluarga dan teruskan ke Team Leader-mu dan CS di hari yang sama — tim Operations yang akan meninjaunya.`,
       say:`<em>“Tim Customer Service akan membantu Anda terkait hal ini.”</em>`,
-      rep:`Team Leader + Client Service + komentar di BO.`,
+      rep:`Team Leader + CS + komentar di BO.`,
       avoid:`Menjelaskan atau menjanjikan apa pun soal kredit.`},
      {ic:'✉️', title:`Keluarga belum menerima tautan atau kredensialnya`,
       do:`<strong>Kamu punya datanya di BO.</strong> Di profil siswa, kamu akan menemukan tautan masuk serta login dan kata sandinya. Kirimkan sendiri ke keluarga, saat itu juga. Jika datanya tidak ada atau tidak berfungsi, laporkan.`,
       say:`<em>“Saya kirimkan detail aksesnya sekarang. Silakan dicoba dan kabari saya jika ada yang tidak berfungsi.”</em>`,
-      rep:`Hanya jika detailnya tidak ada di BO atau tidak berfungsi: Team Leader + Client Service + komentar di BO.`,
+      rep:`Hanya jika detailnya tidak ada di BO atau tidak berfungsi: Team Leader + CS + komentar di BO.`,
       avoid:`Membuat tautan sendiri yang bukan dari BO.`}
    ])}
-   ${co('co-warn','🔗',`<p><strong>Zoom saat ada yang tidak bisa masuk?</strong> Ya — Zoom dipakai agar pelajaran tidak ditunda, tapi selalu direkam dan dilaporkan di hari yang sama (Modul 2). Mengirim tautan Zoom dari pelajaran ke pelajaran justru menyembunyikan masalahnya: tidak ada yang memperbaikinya karena tidak ada yang tahu.</p>`)}
+   ${co('co-warn','🔗',`<p><strong>Zoom saat ada yang tidak bisa masuk?</strong> Ya — Zoom dipakai agar pelajaran tidak ditunda, tapi selalu direkam dan dilaporkan di hari yang sama (Modul 2). Namun, menggunakan Zoom lebih dari satu pelajaran itu berarti menyembunyikan masalah yang seharusnya: tidak ada yang memperbaiki, dan tidak ada yang tahu.</p>`)}
   `},
   {t:'💻 Sebelum pelajaran 1: apakah perangkatnya cocok?', html:`
    <div class="card"><p>Kasus refund karena perangkat yang kurang mumpuni biasanya baru ketahuan <strong>di pelajaran pertama</strong>. Setiap kursus membutuhkan hal yang berbeda:</p></div>
@@ -228,7 +228,7 @@ const CONTENT = {
      <tr><td>3D Modelling</td><td>Blender. 8 GB. Mouse dengan roda gulir. Disarankan GPU terpisah. Windows atau Mac.</td><td>🔴 Berat</td></tr>
     </table></div>`)}
    ${co('co-idea','📌',`<p><strong>Aturannya:</strong> jika kamu melihat di BO bahwa kursus siswa termasuk <strong>🟡 Perlu dicek</strong> atau <strong>🔴 Berat</strong>, konfirmasi perangkatnya sebelum pelajaran 1, dengan pesan yang sudah disetujui Team Leader-mu.</p>`)}
-   ${co('co-danger','💻',`<p><strong>Jika komputernya tidak bisa menjalankan kursus, seharusnya kursus itu tidak dijual dengan cara itu — dan itu bukan tugasmu untuk memperbaikinya.</strong> Laporkan ke Team Leader-mu; tim Teaching dan Sales bersama-sama memutuskan bagaimana dan di mana siswa melanjutkan. Jangan pernah menyuruh keluarga membeli komputer baru atau pindah kursus atas inisiatifmu sendiri. Sementara itu, jaga agar pelajaran tetap bermanfaat dengan solusi alternatif di Modul 2.</p>`)}
+   ${co('co-danger','💻',`<p><strong>Jika komputernya tidak bisa menjalankan kursus, seharusnya kursus itu tidak dijual kepada siswa tersebut — dan itu bukan tugasmu untuk memperbaikinya.</strong> Laporkan ke Team Leader-mu; tim Teaching dan Sales bersama-sama memutuskan bagaimana dan di mana siswa melanjutkan. Jangan pernah menyuruh keluarga membeli komputer baru atau pindah kursus atas inisiatifmu sendiri. Sementara itu, jaga agar pelajaran tetap bermanfaat dengan solusi alternatif di Modul 2.</p>`)}
   `}
  ],
  ix:{
@@ -237,10 +237,10 @@ const CONTENT = {
   items:[
    {type:'sort', prompt:'Apa tindakan pertamamu?', card:`Pelajaran dimulai 10 menit lagi dan seorang siswa bilang tombol untuk bergabung tidak muncul.`, zones:[{label:'🔁 Refresh, cek Chrome, dan konfirmasi di BO bahwa dia ada di grup', fb:'Benar — pertolongan pertama yang cepat. Jika tidak ada perubahan, laporkan dengan menyertakan tautan BO grup dan siswa.'},{label:'🔗 Kirim tautan Zoom untuk pelajaran itu', fb:'Belum tepat — Zoom dipakai saat seseorang benar-benar tidak bisa masuk, setelah pengecekan cepat. Pertolongan pertama dulu.'},{label:'⏳ Tunggu dan lihat apakah dia masuk nanti', fb:'Belum tepat — menunggu dalam diam membuat pelajarannya hilang. Bertindaklah sekarang.'}], correctZone:0},
    {type:'sort', prompt:'Apa tindakan pertamamu?', card:`Kursus siswa adalah 3D Modelling dan BO menunjukkan pelajaran 1-nya hari Kamis.`, zones:[{label:'⏳ Tidak ada — nanti kita lihat di pelajaran 1', fb:'Belum tepat — di 3D Modelling, masalah perangkat biasanya baru ketahuan di pelajaran pertama, saat sudah terlambat.'},{label:'💻 Konfirmasi perangkatnya sebelum pelajaran 1, dengan pesan yang sudah disetujui Team Leader-mu', fb:'Benar — 3D Modelling adalah kursus yang berat. Mengonfirmasi perangkat lebih dulu mencegah hilangnya pelajaran pertama.'},{label:'📝 Minta keluarga membeli komputer yang lebih baik', fb:'Belum tepat — kamu tidak meminta keluarga membeli sesuatu. Kamu mengonfirmasi perangkatnya dan, jika tidak memenuhi persyaratan, melaporkannya.'}], correctZone:1},
-   {type:'choice', prompt:`Seorang ibu menulis: “Anak saya tidak muncul sebagai terdaftar di pelajaran.” Bagaimana kamu membalasnya?`, opts:[`“Anak Anda tidak terdaftar, Anda perlu menghubungi tim sales.”`,`“Ya, dia terdaftar, mungkin ada kesalahan di pihak Anda.”`,`“Saya sedang mengecek akses Anda bersama tim saya.”`], correct:2, fb:`Jangan mengonfirmasi atau membantah pendaftarannya. Kamu mengeceknya di BO dan memberi tahu Team Leader-mu dan Client Service.`},
+   {type:'choice', prompt:`Seorang ibu menulis: “Anak saya tidak muncul sebagai terdaftar di pelajaran.” Bagaimana kamu membalasnya?`, opts:[`“Anak Anda tidak terdaftar, Anda perlu menghubungi tim sales.”`,`“Ya, dia terdaftar, mungkin ada kesalahan di pihak Anda.”`,`“Saya sedang mengecek akses Anda bersama tim saya.”`], correct:2, fb:`Jangan mengonfirmasi atau membantah pendaftarannya. Kamu mengeceknya di BO dan memberi tahu Team Leader-mu dan CS.`},
    {type:'choice', prompt:`Keluarga mengatakan jam pelajarannya ternyata berbeda dari yang mereka minta. Apa yang kamu lakukan?`, opts:[`Mengakui ketidaknyamanannya tanpa menjanjikan perubahan, dan memberi tahu Team Leader-mu di hari yang sama`,`Menawarkan untuk memindahkannya sendiri ke jam yang mereka inginkan`,`Menjelaskan bahwa jadwalnya sudah tidak bisa diubah`], correct:0, fb:`Kamu tidak mengubah jadwalnya, tapi juga tidak menutup kemungkinan perubahan. Kamu mengakui ketidaknyamanannya dan memberi tahu timmu di hari yang sama.`},
-   {type:'choice', prompt:`Keluarga mengatakan ada pelajaran yang tidak pernah terlaksana tapi dipotong dari paket mereka. Apa yang kamu lakukan?`, opts:[`Mengatakan bahwa kamu akan mengembalikan pelajarannya`,`Mencatat apa yang mereka katakan, menyampaikan “Tim Customer Service akan membantu Anda terkait hal ini”, lalu meneruskannya ke Team Leader-mu dan Client Service di hari yang sama`,`Menjelaskan cara kerja pemotongan pelajaran`], correct:1, fb:`Kredit dan pemotongan ditinjau oleh tim Operations. Kamu tidak berjanji atau menjelaskan — kamu meneruskan persis apa yang dikatakan keluarga, di hari yang sama.`},
-   {type:'choice', prompt:`Di pelajaran 1 kursus 3D Modelling, kamu melihat komputer siswa hanya punya RAM 4 GB dan Blender tidak bisa berjalan. Mana yang benar?`, opts:[`Laporkan ke Team Leader-mu — tim Teaching dan Sales yang memutuskan bagaimana siswa melanjutkan — dan sementara itu jaga agar pelajaran ini tetap bermanfaat`,`Bilang ke keluarga bahwa kursus ini tidak cocok untuk mereka dan sarankan kursus lain`,`Minta keluarga meng-upgrade komputernya sebelum pelajaran berikutnya`], correct:0, fb:`Komputer yang tidak bisa menjalankan kursus seharusnya tidak dijual dengan cara itu. Itu bukan tugasmu untuk diselesaikan: kamu melaporkannya, dan tim Teaching dan Sales yang memutuskan.`}
+   {type:'choice', prompt:`Keluarga mengatakan ada pelajaran yang tidak pernah terlaksana tapi dipotong dari paket mereka. Apa yang kamu lakukan?`, opts:[`Mengatakan bahwa kamu akan mengembalikan pelajarannya`,`Mencatat apa yang mereka katakan, menyampaikan “Tim Customer Service akan membantu Anda terkait hal ini”, lalu meneruskannya ke Team Leader-mu dan CS di hari yang sama`,`Menjelaskan cara kerja pemotongan pelajaran`], correct:1, fb:`Kredit dan pemotongan ditinjau oleh tim Operations. Kamu tidak berjanji atau menjelaskan — kamu meneruskan persis apa yang dikatakan keluarga, di hari yang sama.`},
+   {type:'choice', prompt:`Di pelajaran 1 kursus 3D Modelling, kamu melihat komputer siswa hanya punya RAM 4 GB dan Blender tidak bisa berjalan. Mana yang benar?`, opts:[`Laporkan ke Team Leader-mu — tim Teaching dan Sales yang memutuskan bagaimana siswa melanjutkan — dan sementara itu jaga agar pelajaran ini tetap bermanfaat`,`Bilang ke keluarga bahwa kursus ini tidak cocok untuk mereka dan sarankan kursus lain`,`Minta keluarga meng-upgrade komputernya sebelum pelajaran berikutnya`], correct:0, fb:`Komputer yang tidak bisa menjalankan kursus seharusnya tidak dijual kepada siswa tersebut. Itu bukan tugasmu untuk diselesaikan: kamu melaporkannya, dan tim Teaching dan Sales yang memutuskan.`}
   ]
  }
 },
@@ -285,15 +285,15 @@ const CONTENT = {
     <div class="vslot-brief">Jika layar masih hitam setelah mengikuti langkah-langkahnya, refresh halaman (kamu atau siswa). Jika terus terjadi, laporkan dengan tangkapan layar.</div></div>
   `},
   {t:'🖥️ Classroom — solusi cepat lainnya', html:`
-   <div class="card"><p>Langkah-langkah lengkap dan terbaru ada di panduan <strong>“Classroom Issues Quick Fixes”</strong> dari tim Classroom. Yang paling sering:</p></div>
+   <div class="card"><p>Langkah-langkah lengkap dan terbaru ada di panduan <strong>“Classroom Issues Quick Fixes”</strong> dari tim Classroom. Masalah yang paling sering terjadi:</p></div>
    ${accItem('▬ Persegi panjang hitam muncul alih-alih layarmu', `<p>Hentikan lalu lanjutkan berbagi layar. Bagi sebagian orang, meminimalkan lalu memulihkan jendela juga berhasil.</p>`)}
    ${accItem('🌫️ Layar yang dibagikan buram', `<p>Bagikan lagi dan cek koneksinya.</p>`)}
    ${accItem('🙈 Siswa tidak bisa melihat layar yang kamu bagikan', `<p>Jika dia memakai ponsel, dia harus menggunakan “situs desktop”. Cek bahwa dia memakai Chrome. Jika tidak ada yang berhasil, minta siswa lain membagikan layarnya ke grup.</p>`)}
    ${accItem('📱 Siswa tidak bisa membagikan layarnya', `<p>Dari browser seluler (iPad, tablet, atau ponsel) <strong>hal ini tidak memungkinkan</strong>. Dia butuh komputer.</p>`)}
    ${accItem('🧾 Papan tulis tetap terlihat setelah ditutup', `<p>Minta mereka keluar lalu bergabung lagi; laporkan dengan tautan BO grupnya.</p>`)}
    ${accItem('🚪 Breakout room menampilkan error', `<p>Tutup semua room lalu buat lagi. Jika berbagi layar gagal di dalam room, laporkan.</p>`)}
-   ${accItem('📄 Halaman Assignments tampil hitam', `<p>Matikan dan hapus anotasi, hentikan berbagi layar, lalu klik kanan → “Reload frame”. Jika layar siswa menjadi hitam karena dia sedang di tab Assignments, hentikan lalu bagikan lagi.</p>`)}
-   ${accItem('⚠️ Siswa melihat banner error', `<p>Minta dia <strong>membacakannya dengan lantang</strong> dan jelaskan apa yang harus dilakukan. <strong>Catat</strong> apakah ada banner, pesannya, peringatan sebelum bergabung, dan jenis error-nya. Laporkan dengan tangkapan layar.</p>`)}
+   ${accItem('📄 Halaman Assignments menjadi hitam', `<p>Matikan dan hapus anotasi, hentikan berbagi layar, lalu klik kanan → “Reload frame”. Jika layar siswa menjadi hitam karena dia sedang di tab Assignments, hentikan lalu bagikan lagi.</p>`)}
+   ${accItem('⚠️ Siswa melihat banner error', `<p>Minta dia <strong>membacakan masalahnya dengan lantang</strong> dan jelaskan apa yang harus dilakukan. <strong>Catat</strong> apakah ada banner, pesannya, peringatan sebelum bergabung, dan jenis error-nya. Laporkan dengan tangkapan layar.</p>`)}
    ${accItem('🖼️ Kamera bermasalah saat memakai latar belakang virtual', `<p>Aktifkan “Use graphics acceleration when available” di <em>chrome://settings/system</em>.</p>`)}
    ${accItem('🪟 Mode Picture-in-Picture', `<p>Ini membantu: klik kanan pada layar yang dibagikan → Picture-in-Picture.</p>`)}
   `},
@@ -304,7 +304,7 @@ const CONTENT = {
      {ic:'📮', label:'Masih tidak berfungsi: laporkan ke Team Leader-mu, yang akan mengeskalasikannya ke dukungan teknis, dan minta dukungan teknis mengetesnya dalam minggu itu'}
    ])}
    ${co('co-ok','💬',`<p><strong>Sementara itu, siswa tetap belajar.</strong> Dia bisa ikut tanpa kamera dan, sebagai pengecualian, bahkan tanpa mikrofon: kalian berkomunikasi lewat chat dan reaksi. Tidak ada yang tertinggal dari pelajaran karena masalah perangkat.</p>`)}
-   ${co('co-danger','🔇',`<p><strong>Jika kamu mematikan mikrofon siswa, nyalakan lagi.</strong> Membiarkan mikrofon anak tetap mati tanpa disadari bisa membuat kita kehilangan sebuah keluarga.</p>`)}
+   ${co('co-danger','🔇',`<p><strong>Jika kamu mematikan mikrofon siswa, nyalakan lagi.</strong> Membiarkan mikrofon siswa tetap mati tanpa disadari bisa membuat kita kehilangan seorang siswa.</p>`)}
   `},
   {t:'🧩 Saat alat kursus tidak berfungsi — solusi alternatif per kursus', html:`
    <div class="card"><p>Para penyusun kursus membagikan apa yang bisa kamu lakukan saat siswa tidak bisa membuka program kursus atau komputernya kesulitan menjalankannya. Ketuk kursusmu:</p></div>
@@ -366,7 +366,7 @@ const CONTENT = {
  eyebrow:'Modul 3 dari 4',
  title:'Setelah Pelajaran',
  desc:'Pekerjaan rumah yang tidak dikumpulkan karena siswa tidak bisa masuk, platform di ponsel atau tablet, pelajaran yang hilang, dan cara menuntaskan komunikasi dengan keluarga.',
- obj:'Memastikan masalah teknis tidak membuat keluarga tertinggal pekerjaan rumah atau tidak mendapat jawaban, dan mengenalinya sebelum mengira itu sebagai “tidak mengumpulkan”.',
+ obj:'Memastikan masalah teknis tidak membuat siswa tertinggal di pekerjaan rumah atau tidak mendapat jawaban, dan mengenalinya sebelum tutor mengira bahwa siswa “tidak mengumpulkan”.',
  sections:[
   {t:'🔍 Saat siswa tidak mengumpulkan, mungkin dia tidak bisa', html:`
    <div class="card"><p>Sebelum berpikir soal kurangnya motivasi, cek apakah siswa <strong>bisa masuk</strong> untuk mengerjakan pekerjaan rumahnya. Beberapa keluarga mengeluh bahwa mereka tidak bisa membuka pekerjaan rumah dan tidak ada yang memberi mereka pilihan.</p></div>
@@ -386,7 +386,7 @@ const CONTENT = {
       say:`Jelaskan keterbatasannya dengan hangat: <em>“Beberapa bagian tidak tampil dengan baik di ponsel; di komputer, atau dengan situs desktop, jauh lebih lancar.”</em>`},
      {ic:'📲', title:`Platform tidak sepenuhnya berfungsi di ponsel atau tablet`,
       do:`Ini adalah <strong>keterbatasan yang sudah diketahui</strong> (misalnya, berbagi layar tidak memungkinkan dari ponsel). Jika kursusnya membutuhkannya, laporkan.`},
-     {ic:'🗂️', title:`Pekerjaan rumah tidak muncul di notebook atau dashboard`,
+     {ic:'🗂️', title:`Pekerjaan rumah tidak muncul di Platform siswa`,
       do:`Laporkan dengan tangkapan layar.`},
      {ic:'📼', title:`Dia kehilangan pelajaran karena gangguan`,
       do:`Kirim rekaman dan bagian pentingnya, susun rencana pemulihan, dan bicarakan dengan Team Leader-mu di hari yang sama — kamu bisa mengajukan pelajaran tambahan.`,
@@ -395,8 +395,6 @@ const CONTENT = {
   `},
   {t:'🔁 Tuntaskan komunikasinya', html:`
    <div class="card"><p>Saat masalahnya sudah teratasi, <strong>beri tahu keluarga</strong>. Orang tua yang mendapat kabar adalah orang tua yang bertahan.</p></div>
-   <div class="card" style="background:var(--surface2)"><h4>💬 Pesan penutup yang bisa kamu pakai</h4>
-   <p style="font-size:13.5px;line-height:1.75"><em>“Halo, [nama orang tua]. Saya ingin mengabarkan bahwa masalah akses yang dialami [siswa] sekarang sudah teratasi. Terima kasih atas kesabaran Anda. Jika ada kendala lagi, silakan hubungi saya dan kami akan segera mengeceknya.”</em></p></div>
   `}
  ],
  ix:{
@@ -410,19 +408,19 @@ const CONTENT = {
   ]
  }
 },
-{id:'report', numLabel:'Modul 4', emoji:'📮', color:'#F58AC4', art:'report', learn:[['🆘','Ke mana meminta bantuan dan siapa yang dihubungi'],['🛣️','Pilih jalur yang tepat'],['📅','Pelajaran tambahan dan penjadwalan ulang'],['🧾','Tulis laporan yang lengkap'],['💛','Balas keluarga tepat waktu'],['🖥️','Berlatih di simulasi BO']],
+{id:'report', numLabel:'Modul 4', emoji:'📮', color:'#F58AC4', art:'report', learn:[['🆘','Kemana meminta bantuan dan siapa yang harus dihubungi'],['🛣️','Pilih jalur yang tepat'],['📅','Pelajaran tambahan dan penjadwalan ulang'],['🧾','Tulis laporan yang lengkap'],['💛','Balas keluarga tepat waktu'],['🖥️','Berlatih di simulasi BO']],
  eyebrow:'Modul 4 dari 4',
  title:'Lapor dan Eskalasi',
- desc:'Ke mana meminta bantuan dan siapa yang dihubungi di wilayahmu, siapa yang diberi tahu tergantung masalahnya, pelajaran tambahan dan penjadwalan ulang, apa saja isi laporan yang baik, cara membalas keluarga tepat waktu, dan simulasi BO untuk berlatih membuat laporan teknis.',
+ desc:'Kemana meminta bantuan dan siapa yang harus dihubungi di wilayahmu, siapa yang diberi tahu tergantung masalahnya, pelajaran tambahan dan penjadwalan ulang, apa saja isi laporan yang baik, cara membalas keluarga tepat waktu, dan simulasi BO untuk berlatih membuat laporan teknis.',
  obj:'Mengetahui ke mana meminta bantuan, siapa yang diberi tahu, dengan detail apa, dan dalam urutan apa — serta terus memberi kabar kepada keluarga tepat waktu. Masalah yang tidak dilaporkan, atau keluarga yang tidak dibalas, tidak pernah diketahui oleh siapa pun.',
  sections:[
-  {t:'🆘 Ke mana meminta bantuan dan siapa yang dihubungi', html:`
+  {t:'🆘 Kemana meminta bantuan dan siapa yang harus dihubungi', html:`
    <div class="card"><p><strong>Kirim pesan langsung ke Team Leader-mu.</strong> Saat kamu tidak bisa menyelesaikan masalah teknis sendiri, Team Leader-mu yang akan mengeskalasikannya ke dukungan teknis — kamu tidak perlu mencari saluran lain.</p></div>
    <div class="card" style="background:var(--surface2)"><h4>👥 Siapa yang dihubungi</h4>
    <div class="tbl-wrap"><table>
     <tr><th>Apa yang terjadi</th><th>Siapa</th></tr>
     <tr><td>Masalah teknis yang tidak bisa kamu selesaikan (Classroom, tautan, platform)</td><td>Team Leader-mu</td></tr>
-    <tr><td>Kredit pelajaran kurang, jadwal yang salah, pemotongan pelajaran yang tidak adil</td><td>Team Leader-mu + Client Service + komentar di BO (Operations: <strong>@Diah Sukmawati</strong>)</td></tr>
+    <tr><td>Kredit pelajaran kurang, jadwal yang salah, pemotongan pelajaran yang tidak adil</td><td>Team Leader-mu + CS + komentar di BO (Operations: <strong>@Diah Sukmawati</strong>)</td></tr>
     <tr><td>Pelajaran tambahan, atau pelajaran yang tidak bisa dilaksanakan</td><td>Team Leader-mu</td></tr>
    </table></div></div>
   `},
@@ -431,15 +429,15 @@ const CONTENT = {
    <div class="tbl-wrap"><table>
     <tr><th>Jalur</th><th>Kapan</th><th>Ke mana</th></tr>
     <tr><td><strong>1. Gangguan Classroom atau platform</strong><br>(tidak bisa masuk / tombol bergabung tidak muncul, layar hitam, audio, papan tulis, room, tautan rusak)</td><td>Solusi cepat tidak menyelesaikannya</td><td>Team Leader-mu (dia yang mengeskalasikannya ke dukungan teknis) + komentar di BO</td></tr>
-    <tr><td><strong>2. Akun dan Operations</strong><br>(pendaftaran, kredensial, jadwal, lisensi, kredit pelajaran, pemotongan)</td><td>Siswa tidak bisa masuk karena masalah akun: tidak terdaftar, kredensialnya tidak berfungsi, jadwalnya salah, atau pelajaran dipotong secara tidak adil</td><td>Team Leader + Client Service + komentar di BO (Operations: @Diah Sukmawati)</td></tr>
-    <tr><td><strong>3. Pelajaran yang hilang</strong><br>(satu pelajaran atau lebih terganggu)</td><td>Karena gangguan platform, pembatalan, atau ketidakhadiran</td><td><strong>Team Leader di hari yang sama</strong> (kamu bisa mengajukan pelajaran tambahan) + Client Service jika keluarga kecewa + komentar di BO</td></tr>
+    <tr><td><strong>2. Akun dan Operations</strong><br>(pendaftaran, kredensial, jadwal, lisensi, kredit pelajaran, pemotongan)</td><td>Siswa tidak bisa masuk karena masalah akun: tidak terdaftar, kredensialnya tidak berfungsi, jadwalnya salah, atau pelajaran dipotong secara tidak adil</td><td>Team Leader + CS + komentar di BO (Operations: @Diah Sukmawati)</td></tr>
+    <tr><td><strong>3. Pelajaran yang hilang</strong><br>(satu pelajaran atau lebih terganggu)</td><td>Karena gangguan platform, pembatalan, atau ketidakhadiran</td><td><strong>Team Leader di hari yang sama</strong> (kamu bisa mengajukan pelajaran tambahan) + CS jika keluarga kecewa + komentar di BO</td></tr>
    </table></div></div>
   `},
   {t:'📅 Pelajaran tambahan dan penjadwalan ulang', html:`
    ${iconGrid([
      {ic:'➕', html:`<strong>Pelajaran tambahan: kamu yang mengajukan, Team Leader-mu yang memutuskan.</strong> Kamu bisa mengajukannya saat ada masalah yang bisa membuat siswa pergi — seperti masalah teknis — atau untuk membantu siswa mengejar materi.`},
      {ic:'🚫', html:`<strong>Jangan pernah menawarkan pelajaran tambahan kepada keluarga</strong> sebelum Team Leader-mu menyetujuinya.`},
-     {ic:'🎥', html:`<strong>Ada yang tidak bisa masuk?</strong> Zoom (direkam) ada justru agar pelajaran tidak ditunda.`},
+     {ic:'🎥', html:`<strong>Ada yang tidak bisa masuk?</strong> Rekaman kelas ada justru agar pelajaran tidak ditunda. Mari kirimkan!`},
      {ic:'🕒', html:`<strong>Kamu tidak menjadwal ulang pelajaran atas inisiatifmu sendiri.</strong> Jika benar-benar tidak ada cara untuk mengadakannya, bicarakan dengan Team Leader-mu.`}
    ])}
   `},
@@ -471,14 +469,13 @@ const CONTENT = {
   {t:'🔢 Urutannya penting', html:`
    ${iconGrid([
      {ic:'👥', html:`<strong>Tim dulu, keluarga kemudian.</strong> Saat masalahnya menyangkut lebih dari sekadar pengajaranmu (akses, jadwal, kredit, pelajaran yang hilang), jangan menulis hal lain ke keluarga sebelum berbicara dengan Team Leader-mu. Pengecualiannya: kamu <strong>selalu boleh langsung membalas</strong> dengan pesan singkat bahwa pesannya sudah kamu terima (<em>“Saya sudah melihatnya dan sedang mengeceknya”</em>). Pilihan, penjelasan, kompensasi, atau pelajaran tambahan baru disampaikan setelah kamu berbicara dengan Team Leader-mu.`},
-     {ic:'🎓', html:`<strong>Kamu bicara soal pembelajaran; tindakannya kamu serahkan.</strong> Kamu bisa menyampaikan apa yang sudah kamu coba di pelajaran dan bahwa kamu sedang mengeceknya. Pilihan-pilihannya (pelajaran tambahan, pindah grup atau kursus, kompensasi) datang dari Team Leader-mu dan Client Service.`},
+     {ic:'🎓', html:`<strong>Kamu bicara soal pembelajaran; tindakannya kamu serahkan.</strong> Kamu bisa menyampaikan apa yang sudah kamu coba di pelajaran dan bahwa kamu sedang mengeceknya. Pilihan-pilihannya (pelajaran tambahan, pindah grup atau kursus, kompensasi) datang dari Team Leader-mu dan CS.`},
      {ic:'⚖️', html:`<strong>Jangan pernah berjanji dan jangan pernah menolak.</strong> Bukan <em>“kami akan memberi pelajaran tambahan”</em> dan bukan juga <em>“itu tidak mungkin”</em>. Tunjukkan bahwa kamu peduli dan sudah menanganinya.`},
      {ic:'📅', html:`<strong>Eskalasikan sekali lalu tindak lanjuti.</strong> Pasang pengingat di kalendermu untuk menindaklanjuti setelah 24 jam.`}
    ])}
-   ${co('co-ok','💬',`<p><strong>Pesan yang bisa kamu kirim</strong> (setelah disepakati dengan Team Leader-mu): <em>“Halo, [nama orang tua]. Saya melihat [siswa] tidak bisa masuk ke pelajaran hari ini. Saya sudah melaporkannya ke tim saya dengan semua detailnya, dan Client Service akan menghubungi Anda. Sementara itu, saya kirimkan rekamannya agar tidak ada materi yang terlewat.”</em></p>`)}
   `},
   {t:'💛 Balas tepat waktu: keluarga memperhatikan usahamu', html:`
-   <div class="card"><p>Gangguan teknis jarang menjadi satu-satunya alasan keluarga pergi. Yang menentukan adalah apa yang terjadi <strong>sesudahnya</strong>: apakah ada yang membalas, apakah anaknya bisa masuk lagi, apakah keluarga merasa ada yang peduli? Saat orang tua melihat bahwa kamu berusaha agar semuanya berjalan — kamu membalas dengan cepat, kamu menindaklanjuti, kamu memastikan anak mereka mendapat pelajaran sebaik mungkin — mereka menyadarinya. Usaha itulah yang membuat banyak keluarga <strong>memberi kita kesempatan kedua</strong>. Diam memberi tahu mereka hal sebaliknya.</p></div>
+   <div class="card"><p>Gangguan teknis jarang menjadi satu-satunya alasan siswa pergi. Yang menentukan adalah apa yang terjadi <strong>sesudahnya</strong>: apakah ada yang membalas, apakah anaknya bisa masuk lagi, apakah keluarga merasa ada yang peduli? Saat orang tua melihat bahwa kamu berusaha agar semuanya berjalan — kamu membalas dengan cepat, kamu menindaklanjuti, kamu memastikan anak mereka mendapat pelajaran sebaik mungkin — mereka menyadarinya. Usaha itulah yang membuat banyak keluarga <strong>memberi kita kesempatan kedua</strong>. Tutor yang hanya diam dan tidak melakukan apa pun tidak akan membuat siswa bertahan atau masalahnya selesai.</p></div>
    ${co('co-danger','🚨',`<p><strong>Jangan menganggap masalah teknis sebagai hal kecil.</strong> Bagimu mungkin itu hanya layar hitam. Bagi keluarga, itu adalah pelajaran yang sudah mereka bayar, anak yang kecewa, dan sebuah keraguan: <em>“apakah ini sepadan?”</em> Tanggapi dengan serius, bahkan jika hanya berlangsung lima menit — terutama jika keluarga sudah menunjukkan bahwa mereka kecewa.</p>`)}
    ${rclock([
      {ic:'👀', when:'Segera', t:'Sudah dilihat, sedang ditangani', d:'Tanggapi pesan mereka saat itu juga, meskipun kamu belum punya jawabannya.'},
@@ -495,7 +492,7 @@ const CONTENT = {
      opts:[
       {t:`“Selamat malam! Classroom biasanya lancar, mungkin masalahnya di internet Anda. Coba pakai browser lain.”`, ok:false, fb:`Kamu menyalahkan keluarga dan platform sekaligus, dan tidak menunjukkan kepedulian sama sekali. Orang tua akan membacanya sebagai “bukan urusan saya”.`},
       {t:`“Saya mohon maaf sekali — kehilangan dua pelajaran itu tidak bisa dibiarkan, dan saya mengerti betapa kecewanya dia. Saya sudah membaca pesan Anda dan sedang menanganinya: hari ini saya melaporkannya dengan semua detailnya ke tim saya. Besok pagi saya akan menghubungi Anda lagi dengan kabar terbaru, dan di pelajaran berikutnya saya akan masuk lebih awal untuk memastikan dia bisa masuk.”`, ok:true, fb:`Ini dia. Balasan ini mengakui masalah dan perasaannya, menunjukkan usaha yang konkret, menyebutkan kapan kamu akan menghubungi lagi, dan tidak menjanjikan apa pun yang bukan wewenangmu.`},
-      {t:`“Jangan khawatir, saya akan memberinya pelajaran tambahan gratis sebagai gantinya!”`, ok:false, fb:`Niatnya baik, tapi itu bukan hakmu untuk dijanjikan: pelajaran tambahan dan kompensasi diputuskan bersama Team Leader-mu dan Client Service. Jika ternyata tidak bisa terlaksana, keluarga kehilangan kepercayaan lagi.`},
+      {t:`“Jangan khawatir, saya akan memberinya pelajaran tambahan gratis sebagai gantinya!”`, ok:false, fb:`Niatnya baik, tapi itu bukan hakmu untuk dijanjikan: pelajaran tambahan dan kompensasi diputuskan bersama Team Leader-mu dan CS. Jika ternyata tidak bisa terlaksana, keluarga kehilangan kepercayaan lagi.`},
       {t:`Aku akan membalas besok, setelah punya jawaban lengkap.`, reply:`<i>(tidak ada balasan malam ini…)</i>`, ok:false, fb:`Diam adalah pilihan terburuk. Orang tua itu sudah kecewa; setiap jam tanpa jawaban menegaskan bahwa tidak ada yang peduli. Selalu tanggapi saat itu juga.`}
      ]
    })}
@@ -506,8 +503,8 @@ const CONTENT = {
   title:'Laporkan dengan baik, dan sesuai urutan',
   instr:'Pilih jalurnya, komentar terbaik, dan apa yang akan kamu katakan. 70% untuk menyelesaikan modul ini.',
   items:[
-   {type:'sort', prompt:'Laporan ini masuk ke jalur mana?', card:`Keluarga mengatakan dua pelajaran dipotong dari paket mereka, padahal hanya satu yang terlaksana.`, zones:[{label:'1️⃣ Gangguan Classroom atau platform', fb:'Belum tepat — tidak ada yang gagal di Classroom; ini soal kredit pelajaran.'},{label:'2️⃣ Akun dan Operations', fb:'Benar — kredit dan pemotongan dilaporkan ke Team Leader-mu dan Client Service, dengan komentar di BO. Tim Operations yang meninjaunya.'},{label:'3️⃣ Pelajaran yang hilang', fb:'Belum tepat — pelajarannya tidak hilang karena gangguan; ini soal kredit.'}], correctZone:1},
-   {type:'sort', prompt:'Laporan ini masuk ke jalur mana?', card:`Papan tulis tetap terlihat setelah ditutup, dan keluar lalu bergabung lagi tidak mengatasinya.`, zones:[{label:'1️⃣ Gangguan Classroom atau platform', fb:'Benar — solusi cepat tidak menyelesaikannya: laporkan (kirim pesan ke Team Leader-mu) dengan komentar di BO.'},{label:'2️⃣ Akun dan Operations', fb:'Belum tepat — ini tidak ada hubungannya dengan akun siswa.'},{label:'3️⃣ Pelajaran yang hilang', fb:'Belum tepat — pelajarannya tetap berjalan; ini gangguan Classroom.'}], correctZone:0},
+   {type:'sort', prompt:'Laporan ini masuk ke jalur mana?', card:`Keluarga mengatakan dua pelajaran dipotong dari paket mereka, padahal hanya satu yang terlaksana.`, zones:[{label:'1️⃣ Gangguan Classroom atau platform', fb:'Belum tepat — tidak ada yang gagal di Classroom; ini soal kredit pelajaran.'},{label:'2️⃣ Akun dan Operations', fb:'Benar — kredit dan pemotongan dilaporkan ke Team Leader-mu dan CS, dengan komentar di BO. Tim Operations yang meninjaunya.'},{label:'3️⃣ Pelajaran yang hilang', fb:'Belum tepat — pelajarannya tidak hilang karena gangguan; ini soal kredit.'}], correctZone:1},
+   {type:'sort', prompt:'Laporan ini masuk ke jalur mana?', card:`Tampilan papan tulis (whiteboard) tidak mau hilang meskipun sudah ditutup. Keluar kelas lalu masuk lagi juga tidak mengatasi masalah ini.`, zones:[{label:'1️⃣ Gangguan Classroom atau platform', fb:'Benar — solusi cepat tidak menyelesaikannya: laporkan (kirim pesan ke Team Leader-mu) dengan komentar di BO.'},{label:'2️⃣ Akun dan Operations', fb:'Belum tepat — ini tidak ada hubungannya dengan akun siswa.'},{label:'3️⃣ Pelajaran yang hilang', fb:'Belum tepat — pelajarannya tetap berjalan; ini gangguan Classroom.'}], correctZone:0},
    {type:'choice', prompt:`Mana komentar BO terbaik untuk kasus yang sama?`, opts:[`“Tidak bisa masuk, koneksi jelek.”`,`“3/11, pelajaran 2. Tidak bisa masuk: banner ‘System not supported’ di layar sebelum bergabung. Windows 7, Chrome versi terbaru. Sudah mencoba refresh dan bergabung ulang, 10 menit; mengikuti demo saya selama sisa pelajaran. Tangkapan layar terlampir. Tautan BO grup dan siswa.”`,`“Platformnya bermasalah lagi, selalu begini.”`], correct:1, fb:`Komentar yang berguna itu lengkap dan netral: tanggal, apa yang gagal, banner-nya, perangkatnya, apa yang sudah dicoba, bagaimana pelajaran berlanjut, tangkapan layar, dan tautan BO.`},
    {type:'choice', prompt:`Seorang siswa kehilangan pelajaran karena gangguan platform, dan keluarganya tidak puas. Apa yang didahulukan?`, opts:[`Menulis ke keluarga dan menawarkan pelajaran tambahan`,`Menunggu dan melihat apakah pelajaran berikutnya berjalan lancar`,`Berbicara dengan Team Leader-mu di hari yang sama, mengajukan pelajaran tambahan, dan menyepakati bersamanya pesan untuk keluarga`], correct:2, fb:`Tim dulu, keluarga kemudian. Kamu bisa mengajukan pelajaran tambahan; Team Leader-mu yang memutuskan, dan baru setelah itu keluarga diberi tahu.`},
    {type:'choice', prompt:`Seorang siswa melewatkan sebagian besar pelajaran karena masalah teknis dan sekarang tertinggal dari grupnya. Apa yang bisa kamu lakukan?`, opts:[`Menjanjikan pelajaran tambahan gratis kepada keluarga`,`Mengajukan pelajaran tambahan ke Team Leader-mu — pelajaran tambahan memang ada untuk masalah yang bisa membuat siswa pergi, atau untuk membantunya mengejar materi`,`Tidak ada — siswa akan mengejar sendiri`], correct:1, fb:`Kamu bisa mengajukannya; Team Leader-mu yang memutuskan. Keluarga baru diberi tahu setelah disetujui.`},

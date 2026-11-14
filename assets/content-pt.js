@@ -88,7 +88,7 @@ const CONTENT = {
    <div class="card"><p>Um problema técnico raramente vem sozinho. Ele aparece nas primeiras aulas, enquanto a família ainda está decidindo se a Kodland é a escolha certa — e às vezes antes de a criança ter assistido a uma única aula.</p></div>
    ${bigStat('≈ 1 em 20',`<p>pedidos de reembolso tem um <strong>problema técnico real</strong> por trás. E isso é o mínimo: alguns desses casos chegam registrados com outro motivo.</p>`)}
    <p style="font-size:11.5px;color:var(--text-muted)">Com base nos pedidos de reembolso dos últimos 90 dias em todas as regiões; números aproximados.</p>
-   ${co('co-idea','💡',`<p><strong>As primeiras aulas são a janela mais estreita.</strong> Um problema técnico resolvido no mesmo dia normalmente é revertido; o mesmo problema resolvido tarde quase nunca é. Por isso as primeiras aulas contam, e por isso o mesmo dia conta.</p>`)}
+   ${co('co-idea','💡',`<p><strong>As primeiras aulas são a janela mais estreita.</strong> Um problema técnico resolvido no mesmo dia normalmente tem a situação revertida; o mesmo problema resolvido tarde quase nunca tem. Por isso as primeiras aulas contam, e por isso o mesmo dia conta.</p>`)}
   `},
   {t:'🔎 Os problemas que este treinamento aborda', html:`
    ${iconGrid([
@@ -121,7 +121,7 @@ const CONTENT = {
      {ic:'⏱️', html:`<strong>15 minutos antes:</strong> Chrome para computador atualizado, outros aplicativos fechados; microfone, câmera e compartilhamento de tela testados; grupo e lista de alunos conferidos no BO.`},
      {ic:'🅱️', html:`<strong>Um plano B pronto:</strong> o que você vai fazer se o aluno não conseguir entrar, se o áudio falhar ou se a ferramenta do curso não abrir (Módulos 1 e 2).`},
      {ic:'👀', html:`<strong>Atenção específica</strong> para essa criança — faça com que ela se sinta notada por algo concreto, e não elogiada de forma genérica.`},
-     {ic:'🏆', html:`<strong>Uma conquista cedo e visível.</strong> Ela deve sair da aula se sentindo capaz, e não atrasada.`}
+     {ic:'🏆', html:`<strong>Uma conquista rápida e visível.</strong> Ela deve sair da aula se sentindo capaz, e não atrasada.`}
    ])}
    ${co('co-danger','🚨',`<p><strong>Se a falha se repetir nessa aula, relate imediatamente</strong> pelo <strong>bot EU Request from Tutors</strong> — não no fim do dia.</p>`)}
   `},
@@ -135,7 +135,7 @@ const CONTENT = {
    ${co('co-ok','✅',`<p><strong>A frase que é sempre segura:</strong> <em>“O departamento de Atendimento ao Cliente vai ajudar você com isso.”</em> É aí que termina a sua parte na conversa.</p>`)}
   `},
   {t:'🌱 Mantenha o esforço depois', html:`
-   <div class="card"><p>Mesmo que o pedido seja retirado ou que a criança mude de grupo, continue cuidando do lado técnico das aulas dela nas semanas seguintes: entre mais cedo, teste sua configuração e pergunte se está tudo funcionando. Uma recuperação que dura uma aula e depois volta silenciosamente ao normal muitas vezes não se sustenta.</p></div>
+   <div class="card"><p>Mesmo que o pedido seja retirado ou que a criança mude de grupo, continue cuidando do lado técnico das aulas dela nas semanas seguintes: entre mais cedo, teste sua configuração e pergunte se está tudo funcionando. Uma recuperação que dura uma aula e depois volta silenciosamente ao que era antes muitas vezes não se sustenta.</p></div>
   `}
  ],
  ix:{
@@ -225,7 +225,7 @@ const CONTENT = {
      <tr><td>Minecraft</td><td>Windows, Mac ou Linux. Java Edition recomendada. 4 GB. É necessária uma conta do Minecraft.</td><td>🟡 Verificar</td></tr>
     </table></div>`)}
    ${co('co-idea','📌',`<p><strong>A regra:</strong> se você vir no BO que o aluno tem um curso <strong>🟡 Verificar</strong>, confirme o dispositivo antes da aula 1, com uma mensagem aprovada pelo seu Team Leader.</p>`)}
-   ${co('co-danger','💻',`<p><strong>Se o computador não roda o curso, ele não deveria ter sido vendido assim — e não cabe a você resolver.</strong> Relate ao seu Team Leader; as equipes de Ensino e de Vendas decidem juntas como e onde o aluno continua. Nunca diga à família que compre um computador novo nem que troque de curso por conta própria. Enquanto isso, mantenha a aula útil com as alternativas do Módulo 2.</p>`)}
+   ${co('co-danger','💻',`<p><strong>Se o computador não roda o curso, ele não deveria ter sido vendido assim — e não cabe a você resolver.</strong> Relate ao seu Team Leader; as equipes de Ensino e de Vendas decidem juntas como e onde o aluno continua. Nunca diga à família para comprar um computador novo nem para trocar de curso por conta própria. Enquanto isso, mantenha a aula útil com as alternativas do Módulo 2.</p>`)}
   `}
  ],
  ix:{
@@ -370,7 +370,7 @@ const CONTENT = {
       do:`Confirme o navegador (Chrome para computador), o dispositivo e os dados de login — você os encontra no BO e pode enviá-los de novo. Se nada mudar, relate com os links do BO do aluno e do grupo, e <strong>acompanhe depois de 24 horas</strong>.`,
       say:`<em>“Estou verificando com a minha equipe e te escrevo amanhã.”</em>`},
      {ic:'🧩', title:`O programa do curso não abriu durante a aula`,
-      do:`Depois da aula, faça a instalação ou o login junto com o aluno (e a alternativa para o curso dele do Módulo 2). Se ainda não funcionar, peça suporte técnico pelo <strong>bot EU Request from Tutors</strong>.`},
+      do:`Depois da aula, faça a instalação ou o login junto com o aluno (e aplique a alternativa para o curso dele do Módulo 2). Se ainda não funcionar, peça suporte técnico pelo <strong>bot EU Request from Tutors</strong>.`},
      {ic:'🎙️', title:`O microfone ou a câmera não funcionou`,
       do:`Se entrar de novo e verificar o dispositivo não ajudou, relate e peça ao suporte técnico que faça um teste com o aluno ao longo da semana seguinte. Até lá, o aluno participa pelo chat e pelas reações.`},
      {ic:'📱', title:`Só conseguem entrar pelo celular e a plataforma não aparece bem`,
@@ -387,8 +387,6 @@ const CONTENT = {
   `},
   {t:'🔁 Feche o ciclo', html:`
    <div class="card"><p>Quando o problema estiver resolvido, <strong>avise a família</strong>. Um responsável bem informado é um responsável que fica.</p></div>
-   <div class="card" style="background:var(--surface2)"><h4>💬 Uma mensagem de encerramento que você pode usar</h4>
-   <p style="font-size:13.5px;line-height:1.75"><em>“Olá, [nome do responsável]. Estou escrevendo para avisar que o problema de acesso que o(a) [aluno] teve já foi resolvido. Obrigado(a) pela paciência. Se acontecer algo de novo, me escreva e vamos verificar na hora.”</em></p></div>
   `}
  ],
  ix:{
@@ -471,7 +469,6 @@ const CONTENT = {
      {ic:'⚖️', html:`<strong>Nunca prometa e nunca recuse.</strong> Nem <em>“vamos te dar uma aula extra”</em> nem <em>“isso não é possível”</em>. Mostre, sim, que você se importa e que já está cuidando disso.`},
      {ic:'📅', html:`<strong>Escale uma vez e acompanhe.</strong> Coloque um lembrete na sua agenda para verificar daqui a duas aulas.`}
    ])}
-   ${co('co-ok','💬',`<p><strong>Uma mensagem que você pode enviar</strong> (depois de alinhar com seu Team Leader): <em>“Olá, [nome do responsável]. Vi que o(a) [aluno] não conseguiu entrar na aula de hoje. Já relatei para a minha equipe com todos os detalhes, e o Client Service vai entrar em contato com vocês. Enquanto isso, estou enviando a gravação para que nada do que vimos se perca.”</em></p>`)}
   `},
   {t:'💛 Responda a tempo: as famílias percebem o seu esforço', html:`
    <div class="card"><p>Uma falha técnica raramente é o único motivo de uma família desistir. O que decide é o que acontece <strong>depois</strong>: alguém responde, a criança volta a conseguir entrar, a família sente que alguém se importa? Quando os pais veem que você está se esforçando para que tudo funcione — responde rápido, acompanha, garante que o filho tenha a melhor aula possível — eles percebem. Esse esforço é o que faz muitas famílias <strong>nos darem uma segunda chance</strong>. O silêncio diz o contrário.</p></div>

@@ -391,8 +391,6 @@ const CONTENT = {
   `},
   {t:'🔁 Close the loop', html:`
    <div class="card"><p>When the problem is solved, <strong>let the family know</strong>. An informed parent is a parent who stays.</p></div>
-   <div class="card" style="background:var(--surface2)"><h4>💬 A closing message you can use</h4>
-   <p style="font-size:13.5px;line-height:1.75"><em>"Hi [parent's name]. I'm writing to let you know that the access problem [student] had is now fixed. Thank you for your patience. If anything happens again, write to me and we'll look into it right away."</em></p></div>
   `}
  ],
  ix:{
@@ -471,7 +469,6 @@ const CONTENT = {
      {ic:'⚖️', html:`<strong>Never promise and never refuse.</strong> Neither <em>"we'll give you an extra lesson"</em> nor <em>"that's not possible"</em>. Do show that you care and that you're already on it.`},
      {ic:'📅', html:`<strong>Escalate once and follow up.</strong> Put a reminder in your calendar to follow up after 24 hours.`}
    ])}
-   ${co('co-ok','💬',`<p><strong>A message you can send</strong> (once agreed with your Team Leader): <em>"Hi [parent's name]. I saw that [student] couldn't get into the lesson today. I've already reported it to my team with all the details, and Client Service will get in touch with you. In the meantime, I'm sending you the recording so nothing we covered is lost."</em></p>`)}
   `},
   {t:'💛 Reply on time: families notice your effort', html:`
    <div class="card"><p>A technical failure is rarely the only reason a family leaves. What decides it is what happens <strong>next</strong>: does someone answer, does the child get back in, does the family feel that somebody cares? When parents see that you are working so that everything runs — you reply quickly, you follow up, you make sure their child gets the best possible lesson — they notice. That effort is what makes many families <strong>give us a second chance</strong>. Silence tells them the opposite.</p></div>

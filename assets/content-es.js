@@ -81,12 +81,12 @@ const CONTENT = {
 {id:'intro', numLabel:'Introducción', emoji:'🧩', color:'#5DD39E', art:'lifebuoy', learn:[['📊','Lo que muestran los datos'],['🔎','Los problemas que cubre este entrenamiento'],['🧭','Qué es tuyo y qué no'],['🛟','Qué hacer si ya existe una solicitud de reembolso'],['🎯','Cómo hacer de tu próxima clase el intento de recuperación']],
  eyebrow:'Introducción',
  title:'Por qué estás aquí',
- desc:'Por qué un problema técnico en las primeras clases nos puede costar una familia, qué parte es tuya — y qué hacer si ya existe una solicitud de reembolso.',
- obj:'Entender por qué un problema técnico en las primeras clases nos puede costar una familia, qué parte es tuya y qué hacer cuando ya existe una solicitud de reembolso.',
+ desc:'Por qué los problemas técnicos durante las primeras clases pueden llevar a una familia a abandonar el curso, cuál es tu responsabilidad y cómo actuar cuando ya existe una solicitud de reembolso.',
+ obj:'Comprende por qué los problemas técnicos durante las primeras clases pueden llevar a una familia a abandonar el curso, cuál es tu responsabilidad y cómo actuar cuando ya existe una solicitud de reembolso.',
  sections:[
   {t:'📊 Lo que muestran los datos', html:`
-   <div class="card"><p>Un problema técnico casi nunca llega solo. Aparece en las primeras clases, cuando la familia todavía está decidiendo si Kodland es para ellos — y a veces antes de que el niño haya visto una sola clase.</p></div>
-   ${bigStat('≈ 1 de cada 20',`<p>solicitudes de reembolso tiene detrás un <strong>problema técnico real</strong>. Y es un mínimo: algunos de estos casos llegan etiquetados con otro motivo.</p>`)}
+   <div class="card"><p>Un problema técnico casi nunca llega solo. Aparece en las primeras clases, cuando la familia todavía está decidiendo si Kodland es la opción adecuada para ellos, incluso antes de que el niño haya asistido a su primera clase.</p></div>
+   ${bigStat('≈ 1 de cada 20',`<p>solicitudes de reembolso están relacionadas con un <strong>problema técnico real</strong>. Sin embargo, esta cifra representa solo una parte de los casos, ya que algunos se registran bajo otros motivos.</p>`)}
    <p style="font-size:11.5px;color:var(--text-muted)">Basado en las solicitudes de reembolso de los últimos 90 días en todas las regiones; cifras aproximadas.</p>
    ${co('co-idea','💡',`<p><strong>Las primeras clases son la ventana más estrecha.</strong> Un problema técnico resuelto el mismo día suele salvarse; el mismo problema resuelto tarde casi nunca. Por eso cuentan las primeras clases, y por eso cuenta el mismo día.</p>`)}
   `},
@@ -98,7 +98,7 @@ const CONTENT = {
    ])}
   `},
   {t:'🧭 Qué es tuyo y qué no', html:`
-   <div class="card"><p>No puedes arreglar un bug de la plataforma, una matrícula ni un horario. Pero hay mucho que sí está en tus manos — y lo más importante es <strong>avisar a las personas correctas, rápido y bien</strong>.</p>
+   <div class="card"><p>No puedes arreglar un bug de la plataforma, una matrícula ni un horario. Sin embargo, hay muchas acciones que sí están en tus manos. Lo más importante es <strong>avisar a las personas indicadas de manera rápida y con la información correcta</strong>.</p>
    <div class="tbl-wrap"><table>
     <tr><th>✅ Totalmente tuyo</th><th>🔁 Tuyo para adaptar y reportar</th><th>🚫 Fuera de tu control</th></tr>
     <tr><td>Revisar tu propia conexión, tu equipo y Chrome antes de cada clase<br>Enviar a la familia los datos de acceso que encuentras en BO</td><td>Un estudiante que no puede entrar o conectarse: ayúdalo con los primeros auxilios y <strong>repórtalo</strong></td><td>Corregir un bug de Classroom o de la plataforma</td></tr>
@@ -107,29 +107,29 @@ const CONTENT = {
     <tr><td>Probar las alternativas conocidas (recargar, volver a entrar, otra herramienta para el curso)</td><td>Un problema técnico que podría hacer que la familia se vaya: <strong>pide una clase extra a tu Team Leader</strong></td><td>Aprobar una clase extra, un cambio de horario o cualquier compensación</td></tr>
     <tr><td>Reportar el mismo día con datos completos</td><td>Una falla que afecta a varios estudiantes: triage, <strong>reporte</strong> y plan de recuperación</td><td>El proveedor de internet o la red de la casa de la familia</td></tr>
    </table></div></div>
-   ${co('co-ok','✅',`<p><strong>Tu parte tiene tres movimientos:</strong> primeros auxilios en la clase, ajustar la clase para que el daño sea el menor posible y <strong>reportar el mismo día</strong> con los datos completos.</p>`)}
+   ${co('co-ok','✅',`<p><strong>Tu responsabilidad se divide en tres acciones:</strong> brindar primeros auxilios durante la clase, realizar los ajustes necesarios para reducir el impacto del problema y <strong>reportarlo el mismo día</strong> con toda la información requerida.</p>`)}
    ${co('co-danger','⏱️',`<p><strong>No esperes en silencio.</strong> Si en 10 minutos no se resuelve, deja de intentarlo por tu cuenta: comunica, documenta, escala.</p>`)}
   `},
   {t:'🛟 Si ya existe una solicitud de reembolso por un problema técnico', html:`
    <div class="card"><p>Todo lo anterior trata de prevenirlo. Pero puede que estés abriendo este entrenamiento porque una familia <strong>ya</strong> pidió un reembolso por un problema técnico. Lee primero estas reglas.</p></div>
    ${co('co-idea','💡',`<p><strong>La solicitud la crea Servicio al Cliente, no tú.</strong> Te enteras por los comentarios de Servicio al Cliente en el perfil del estudiante en BO; no hay ningún aviso automático.</p>`)}
-   ${co('co-danger','🤐',`<p><strong>No digas nada sobre la solicitud</strong> — ni al niño ni a la familia — salvo que Servicio al Cliente te pida decir algo concreto. Si el niño la menciona, redirige con calidez y sigue enseñando.</p>`)}
+   ${co('co-danger','🤐',`<p><strong>No menciones la solicitud de reembolso</strong>, ni al estudiante ni a su familia, a menos que el equipo de Servicio al Cliente te indique expresamente qué debes comunicar. Si el niño la menciona, redirige con calidez y sigue enseñando.</p>`)}
   `},
   {t:'🎯 Tu próxima clase es el intento de recuperación', html:`
    <div class="card"><p>Esa clase tiene que ser <strong>técnicamente a prueba de fallas</strong>. Una segunda falla después de la solicitud es el peor escenario posible.</p></div>
    ${iconGrid([
      {ic:'⏱️', html:`<strong>15 minutos antes:</strong> Chrome de escritorio actualizado y las demás aplicaciones cerradas; micrófono, cámara y compartir pantalla probados; grupo y lista de estudiantes revisados en BO.`},
      {ic:'🅱️', html:`<strong>Un plan B listo:</strong> qué harás si el estudiante no puede entrar, si falla el audio o si no abre la herramienta de su curso (Módulos 1 y 2).`},
-     {ic:'👀', html:`<strong>Atención específica</strong> para ese niño — que se sienta notado por algo concreto, no elogiado de forma genérica.`},
+     {ic:'👀', html:`<strong>Atención específica</strong> para ese estudiante, procurando reconocer algo específico de su participación o desempeño, en lugar de ofrecerle un elogio genérico.`},
      {ic:'🏆', html:`<strong>Un logro temprano y visible.</strong> Debe salir de la clase sintiéndose capaz, no rezagado.`}
    ])}
-   ${co('co-danger','🚨',`<p><strong>Si la falla se repite en esa clase, repórtala de inmediato</strong> en el <strong>canal de ayuda para tutores</strong> — no al final del día.</p>`)}
+   ${co('co-danger','🚨',`<p><strong>Si el problema técnico vuelve a presentarse durante la clase, repórtalo inmediatamente</strong> a través del <strong>canal de ayuda para tutores</strong>, sin esperar hasta el final del día.</p>`)}
   `},
   {t:'📮 Reporta el mismo día y conoce la única frase segura', html:`
    ${numlist([
      'Deja un comentario en BO ese mismo día con exactamente lo que viste: fechas, qué falló, el mensaje de error o el banner, qué intentaste y una captura',
      'Incluye las palabras exactas de la familia, textualmente, si las tienes',
-     'Avisa a tu Team Leader ese mismo día — es también el momento de preguntar si tiene sentido una clase extra',
+     'Informa a tu Team Leader ese mismo día y aprovecha la oportunidad para consultar si sería conveniente programar una clase adicional',
      'Nunca confirmes que un reembolso fue aprobado, nunca hables de montos y nunca culpes a la plataforma'
    ])}
    ${co('co-ok','✅',`<p><strong>La frase que siempre es segura:</strong> <em>“Servicio al Cliente le ayudará con esto.”</em> Ahí termina tu parte de la conversación.</p>`)}
@@ -305,7 +305,7 @@ const CONTENT = {
      {ic:'🎚️', label:'Revisa que estén seleccionados el micrófono y la cámara correctos'},
      {ic:'📮', label:'¿Sigue sin funcionar? Repórtalo y pide a soporte técnico que lo pruebe durante la semana'}
    ])}
-   ${co('co-ok','💬',`<p><strong>Mientras tanto, el estudiante sigue aprendiendo.</strong> Puede asistir sin cámara y, de forma excepcional, incluso sin micrófono: se comunican por el chat y las reacciones. Nadie se queda fuera de la clase por un dispositivo.</p>`)}
+   ${co('co-ok','💬',`<p><strong>Mientras tanto, el estudiante sigue aprendiendo.</strong> El estudiante puede participar sin cámara y, de manera excepcional, incluso sin micrófono. En ese caso, podrá comunicarse mediante el chat y las reacciones, ya que ningún estudiante debe quedarse por fuera de la clase debido a las limitaciones de su dispositivo.</p>`)}
    ${co('co-danger','🔇',`<p><strong>Si silencias a un estudiante, vuelve a activar su micrófono.</strong> Dejar a un niño silenciado sin darte cuenta nos puede costar una familia.</p>`)}
   `},
   {t:'🧩 Cuando la herramienta del curso no funciona — alternativas por curso', html:`
@@ -322,8 +322,8 @@ const CONTENT = {
      ])}`},
      {ic:'🧊', title:'Modelado 3D', html:`${symCards([
        {ic:'⬇️', title:`Blender no funciona en el computador del estudiante`,
-        do:`<ul><li><strong>Prueba una versión anterior de Blender,</strong> descargada del sitio oficial de Blender.</li><li><strong>Si aun así no funciona,</strong> el computador no puede con el curso: repórtalo a tu Team Leader. Teaching y Ventas deciden cómo continúa el estudiante.</li></ul>`,
-        avoid:`Prometer un cambio de curso — esa decisión no es tuya.`}
+        do:`<ul><li><strong>Prueba una versión anterior de Blender,</strong> descargada del sitio oficial de Blender.</li><li><strong>Si después de realizar estos ajustes el problema persiste,</strong> es posible que el computador no cumpla con los requisitos del curso. En ese caso, informa a tu Team Leader, ya que los equipos de Teaching y Ventas serán los encargados de decidir cómo continuará el estudiante.</li></ul>`,
+        avoid:`No prometas un cambio de curso, puesto que esa decisión corresponde a los equipos responsables.`}
      ])}`},
      {ic:'🎨', title:'Creatividad digital', html:`${symCards([
        {ic:'📚', title:`Una de las herramientas en línea no funciona`,
@@ -346,14 +346,14 @@ const CONTENT = {
   `},
   {t:'👥 Cuando varios estudiantes fallan a la vez, o la clase se pierde', html:`
    ${doavoid(
-     ['Hacer triage: ¿falla uno o muchos? Si son muchos, es la plataforma — <strong>repórtalo ya</strong>, con el enlace de BO del grupo','Mantener viva la clase con quienes están conectados, y pedir a los demás que sigan por el chat','Si la clase se perdió, enviar la grabación y armar un plan de recuperación (Módulo 3)','Hacer una demostración, compartir el archivo del proyecto y planear una sesión de recuperación'],
+     ['Realiza una primera revisión para identificar si el problema afecta a un solo estudiante o a varios. Si afecta a varios, podría tratarse de una falla de la plataforma, por lo que debes <strong>reportarlo de inmediato</strong> e incluir el enlace del grupo en el Backoffice','Mantener viva la clase con quienes están conectados, y pedir a los demás que sigan por el chat','Si la clase se perdió, enviar la grabación y armar un plan de recuperación (Módulo 3)','Hacer una demostración, compartir el archivo del proyecto y planear una sesión de recuperación'],
      ['Pasar toda la clase ayudando a los estudiantes uno por uno mientras el resto se aburre','Hacer la tarea por el estudiante cuando la tecnología falla','Prometerle una clase extra a la familia','Reprogramar la clase por tu cuenta']
    )}
    ${co('co-danger','2️⃣',`<p><strong>Cuando un problema técnico compromete una clase</strong> — o dos seguidas — <strong>habla con tu Team Leader el mismo día.</strong> Puedes pedir una clase extra; tu Team Leader decide. Nunca se la prometas ni se la descartes tú a la familia.</p>`)}
   `},
   {t:'🆘 Classroom no funciona: qué hacer', html:`
-   <div class="card"><p><strong>Classroom siempre va primero.</strong> Está conectado con todo — pagos, grabaciones, asistencia. En tu región <strong>no se usa Zoom como alternativa</strong>: genera problemas con los pagos y afecta la calidad de la clase.</p></div>
-   ${numlist(['Prueba las soluciones rápidas de arriba durante un máximo de 10 minutos','¿No se resuelve? Avisa de inmediato a tu Team Leader y escribe en el canal de ayuda para tutores','Mantén viva la clase con quien esté conectado, y envía a los demás la grabación y lo esencial','Repórtalo el mismo día con un comentario en BO — si la clase se perdió, puedes pedirle una clase extra a tu Team Leader'])}
+   <div class="card"><p><strong>Classroom siempre va primero.</strong> Esta herramienta está integrada con otros procesos, como los pagos, las grabaciones y el registro de asistencia. Por esta razón, en tu región <strong>no se debe utilizar Zoom como alternativa</strong>, ya que puede generar inconvenientes con los pagos y afectar la calidad de la clase.</p></div>
+   ${numlist(['Prueba las soluciones rápidas de arriba durante un máximo de 10 minutos','¿No se resuelve? Avisa de inmediato a tu Team Leader y escribe en el canal de ayuda para tutores','Mantén viva la clase con quien esté conectado, y envía a los demás la grabación y lo esencial','Registra el problema el mismo día mediante un comentario en el Backoffice. Si la clase no pudo llevarse a cabo, puedes consultar con tu Team Leader la posibilidad de solicitar una clase adicional'])}
   `}
  ],
  ix:{
@@ -383,7 +383,7 @@ const CONTENT = {
   {t:'🩺 Síntomas después de la clase', html:`
    ${symCards([
      {ic:'🔒', title:`No puede entrar a la plataforma para hacer la tarea`,
-      do:`Confirma el navegador (Chrome de escritorio), el dispositivo y los datos de acceso — los encuentras en BO y puedes enviarlos de nuevo. Si no cambia nada, repórtalo con los enlaces de BO del estudiante y del grupo, y <strong>haz seguimiento a las 24 horas</strong>.`,
+      do:`Verifica que el estudiante esté utilizando Chrome desde un computador y confirma tanto el dispositivo como los datos de acceso. Esta información se encuentra en el Backoffice, desde donde puedes volver a enviarla si es necesario. Si no cambia nada, repórtalo con los enlaces de BO del estudiante y del grupo, y <strong>haz seguimiento a las 24 horas</strong>.`,
       say:`<em>“Lo estoy revisando con mi equipo y te escribo mañana.”</em>`},
      {ic:'🧩', title:`El programa del curso no abrió durante la clase`,
       do:`Después de la clase, revisa con el estudiante la instalación o el inicio de sesión (y la alternativa para su curso del Módulo 2). Si sigue sin funcionar, pide soporte técnico en el <strong>canal de ayuda para tutores</strong>.`},
@@ -403,8 +403,6 @@ const CONTENT = {
   `},
   {t:'🔁 Cierra el ciclo', html:`
    <div class="card"><p>Cuando el problema se resuelve, <strong>avísale a la familia</strong>. Un padre informado es un padre que se queda.</p></div>
-   <div class="card" style="background:var(--surface2)"><h4>💬 Un mensaje de cierre que puedes usar</h4>
-   <p style="font-size:13.5px;line-height:1.75"><em>“Hola, [nombre del padre o la madre]. Te escribo para contarte que el problema de acceso que tuvo [estudiante] ya está resuelto. Gracias por tu paciencia. Si vuelve a pasar algo, escríbeme y lo revisamos enseguida.”</em></p></div>
   `}
  ],
  ix:{
@@ -422,11 +420,11 @@ const CONTENT = {
  eyebrow:'Módulo 4 de 4',
  title:'Reportar y escalar',
  desc:'Dónde pedir ayuda y a quién contactar en tu región, a quién avisar según el problema, clases extra y reprogramaciones, qué incluye un buen reporte, cómo responder a la familia a tiempo y una simulación de BO para practicar un reporte técnico.',
- obj:'Saber dónde pedir ayuda, a quién avisar, con qué datos y en qué orden — y mantener informada a la familia a tiempo. Un problema que no se reporta, o una familia a la que no se le responde, no existe para nadie más.',
+ obj:'Identifica dónde solicitar ayuda, a quién informar, qué datos proporcionar y en qué orden hacerlo. Además, asegúrate de mantener a la familia informada oportunamente. Un problema que no se reporta, o una familia a la que no se le responde, no existe para nadie más.',
  sections:[
   {t:'🆘 Dónde pedir ayuda y a quién contactar', html:`
    <div class="card"><p>Cuando no puedes resolver tú solo un problema técnico, pide ayuda:</p>
-   ${numlist(['<strong>El canal de ayuda para tutores</strong> — para solicitudes y problemas técnicos; una persona responsable se encarga de ellos','<strong>Servicio al Cliente</strong> puede abrir una solicitud para contactar directamente a la familia cuando el problema está de su lado'])}</div>
+   ${numlist(['<strong>El canal de ayuda para tutores</strong> es el espacio destinado a gestionar solicitudes y reportar problemas técnicos, donde cada caso recibe la atención de una persona responsable','<strong>Servicio al Cliente</strong> puede abrir una solicitud para contactar directamente a la familia cuando el problema está de su lado'])}</div>
    <div class="card" style="background:var(--surface2)"><h4>👥 A quién contactar</h4>
    <div class="tbl-wrap"><table>
     <tr><th>Qué pasó</th><th>A quién</th></tr>
@@ -484,18 +482,17 @@ const CONTENT = {
      {ic:'⚖️', html:`<strong>Nunca prometas y nunca rechaces.</strong> Ni <em>“te damos una clase extra”</em> ni <em>“eso no es posible”</em>. Lo que sí: muestra que te importa y que ya estás en ello.`},
      {ic:'📅', html:`<strong>Escala una vez y haz seguimiento.</strong> Pon un recordatorio en tu calendario para revisarlo en dos clases.`}
    ])}
-   ${co('co-ok','💬',`<p><strong>Un mensaje que puedes enviar</strong> (una vez acordado con tu Team Leader): <em>“Hola, [nombre del padre o la madre]. Vi que hoy [estudiante] no pudo entrar a la clase. Ya lo reporté a mi equipo con todos los detalles, y Servicio al Cliente se pondrá en contacto contigo. Mientras tanto, te envío la grabación para que no se pierda nada de lo que vimos.”</em></p>`)}
   `},
   {t:'💛 Responde a tiempo: las familias notan tu esfuerzo', html:`
-   <div class="card"><p>Una falla técnica casi nunca es la única razón por la que una familia se va. Lo que decide es lo que pasa <strong>después</strong>: ¿alguien responde?, ¿el niño vuelve a entrar?, ¿la familia siente que a alguien le importa? Cuando los padres ven que te esfuerzas para que todo funcione — respondes rápido, das seguimiento, te aseguras de que su hijo tenga la mejor clase posible — lo notan. Ese esfuerzo es lo que hace que muchas familias <strong>nos den una segunda oportunidad</strong>. El silencio les dice lo contrario.</p></div>
-   ${co('co-danger','🚨',`<p><strong>No tomes un problema técnico como algo menor.</strong> Para ti puede ser una pantalla negra. Para la familia es una clase que pagaron, un niño decepcionado y una duda: <em>“¿vale la pena?”</em> Tómalo en serio, aunque solo haya durado cinco minutos — y más aún si la familia ya mostró que está molesta.</p>`)}
+   <div class="card"><p>Una falla técnica casi nunca es la única razón por la que una familia se va. Lo que decide es lo que pasa <strong>después</strong>: ¿alguien responde?, ¿el niño vuelve a entrar?, ¿la familia siente que a alguien le importa? Cuando las familias ven tu compromiso para que todo funcione, respondes con rapidez, haces seguimiento y procuras que su hijo tenga la mejor experiencia posible durante la clase, valoran ese esfuerzo. Ese esfuerzo es lo que hace que muchas familias <strong>nos den una segunda oportunidad</strong>. El silencio les dice lo contrario.</p></div>
+   ${co('co-danger','🚨',`<p><strong>No tomes un problema técnico como algo menor.</strong> Para ti puede ser una pantalla negra. Para la familia es una clase que pagaron, un niño decepcionado y una duda: <em>“¿vale la pena?”</em> Toma cada inconveniente en serio, incluso si solo duró cinco minutos, especialmente cuando la familia ya ha manifestado su inconformidad.</p>`)}
    ${rclock([
      {ic:'👀', when:'De inmediato', t:'Lo vi y estoy en eso', d:'Confirma que recibiste su mensaje al instante, aunque todavía no tengas la respuesta.'},
      {ic:'📮', when:'El mismo día', t:'Reporta y sincroniza', d:'Comentario en BO con todos los detalles, Team Leader informado y acuerdo sobre qué le dirás a la familia.'},
      {ic:'💬', when:'El mismo día', t:'Actualiza a la familia', d:'Cuéntales qué hiciste y cuándo les vas a volver a escribir — y cúmplelo, aunque no haya novedades.'},
      {ic:'🚪', when:'Próxima clase', t:'Haz que funcione', d:'Entra antes, prueba todo y comprueba que el estudiante entra. Después cierra el ciclo.'}
    ])}
-   ${co('co-ok','💬',`<p><strong>Confirmar la recepción siempre está permitido.</strong> Un mensaje corto y cálido — lo viste, te importa, estás en ello y cuándo volverás a escribir — no necesita la aprobación de nadie. Lo que espera a tu Team Leader es cualquier explicación, cualquier opción y todo lo relacionado con compensaciones.</p>`)}
+   ${co('co-ok','💬',`<p><strong>Confirmar la recepción siempre está permitido.</strong> Un mensaje breve y amable para informar que ya identificaste el problema, que estás trabajando en solucionarlo y cuándo volverás a comunicarte con la familia no necesita la aprobación de nadie. Lo que espera a tu Team Leader es cualquier explicación, cualquier opción y todo lo relacionado con compensaciones.</p>`)}
    ${chatMock({
      name:'Madre / padre', sub:'en línea', avatar:'👩', time:'18:02',
      msgs:[`Buenas noches. Es la <strong>segunda vez</strong> que mi hijo no puede entrar a la clase. Estamos pagando clases que no recibe y está muy decepcionado. ¿¿Qué está pasando??`],
@@ -508,7 +505,7 @@ const CONTENT = {
       {t:`Respondo mañana, cuando tenga la respuesta completa.`, reply:`<i>(sin respuesta esta noche…)</i>`, ok:false, fb:`El silencio es la peor opción. La familia ya está molesta; cada hora sin respuesta confirma que a nadie le importa. Confirma siempre la recepción de inmediato.`}
      ]
    })}
-   ${co('co-star','🌟',`<p><strong>Recuerda:</strong> una falla técnica se puede perdonar. Sentirse ignorado cuesta mucho más perdonarlo. Tu respuesta, tu seguimiento y tu esfuerzo para que el estudiante recupere el acceso y tenga la mejor clase posible es lo que muchas familias ven — y por lo que deciden quedarse.</p>`)}
+   ${co('co-star','🌟',`<p><strong>Recuerda:</strong> una falla técnica se puede perdonar. Sentirse ignorado cuesta mucho más perdonarlo. Tu capacidad de responder, hacer seguimiento y trabajar para que el estudiante recupere el acceso y disfrute de la mejor clase posible es lo que muchas familias valoran y puede influir en su decisión de continuar en el curso.</p>`)}
   `}
  ],
  ix:{
@@ -528,7 +525,7 @@ const CONTENT = {
  eyebrow:'Lista de verificación final',
  title:'Lista de verificación final',
  desc:'Aquí no hay examen — solo lo esencial de este mini-entrenamiento, antes, durante y después de la clase.',
- obj:'Repasa la lista de verificación de abajo. Este módulo no se califica — léela y luego finaliza el mini-entrenamiento.',
+ obj:'Repasa la lista de verificación de abajo. Este módulo no tiene calificación. Lee toda la información y, cuando termines, finaliza el mini-entrenamiento.',
  sections:[
   {t:'🛟 Si ya existe una solicitud de reembolso', html:`
    ${numlist([
@@ -545,7 +542,7 @@ const CONTENT = {
    ])}
   `},
   {t:'', html:`
-   ${co('co-star','⭐',`<p><strong>Eso es todo el mini-entrenamiento.</strong> Cuando estés listo, continúa — y luego completa el DST en el LMS para cerrar la tarea.</p>`)}
+   ${co('co-star','⭐',`<p><strong>Eso es todo el mini-entrenamiento.</strong> Cuando estés listo, continúa con el siguiente paso y completa el DST en el LMS para finalizar la actividad.</p>`)}
   `}
  ],
  gateExam:true

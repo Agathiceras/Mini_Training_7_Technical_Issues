@@ -394,8 +394,6 @@ const CONTENT = {
   `},
   {t:'🔁 Zamknij sprawę', html:`
    <div class="card"><p>Gdy problem zostanie rozwiązany, <strong>daj znać rodzinie</strong>. Poinformowany rodzic to rodzic, który zostaje.</p></div>
-   <div class="card" style="background:var(--surface2)"><h4>💬 Wiadomość na zamknięcie sprawy, której możesz użyć</h4>
-   <p style="font-size:13.5px;line-height:1.75"><em>„Dzień dobry, [imię rodzica]. Piszę, żeby dać znać, że problem z dostępem, który miał(a) [uczeń], został już rozwiązany. Dziękuję za cierpliwość. Gdyby coś się powtórzyło, proszę do mnie napisać, a od razu się tym zajmiemy”.</em></p></div>
   `}
  ],
  ix:{
@@ -478,7 +476,6 @@ const CONTENT = {
      {ic:'⚖️', html:`<strong>Nigdy nie obiecuj i nigdy nie odmawiaj.</strong> Ani <em>„damy Państwu dodatkową lekcję”</em>, ani <em>„to niemożliwe”</em>. Pokaż natomiast, że ci zależy i że już działasz.`},
      {ic:'📅', html:`<strong>Zgłoś raz i sprawdzaj dalej.</strong> Ustaw sobie w kalendarzu przypomnienie, żeby wrócić do sprawy za dwie lekcje.`}
    ])}
-   ${co('co-ok','💬',`<p><strong>Wiadomość, którą możesz wysłać</strong> (po uzgodnieniu z liderem zespołu): <em>„Dzień dobry, [imię rodzica]. Widzę, że [uczeń] nie mógł/mogła dziś wejść na lekcję. Zgłosiłem/-am to już mojemu zespołowi ze wszystkimi szczegółami, a Dział Obsługi Klienta skontaktuje się z Państwem. W międzyczasie przesyłam nagranie, żeby nic z omawianego materiału nie przepadło”.</em></p>`)}
   `},
   {t:'💛 Odpowiadaj na czas: rodziny widzą twój wysiłek', html:`
    <div class="card"><p>Awaria techniczna rzadko jest jedynym powodem, dla którego rodzina odchodzi. Decyduje to, co dzieje się <strong>potem</strong>: czy ktoś odpowiada, czy dziecko znów może wejść, czy rodzina czuje, że komuś zależy? Gdy rodzice widzą, że pracujesz nad tym, żeby wszystko działało — szybko odpowiadasz, wracasz do sprawy, dbasz o to, by ich dziecko miało jak najlepszą lekcję — dostrzegają to. To właśnie ten wysiłek sprawia, że wiele rodzin <strong>daje nam drugą szansę</strong>. Milczenie mówi im coś przeciwnego.</p></div>
